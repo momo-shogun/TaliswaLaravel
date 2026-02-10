@@ -1,0 +1,591 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --primary-color: #306C48;
+    --secondary-color: #C78F3C;
+    --light-blue-bg: #B1D0CD;
+    --khaki-bg: #CFAB7A;
+    --khaki: #C78F3C;
+    --light-white-color: #F3EAE0;
+    --green-1: #375F4D;
+    --green-2: #385E4B;
+    --orange-1: #A54221;
+    --blue-1: #333092;
+
+    --primary-font: "Marcellus SC", serif;
+    --secondary-font: "Marcellus", serif;
+
+}
+
+body {
+    font-family: var(--secondary-font);
+}
+
+/* -------------------------------------
+        Utility CSS Style
+------------------------------------- */
+
+
+.heading-tag {
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--light-white-color);
+    position: relative;
+    width: fit-content;
+    margin: 0px auto;
+}
+
+.heading-tag .left {
+    width: 90px;
+    height: 0.5px;
+    display: inline-block;
+    background-color: var(--light-white-color);
+    position: absolute;
+    top: -3px;
+    left: -7rem;
+    bottom: 0px;
+    margin: auto;
+}
+
+.heading-tag .right {
+    width: 90px;
+    height: 0.5px;
+    display: inline-block;
+    background-color: var(--light-white-color);
+    position: absolute;
+    top: -3px;
+    right: -7rem;
+    bottom: 0px;
+    margin: auto;
+}
+
+.heading--lg {
+    font-size: 55px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--light-white-color);
+}
+
+.bg-1 {
+    background-color: var(--light-white-color);
+}
+
+.bg-2 {
+    background-color: var(--khaki-bg);
+}
+
+.primary-btn {
+    background-color: var(--light-white-color);
+    color: var(--primary-colors);
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 45px;
+    border: none;
+    position: relative;
+}
+
+.primary-btn::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    border: 1px solid var(--primary-color);
+    width: 97%;
+    height: 92%;
+}
+
+.primary-btn::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    border: 1.4px dotted var(--primary-color);
+    width: 93%;
+    height: 80%;
+}
+
+/* -------------------------------------
+        Hero Banner CSS Style
+------------------------------------- */
+.hero-banner {
+    background-color: var(--light-blue-bg);
+    height: 110vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--green-1);
+    overflow: hidden;
+    position: relative;
+
+}
+
+.hero-banner-title {
+    font-size: 3.5rem;
+    width: 50%;
+    text-align: center;
+    line-height: 4rem;
+    letter-spacing: 0px;
+    font-weight: bolder;
+}
+
+.hero-banner-desc {
+    font-size: 23px;
+    font-weight: 600;
+    margin-top: 16px;
+}
+
+.hero-banner--left-img {
+    width: 30rem;
+    position: absolute;
+    left: 0rem;
+    bottom: -8rem;
+    z-index: 10;
+}
+
+.hero-banner--right-img {
+    width: 24rem;
+    position: absolute;
+    right: 0rem;
+    bottom: -8rem;
+    z-index: 10;
+}
+
+.hero-banner--bottom-img {
+    width: 100%;
+    position: absolute;
+    bottom: -15rem;
+    z-index: 5;
+}
+
+.hero-banner--bg {
+    width: 30rem;
+    position: absolute;
+    right: 0rem;
+    bottom: -5rem;
+    z-index: 2;
+}
+
+.hero-banner--left-bee1 {
+    width: 10.5rem;
+    position: absolute;
+    left: 10rem;
+    top: 8rem;
+    z-index: 10;
+}
+
+.hero-banner--left-bee2 {
+    width: 10.5rem;
+    position: absolute;
+    left: 20rem;
+    bottom: 12rem;
+    z-index: 10;
+}
+
+.hero-banner--bird {
+    width: 16rem;
+    position: absolute;
+    right: 10rem;
+    top: 9rem;
+    z-index: 10;
+}
+
+
+/* -------------------------------------
+        Navbar CSS Style
+------------------------------------- */
+.navbar {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    /* background-color: var(--light-blue-bg); */
+    padding: 2rem 10rem;
+}
+
+.navbar--link {
+    font-family: var(--primary-font);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--primary-color);
+    font-weight: 100;
+}
+
+.navbar--logo {
+    width: 9rem;
+}
+
+/* -------------------------------------
+        Feature Products Section CSS Style
+------------------------------------- */
+.feature-section {
+    background-color: var(--green-2);
+    padding: 5rem 10rem;
+}
+
+
+
+
+/* -------------------------------------
+        Cards CSS Style
+------------------------------------- */
+
+/* FEATURE CARD */
+.f-card {
+    display: flex;
+}
+
+.f-card--img {
+    width: 50%;
+    background-color: orange;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.f-card--content {
+    width: 50%;
+    padding: 2rem 5.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.f-card--border {
+    position: absolute;
+    width: 85%;
+}
+
+.f-card p {
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 22px;
+    padding: 0px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+
+}
+
+.f-card--logo {
+    width: 16rem;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 5;
+}
+
+.f-card .bg-1 p {
+    color: var(--khaki);
+}
+
+.f-card .bg-2 p {
+    color: var(--blue-1);
+}
+
+/* -------------------------------------
+        About Section CSS Style
+------------------------------------- */
+.about-section {
+    background-color: var(--green-2);
+    height: 1000px;
+    overflow: hidden;
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    gap: 2rem;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    bottom: -25rem;
+    width: 100%;
+    height: 100%;
+    opacity: 40%;
+    background-image: url('./../img/header-bottom.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.about-section--label {
+    width: 45%;
+    position: relative;
+    z-index: 1;
+}
+
+.about-section--bg {
+    position: absolute;
+    bottom: -4rem;
+    width: 100%;
+}
+
+.about-section--creative {
+    width: 100%;
+    position: absolute;
+    bottom: -8rem;
+}
+
+.about-section p {
+    font-size: 16px;
+    text-align: center;
+    width: 45%;
+    color: var(--light-white-color);
+    position: relative;
+}
+
+/* -------------------------------------
+        Content & Banner Section CSS Style
+------------------------------------- */
+.info-boxes {
+    padding: 10rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    position: relative;
+}
+
+.info-boxes--content-box {
+    padding: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+
+.info-boxes-bg-2 .info-boxes--content-box:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 25px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-image: url('../img/border.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.info-boxes marquee {
+    background-color: var(--light-white-color);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    width: 100%;
+    padding: 16px 0px;
+
+}
+
+.info-boxes marquee div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.info-boxes marquee p {
+    padding: 0px;
+    margin: 0px;
+    color: var(--green-2);
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.info-boxes marquee p span {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 4px solid var(--green-2);
+}
+
+.info-boxes--content-box h4 {
+    font-size: 50px;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: var(--light-white-color);
+}
+
+.info-boxes--content-box p {
+    font-size: 18px;
+    text-align: center;
+    color: var(--light-white-color);
+
+}
+
+.info-boxes--content-box--img {
+    width: 50%;
+}
+
+.info-boxes-bg-1 {
+    background-image: url('./../img/bg-2.jpg');
+}
+
+.info-boxes-bg-2 {
+    background-image: url('./../img/bg-3.jpg');
+    position: relative;
+}
+
+
+/* -------------------------------------
+        Footer CSS Style
+------------------------------------- */
+.m-footer {
+    background-color: var(--green-2);
+    padding: 3rem 9.5rem;
+
+}
+
+.m-footer--logo {
+    width: 45%;
+    margin-bottom: 2rem;
+
+}
+
+.m-footer p {
+    margin: 0px;
+    padding: 0px;
+    color: var(--light-white-color);
+    font-size: 10px;
+}
+
+.m-footer--title {
+    font-size: 14px;
+    color: var(--light-white-color);
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.m-footer--title span {
+    display: block;
+    height: 0.3px;
+    width: 60%;
+    background-color: var(--light-white-color);
+    margin-top: 6px;
+}
+
+.m-footer--links {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.m-footer--links li {
+    list-style: none;
+}
+
+.m-footer--link {
+    margin: 0px;
+    padding: 0px;
+    color: var(--light-white-color);
+    font-size: 11px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.m-footer label {
+    font-size: 12px;
+    color: var(--light-white-color);
+    font-weight: bolder;
+    letter-spacing: -1px;
+    letter-spacing: 1px;
+}
+
+.m-footer--input-box {
+    display: flex;
+    align-items: center;
+}
+
+.m-footer--input-box input {
+    width: 100%;
+    height: 42px;
+}
+
+.m-footer--input-box button {
+    font-size: 14px;
+    letter-spacing: 2px;
+    background-color: var(--khaki);
+    color: var(--light-white-color);
+    padding: 0px 26px;
+    border: none;
+    height: 42px;
+}
+
+.m-footer--social-links {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.m-footer--social-links li {
+    list-style: none;
+}
+
+.m-footer--social-link {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: var(--khaki);
+    transition: all ease-in-out 0.25s;
+
+}
+
+.m-footer--social-link:hover {
+    background-color: var(--orange-1);
+    margin-top: -20px;
+}
+
+.m-footer--social-link:hover i {
+    color: var(--light-white-color);
+}
+
+.m-footer--social-link i {
+    font-size: 16px;
+    color: var(--primary-color);
+}

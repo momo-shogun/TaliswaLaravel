@@ -1,0 +1,76 @@
+$spacing-unit: 4px;
+$spacing-max: 100;
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$properties: (
+  m: margin,
+  p: padding
+);
+
+$directions: (
+  "": "",
+  t: "-top",
+  b: "-bottom",
+  l: "-left",
+  r: "-right",
+  x: ("-left", "-right"),
+  y: ("-top", "-bottom")
+);
+
+@each $abbr, $prop in $properties {
+  @for $i from 0 through $spacing-max {
+    $value: $i * $spacing-unit;
+
+    .#{$abbr}-#{$i} {
+      #{$prop}: $value;
+    }
+
+    @each $dir, $dir-prop in $directions {
+      @if $dir != "" {
+        .#{$abbr}#{$dir}-#{$i} {
+          @if type-of($dir-prop) == "list" {
+            @each $d in $dir-prop {
+              #{$prop}#{$d}: $value;
+            }
+          } @else {
+            #{$prop}#{$dir-prop}: $value;
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $bp, $size in $breakpoints {
+  @media (min-width: $size) {
+    @each $abbr, $prop in $properties {
+      @for $i from 0 through $spacing-max {
+        $value: $i * $spacing-unit;
+
+        .#{$abbr}-#{$bp}-#{$i} {
+          #{$prop}: $value;
+        }
+
+        @each $dir, $dir-prop in $directions {
+          @if $dir != "" {
+            .#{$abbr}#{$dir}-#{$bp}-#{$i} {
+              @if type-of($dir-prop) == "list" {
+                @each $d in $dir-prop {
+                  #{$prop}#{$d}: $value;
+                }
+              } @else {
+                #{$prop}#{$dir-prop}: $value;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5098 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --primary-color: #306C48;
+    --secondary-color: #C78F3C;
+    --light-blue-bg: #B1D0CD;
+    --khaki-bg: #CFAB7A;
+    --khaki: #C78F3C;
+    --light-white-color: #F3EAE0;
+    --green-1: #375F4D;
+    --green-2: #385E4B;
+    --orange-1: #A54221;
+    --blue-1: #333092;
+    --terracotta: #A54221;
+    --green-dark: #2E473D;
+    --beige-light: #F8F5ED;
+
+    --primary-font: "Marcellus SC", serif;
+    --secondary-font: "Marcellus", serif;
+
+}
+
+body {
+    font-family: var(--secondary-font);
+}
+
+/* -------------------------------------
+        Utility CSS Style
+------------------------------------- */
+
+
+.heading-tag {
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--light-white-color);
+    position: relative;
+    width: fit-content;
+    margin: 0px auto;
+}
+
+.heading-tag .left {
+    width: 90px;
+    height: 0.5px;
+    display: inline-block;
+    background-color: var(--light-white-color);
+    position: absolute;
+    top: -3px;
+    left: -7rem;
+    bottom: 0px;
+    margin: auto;
+}
+
+.heading-tag .right {
+    width: 90px;
+    height: 0.5px;
+    display: inline-block;
+    background-color: var(--light-white-color);
+    position: absolute;
+    top: -3px;
+    right: -7rem;
+    bottom: 0px;
+    margin: auto;
+}
+
+.heading--lg {
+    font-size: 55px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--light-white-color);
+}
+
+.bg-1 {
+    background-color: var(--light-white-color);
+}
+
+.bg-2 {
+    background-color: var(--khaki-bg);
+}
+
+.primary-btn {
+    background-color: var(--light-white-color);
+    color: var(--primary-colors);
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 45px;
+    border: none;
+    position: relative;
+}
+
+.primary-btn::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    border: 1px solid var(--primary-color);
+    width: 97%;
+    height: 92%;
+}
+
+.primary-btn::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    border: 1.4px dotted var(--primary-color);
+    width: 93%;
+    height: 80%;
+}
+
+/* -------------------------------------
+        Hero Banner CSS Style
+------------------------------------- */
+.hero-banner {
+    background-color: var(--light-blue-bg);
+    height: 110vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--green-1);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-banner-title {
+    font-size: 3.9rem;
+    width: 50%;
+    text-align: center;
+    line-height: 4rem;
+    letter-spacing: 0px;
+    font-weight: bolder;
+}
+
+.hero-banner-desc {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 16px;
+}
+
+.hero-banner--left-img {
+    width: 30.29rem;
+    position: absolute;
+    left: 0rem;
+    bottom: -8rem;
+    z-index: 10;
+}
+
+.hero-banner--right-img {
+    width: 24rem;
+    position: absolute;
+    right: 0rem;
+    bottom: -8rem;
+    z-index: 10;
+}
+
+.hero-banner--bottom-img {
+    width: 100%;
+    position: absolute;
+    bottom: -15rem;
+    z-index: 5;
+}
+
+.hero-banner--bg {
+    width: 30rem;
+    position: absolute;
+    right: 0rem;
+    bottom: -5rem;
+    z-index: 2;
+}
+
+.hero-banner--left-bee1 {
+    width: 10.5rem;
+    position: absolute;
+    left: 10rem;
+    top: 8rem;
+    z-index: 10;
+}
+
+.hero-banner--left-bee2 {
+    width: 10.5rem;
+    position: absolute;
+    left: 20rem;
+    bottom: 12rem;
+    z-index: 10;
+}
+
+.hero-banner--bird {
+    width: 16rem;
+    position: absolute;
+    right: 10rem;
+    top: 9rem;
+    z-index: 10;
+}
+
+
+/* -------------------------------------
+        Navbar CSS Style
+------------------------------------- */
+.navbar {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    /* background-color: var(--light-blue-bg); */
+    padding: 2rem 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.navbar--link {
+    font-family: var(--primary-font);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 24px;
+    color: var(--primary-color);
+    font-weight: 100;
+}
+
+.navbar--logo {
+    width: 9rem;
+}
+
+/* -------------------------------------
+        Feature Products Section CSS Style
+------------------------------------- */
+.feature-section {
+    position: relative;
+    z-index: 1;
+    background-color: var(--green-2);
+    padding: 5rem 10rem;
+}
+
+/* -------------------------------------
+    Collection Section CSS Style
+------------------------------------- */
+.collection-section {
+    background-color: var(--green-2);
+    padding: 5rem 10rem;
+    padding-bottom: 10rem;
+    /* height: 100vh; */
+    position: relative;
+}
+.collection-section::before {
+    content: '';
+    background-image: url('./../img/collections/collection-bg-2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-position-y: bottom;
+    opacity: 50%;
+}
+
+.collection-back-btn {
+    position: absolute;
+    left: 8rem;
+    top: 4rem;
+    z-index: 20;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.collection-back-btn:hover {
+    opacity: 1;
+}
+
+.collection-back-btn img {
+    width: auto;
+    height: auto;
+    max-width: 3rem;
+    max-height: 3rem;
+    display: block;
+}
+
+/* -------------------------------------
+        Cards CSS Style
+------------------------------------- */
+
+/* FEATURE CARD */
+.f-card {
+    display: flex;
+}
+
+.f-card--img {
+    width: 50%;
+    background-color: orange;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.f-card--content {
+    width: 50%;
+    padding: 2rem 5.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.f-card--border {
+    position: absolute;
+    width: 85%;
+}
+
+.f-card p {
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 22px;
+    padding: 0px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+
+}
+
+.f-card--logo {
+    width: 16rem;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 5;
+}
+
+.f-card .bg-1 p {
+    color: var(--khaki);
+}
+
+.f-card .bg-2 p {
+    color: var(--blue-1);
+}
+
+/* COLLECTION CARD */
+
+.collection-card--1{
+    background-color: var(--light-white-color);
+    position: relative;
+    padding: 3rem 1rem;
+}
+
+.collection-card--1::before{
+    content: '';
+    background-image: url('./../img/collections/collection-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 80%;
+}
+
+.collection-card--2{
+    background-color: var(--khaki-bg);
+    position: relative;
+    padding: 6rem 1rem;
+    padding-bottom: 10rem;
+}
+.collection-card--2--leftTop{
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    width: 12%;
+}
+.collection-card--2--rightTop{
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    width: 12%;
+    transform: rotateY(180deg);
+}
+
+
+.collection-card--2--leftBottom{
+    position: absolute;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    width: 12%;
+    transform: rotateX(180deg);
+}
+.collection-card--2--rightBottom{
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    width: 12%;
+    transform: rotateZ(180deg);
+}
+
+/* .collection-card--2::before{
+    content: '';
+    background-image: url('./../img/collections/collection-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 80%;
+} */
+
+/* Collection page – responsive (mobile/tablet only; desktop unchanged) */
+@media (max-width: 992px) {
+    .collection-section {
+        padding: 3rem 2rem;
+        padding-bottom: 5rem;
+    }
+
+    .collection-back-btn {
+        left: 2rem;
+        top: 2rem;
+    }
+
+    .collection-card--1,
+    .collection-card--2 {
+        padding: 2.5rem 1rem;
+    }
+
+    .collection-card--2 {
+        padding-bottom: 6rem;
+    }
+
+    .collection-section .row .col-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .collection-section .row .col-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .collection-card--2--leftTop,
+    .collection-card--2--rightTop {
+        width: 18%;
+        top: 1.5rem;
+    }
+    .collection-card--2--leftBottom,
+    .collection-card--2--rightBottom {
+        width: 18%;
+        bottom: 1.5rem;
+    }
+    .collection-card--2--leftTop,
+    .collection-card--2--leftBottom {
+        left: 1rem;
+    }
+    .collection-card--2--rightTop,
+    .collection-card--2--rightBottom {
+        right: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .collection-section {
+        padding: 2rem 1.5rem;
+        padding-bottom: 4rem;
+    }
+
+    .collection-back-btn {
+        left: 1rem;
+        top: 1rem;
+    }
+
+    .collection-back-btn img {
+        max-width: 2rem;
+        max-height: 2rem;
+    }
+
+    .collection-card--1,
+    .collection-card--2 {
+        padding: 2rem 0.75rem;
+    }
+
+    .collection-card--2 {
+        padding-bottom: 5rem;
+    }
+
+    .collection-section .row.gap-4 {
+        gap: 1rem !important;
+    }
+
+    .collection-section .mt-15 {
+        margin-top: 2rem !important;
+    }
+
+    .collection-card--2--leftTop,
+    .collection-card--2--rightTop {
+        width: 15%;
+        top: 1rem;
+    }
+    .collection-card--2--leftBottom,
+    .collection-card--2--rightBottom {
+        width: 15%;
+        bottom: 1rem;
+    }
+    .collection-card--2--leftTop,
+    .collection-card--2--leftBottom {
+        left: 0.5rem;
+    }
+    .collection-card--2--rightTop,
+    .collection-card--2--rightBottom {
+        right: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .collection-section {
+        padding: 1.5rem 1rem;
+        padding-bottom: 3rem;
+    }
+
+    .collection-back-btn {
+        left: 1rem;
+        top: 1rem;
+    }
+
+    .collection-back-btn img {
+        max-width: 2rem;
+        max-height: 2rem;
+    }
+
+    .collection-section .heading--lg {
+        font-size: 2rem;
+    }
+
+    .collection-card--1,
+    .collection-card--2 {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .collection-card--2 {
+        padding-bottom: 4rem;
+    }
+
+    .collection-section .row .col-3,
+    .collection-section .row .col-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .collection-section .row .col-4.mx-auto {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .collection-section .row.gap-4 {
+        gap: 0.75rem !important;
+    }
+
+    .collection-section .mt-15 {
+        margin-top: 1.5rem !important;
+    }
+
+    .collection-card--2--leftTop,
+    .collection-card--2--rightTop {
+        width: 12%;
+        top: 0.75rem;
+    }
+    .collection-card--2--leftBottom,
+    .collection-card--2--rightBottom {
+        width: 12%;
+        bottom: 0.75rem;
+    }
+    .collection-card--2--leftTop,
+    .collection-card--2--leftBottom {
+        left: 0.5rem;
+    }
+    .collection-card--2--rightTop,
+    .collection-card--2--rightBottom {
+        right: 0.5rem;
+    }
+}
+
+
+/* -------------------------------------
+        About Section CSS Style
+------------------------------------- */
+.about-section {
+    background-color: var(--green-2);
+    height: 1000px;
+    overflow: hidden;
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    gap: 2rem;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    bottom: -25rem;
+    width: 100%;
+    height: 100%;
+    opacity: 40%;
+    background-image: url('./../img/header-bottom.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.about-section--label {
+    width: 45%;
+    position: relative;
+    z-index: 1;
+}
+
+.about-section--bg {
+    position: absolute;
+    bottom: -4rem;
+    width: 100%;
+}
+
+.about-section--creative {
+    width: 100%;
+    position: absolute;
+    bottom: 0rem;
+}
+
+.about-section p {
+    font-size: 16px;
+    text-align: center;
+    width: 45%;
+    color: var(--light-white-color);
+    position: relative;
+}
+
+/* -------------------------------------
+        Content & Banner Section CSS Style
+------------------------------------- */
+.info-boxes {
+    padding: 10rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    position: relative;
+}
+
+.info-boxes--content-box {
+    padding: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+
+.info-boxes-bg-2 .info-boxes--content-box:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 25px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-image: url('../img/border.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.info-boxes marquee {
+    background-color: var(--light-white-color);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    width: 100%;
+    padding: 16px 0px;
+    
+}
+
+.info-boxes marquee div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.info-boxes marquee p {
+    padding: 0px;
+    margin: 0px;
+    color: var(--green-2);
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.info-boxes marquee p span {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 4px solid var(--green-2);
+}
+
+.info-boxes--content-box h4 {
+    font-size: 50px;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: var(--light-white-color);
+}
+
+.info-boxes--content-box p {
+    font-size: 18px;
+    text-align: center;
+    color: var(--light-white-color);
+
+}
+
+.info-boxes--content-box--img {
+    width: 50%;
+}
+
+.info-boxes-bg-1 {
+    background-image: url('./../img/bg-2.jpg');
+}
+
+.info-boxes-bg-2 {
+    background-image: url('./../img/bg-3.jpg');
+    position: relative;
+}
+
+
+/* -------------------------------------
+        Footer CSS Style
+------------------------------------- */
+.m-footer {
+    background-color: var(--green-2);
+    padding: 3rem 9.5rem;
+
+}
+
+.m-footer--logo {
+    width: 45%;
+    margin-bottom: 2rem;
+
+}
+
+.m-footer p {
+    margin: 0px;
+    padding: 0px;
+    color: var(--light-white-color);
+    font-size: 10px;
+}
+
+.m-footer--title {
+    font-size: 14px;
+    color: var(--light-white-color);
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.m-footer--title span {
+    display: block;
+    height: 0.3px;
+    width: 60%;
+    background-color: var(--light-white-color);
+    margin-top: 6px;
+}
+
+.m-footer--links {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.m-footer--links li {
+    list-style: none;
+}
+
+.m-footer--link {
+    margin: 0px;
+    padding: 0px;
+    color: var(--light-white-color);
+    font-size: 11px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.m-footer label {
+    font-size: 12px;
+    color: var(--light-white-color);
+    font-weight: bolder;
+    letter-spacing: -1px;
+    letter-spacing: 1px;
+}
+
+.m-footer--input-box {
+    display: flex;
+    align-items: center;
+}
+
+.m-footer--input-box input {
+    width: 100%;
+    height: 42px;
+}
+
+.m-footer--input-box button {
+    font-size: 14px;
+    letter-spacing: 2px;
+    background-color: var(--khaki);
+    color: var(--light-white-color);
+    padding: 0px 26px;
+    border: none;
+    height: 42px;
+}
+
+.m-footer--social-links {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.m-footer--social-links li {
+    list-style: none;
+}
+
+.m-footer--social-link {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: var(--khaki);
+    transition: all ease-in-out 0.25s;
+
+}
+
+.m-footer--social-link:hover {
+    background-color: var(--orange-1);
+    margin-top: -20px;
+}
+
+.m-footer--social-link:hover i {
+    color: var(--light-white-color);
+}
+
+.m-footer--social-link i {
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+
+
+
+
+
+
+
+/* -------------------------------------
+        About Us Page CSS Styles
+        These styles only affect about-us.html page
+------------------------------------- */
+
+/* Remove body margins for about-us page */
+body:has(.about-hero) {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+}
+
+/* CRITICAL: All three sections must have same height matching Figma */
+.about-team,
+.about-timeline {
+    min-height: 800px;
+    height: 800px;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Responsive scaling for larger screens */
+@media (min-width: 1200px) {
+    .about-team,
+    .about-timeline {
+        min-height: 1000px;
+        height: 1000px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .about-team,
+    .about-timeline {
+        min-height: 1200px;
+        height: 1200px;
+    }
+}
+
+/* SECTION 1: Hero/About Sushma Section */
+.about-hero {
+    background-color: transparent;
+    height: 100vh;
+    min-height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero .container-fluid {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+}
+
+.about-hero .row {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    --bs-gutter-x: 0 !important;
+    --bs-gutter-y: 0 !important;
+}
+
+.about-hero .col-lg-6 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+    height: 100vh;
+}
+
+.about-hero--image-col {
+    position: relative;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    align-items: stretch;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+}
+
+.about-hero--image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block;
+    line-height: 0;
+}
+
+.about-hero--image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.about-hero--arrow {
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.about-hero--arrow img {
+    width: auto;
+    height: auto;
+    max-width: 3rem;
+    max-height: 3rem;
+    display: block;
+}
+
+.about-hero--arrow:hover {
+    opacity: 1;
+}
+
+.about-hero--arrow-top-left {
+    left: 8rem;
+    top: 4rem;
+}
+
+/* -------------------------------------
+        Tanoma Club Page CSS Styles
+        These styles only affect tanoma-club.html page
+        Separate from index.html to avoid conflicts
+------------------------------------- */
+
+.tanoma-club-page {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.tanoma-club-section {
+    position: relative;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 5rem 8rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tanoma-club-bg {
+    background-image: url('./../img/bg-3.jpg');
+}
+
+.tanoma-club--back-btn {
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    left: 8rem;
+    top: 4rem;
+}
+
+.tanoma-club--back-btn img {
+    width: auto;
+    height: auto;
+    max-width: 3rem;
+    max-height: 3rem;
+    display: block;
+}
+
+.tanoma-club--back-btn:hover {
+    opacity: 1;
+}
+
+.tanoma-club--content-box {
+    padding: 6rem 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    background-color: var(--green-2);
+    max-width: 90%;
+    width: 100%;
+    max-height: 85vh;
+    aspect-ratio: 4/3;
+}
+
+.tanoma-club--content-box:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 25px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-image: url('../img/border.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.tanoma-club--title {
+    font-size: 50px;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: var(--light-white-color);
+    margin: 0;
+}
+
+.tanoma-club--img {
+    width: 50%;
+    max-width: 400px;
+}
+
+.tanoma-club--btn {
+    z-index: 1;
+    position: relative;
+}
+
+/* Responsive adjustments for Tanoma Club page (mobile/tablet only; desktop unchanged) */
+@media (max-width: 992px) {
+    .tanoma-club-section {
+        padding: 4rem 3rem;
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .tanoma-club--content-box {
+        padding: 4rem 3rem;
+        max-width: 95%;
+        gap: 2rem;
+        max-height: none;
+        aspect-ratio: auto;
+    }
+
+    .tanoma-club--content-box:before {
+        left: 15px;
+    }
+
+    .tanoma-club--title {
+        font-size: 40px;
+    }
+
+    .tanoma-club--img {
+        width: 60%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tanoma-club-section {
+        padding: 3rem 2rem;
+    }
+
+    .tanoma-club--back-btn {
+        left: 1rem;
+        top: 1rem;
+    }
+
+    .tanoma-club--back-btn img {
+        max-width: 2rem;
+        max-height: 2rem;
+    }
+
+    .tanoma-club--content-box {
+        padding: 3rem 2rem;
+        max-width: 100%;
+        gap: 1.75rem;
+    }
+
+    .tanoma-club--content-box:before {
+        left: 12px;
+    }
+
+    .tanoma-club--title {
+        font-size: 32px;
+    }
+
+    .tanoma-club--img {
+        width: 70%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tanoma-club-section {
+        padding: 2rem 1rem;
+    }
+
+    .tanoma-club--content-box {
+        padding: 2rem 1.25rem;
+        gap: 1.25rem;
+    }
+
+    .tanoma-club--content-box:before {
+        left: 0;
+    }
+
+    .tanoma-club--title {
+        font-size: 26px;
+    }
+
+    .tanoma-club--img {
+        width: 80%;
+        max-width: 101px;
+    }
+}
+
+.about-hero--content-col {
+    background-color: var(--terracotta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.about-hero--content {
+    width: 100%;
+    max-width: 600px;
+}
+
+.about-hero--text {
+    color: var(--light-white-color);
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    text-align: left;
+    font-family: var(--secondary-font);
+}
+
+.about-hero--text:last-child {
+    margin-bottom: 0;
+}
+
+/* SECTION 2: Our Team Section */
+.about-team {
+    background-color: var(--green-dark);
+    padding: 5rem 2rem;
+    margin-top: 0 !important;
+    padding-top: 5rem;
+    clear: both;
+}
+
+.about-team--title {
+    color: var(--light-white-color);
+    margin-bottom: 4rem;
+    font-size: 55px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.about-team--box {
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid var(--light-white-color);
+    background-color: transparent;
+    min-height: 250px;
+}
+
+/* SECTION 3: Timeline Infographic Section */
+.about-timeline {
+    background-color: var(--beige-light);
+    padding: 5rem 2rem;
+}
+
+.about-timeline .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.about-timeline--title {
+    color: var(--green-1);
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.about-timeline--wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.about-timeline--entry {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 2.5rem;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: center;
+}
+
+.about-timeline--entry:last-child {
+    margin-bottom: 0;
+}
+
+.about-timeline--year {
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--green-1);
+    min-width: 200px;
+    width: 200px;
+    text-align: left;
+    flex-shrink: 0;
+    align-self: flex-start;
+    line-height: 1.4;
+}
+
+.about-timeline--description {
+    font-family: var(--secondary-font);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--green-1);
+    text-align: left;
+    max-width: 700px;
+    align-self: flex-start;
+    word-break: keep-all;
+    overflow-wrap: normal;
+}
+
+/* Responsive adjustments for About Us page (mobile/tablet only; desktop unchanged) */
+@media (max-width: 992px) {
+    .about-hero,
+    .about-team,
+    .about-timeline {
+        min-height: auto;
+        height: auto;
+    }
+
+    /* Force hero to stack vertically and use auto height so content sits below image */
+    .about-hero .container-fluid {
+        height: auto;
+    }
+
+    .about-hero .row {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .about-hero .col-lg-6 {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+
+    .about-hero--image-col {
+        min-height: 50vh;
+        height: 50vh;
+        flex-shrink: 0;
+    }
+
+    .about-hero--image-wrapper {
+        height: 100%;
+    }
+
+    .about-hero--content-col {
+        min-height: 0;
+        height: auto;
+        padding: 3rem 2.5rem;
+    }
+
+    .about-hero--image {
+        object-fit: cover;
+    }
+
+    .about-timeline--entry {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .about-timeline--year {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .about-team {
+        padding: 3rem 2rem;
+    }
+
+    .about-team--title {
+        font-size: 40px;
+        margin-bottom: 3rem;
+    }
+
+    .about-timeline {
+        padding: 3rem 2rem;
+    }
+
+    .about-timeline--title {
+        font-size: 40px;
+        margin-bottom: 3rem;
+    }
+
+    .about-timeline--wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero--image-col {
+        min-height: 40vh;
+        height: 40vh;
+    }
+
+    .about-hero--content-col {
+        min-height: auto;
+        padding: 2.5rem 2rem;
+    }
+
+    .about-hero--content {
+        max-width: 100%;
+        padding: 0 2rem;
+    }
+
+    .about-hero--text {
+        font-size: 14px;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-hero--arrow-top-left {
+        left: 1rem;
+        top: 1rem;
+    }
+
+    .about-hero--arrow img {
+        max-width: 2rem;
+        max-height: 2rem;
+    }
+
+    .about-team {
+        padding: 2rem 1rem;
+    }
+
+    .about-team--title {
+        font-size: 32px;
+        margin-bottom: 2rem;
+    }
+
+    .about-team--box {
+        min-height: 200px;
+    }
+
+    .about-timeline {
+        padding: 2rem 1rem;
+    }
+
+    .about-timeline--title {
+        font-size: 32px;
+        margin-bottom: 2rem;
+    }
+
+    .about-timeline--year {
+        font-size: 20px;
+        margin-bottom: 0.5rem;
+    }
+
+    .about-timeline--description {
+        font-size: 14px;
+    }
+
+    .about-timeline--entry {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-hero--image-col {
+        min-height: 35vh;
+        height: 35vh;
+    }
+
+    .about-hero--content-col {
+        padding: 2rem 1.5rem;
+    }
+
+    .about-hero--text {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .about-team--title {
+        font-size: 28px;
+    }
+
+    .about-team--box {
+        min-height: 180px;
+    }
+
+    .about-timeline--title {
+        font-size: 28px;
+    }
+
+    .about-timeline--year {
+        font-size: 18px;
+    }
+
+    .about-timeline--description {
+        font-size: 13px;
+    }
+}
+
+/* -------------------------------------
+        Responsive Styles (Mobile/Tablet Only)
+        Desktop view remains unchanged
+------------------------------------- */
+
+/* Tablet and below (max-width: 992px) */
+@media (max-width: 992px) {
+    /* Navbar */
+    .navbar {
+        padding: 1.5rem 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar--link {
+        font-size: 16px;
+        margin: 0 0.5rem;
+    }
+
+    .navbar--logo {
+        width: 7rem;
+        order: -1;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+        height: 80vh;
+        padding: 2rem;
+    }
+
+    .hero-banner-title {
+        font-size: 2.85rem;
+        width: 90%;
+        line-height: 3.2rem;
+    }
+
+    .hero-banner-desc {
+        font-size: 20px;
+    }
+
+    .hero-banner--left-img,
+    .hero-banner--right-img {
+        width: 15rem;
+    }
+
+    .hero-banner--left-bee1,
+    .hero-banner--left-bee2 {
+        width: 6rem;
+    }
+
+    .hero-banner--bird {
+        width: 10rem;
+        right: 2rem;
+    }
+
+    /* Feature Section */
+    .feature-section {
+        padding: 3rem 2rem;
+    }
+
+    .f-card {
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    .f-card:last-child {
+        margin-bottom: 0;
+    }
+
+    .f-card--img {
+        width: 100%;
+        max-height: 400px;
+        order: 1;
+    }
+
+    .f-card--content {
+        width: 100%;
+        padding: 2.5rem 2rem;
+        order: 2;
+    }
+
+    .f-card--logo {
+        width: 14rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .f-card p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 4rem 2rem;
+        height: auto;
+    }
+
+    .about-section--label {
+        width: 70%;
+    }
+
+    .about-section p {
+        width: 80%;
+    }
+
+    .about-section--creative {
+        width: 100%;
+        position: absolute;
+        bottom: -4rem;
+    }
+
+    /* Info Boxes */
+    .info-boxes {
+        padding: 5rem 2rem;
+    }
+
+    .info-boxes--content-box {
+        padding: 3rem 2rem;
+    }
+
+    .info-boxes-bg-2 .info-boxes--content-box:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        background-image: url('../img/border.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .info-boxes--content-box h4 {
+        font-size: 35px;
+    }
+
+    .info-boxes--content-box--img {
+        width: 70%;
+    }
+
+    /* Footer */
+    .m-footer {
+        padding: 2rem 2rem;
+    }
+
+    .m-footer .col-4,
+    .m-footer .col-8 {
+        width: 100%;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .m-footer .col-3 {
+        width: 50%;
+        margin-bottom: 2rem;
+    }
+
+    .m-footer--social-links {
+        justify-content: center;
+    }
+    .m-footer--title span{
+        margin:auto;
+        margin-top: 6px;
+    }
+    .m-footer--links{
+        align-items: center;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar--link {
+        font-size: 14px;
+        margin: 0.5rem 0;
+        display: block;
+    }
+
+    .navbar--logo {
+        width: 6rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+        height: 70vh;
+        padding: 1rem;
+    }
+
+    .hero-banner-title {
+        font-size: 2.2rem;
+        width: 95%;
+        line-height: 2.6rem;
+    }
+
+    .hero-banner-desc {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .hero-banner--left-img,
+    .hero-banner--right-img {
+        width: 10rem;
+        bottom: -5rem;
+    }
+
+    .hero-banner--left-bee1 {
+        width: 4rem;
+        left: 2rem;
+        top: 4rem;
+    }
+
+    .hero-banner--left-bee2 {
+        width: 4rem;
+        left: 8rem;
+        bottom: 8rem;
+    }
+
+    .hero-banner--bird {
+        width: 7rem;
+        right: 1rem;
+        top: 5rem;
+    }
+
+    .hero-banner--bottom-img {
+        bottom: -10rem;
+    }
+
+    /* Feature Section */
+    .feature-section {
+        padding: 2.5rem 1rem;
+    }
+
+    .heading--lg {
+        font-size: 32px;
+        margin-bottom: 2rem !important;
+    }
+
+    .heading-tag {
+        margin-bottom: 1rem;
+    }
+
+    .f-card {
+        margin-bottom: 2.5rem;
+    }
+
+    .f-card:last-child {
+        margin-bottom: 0;
+    }
+
+    .f-card--img {
+        max-height: 300px;
+        order: 1;
+    }
+
+    .f-card--content {
+        padding: 2rem 1.5rem;
+        order: 2;
+    }
+
+    .f-card--logo {
+        width: 11rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .f-card p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .f-card--border {
+        width: 90%;
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 3rem 1rem;
+        height: 400px;
+    }
+
+    .about-section--label {
+        width: 90%;
+    }
+
+    .about-section p {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    .about-section--creative {
+        width: 100%;
+        position: absolute;
+        bottom: -4rem;
+    }
+
+    /* Info Boxes */
+    .info-boxes {
+        /* padding: 3rem 1rem; */
+    }
+
+    .info-boxes--content-box {
+        padding: 2rem 1.5rem;
+        margin-top: 65px;
+    }
+
+    .info-boxes-bg-2 .info-boxes--content-box:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        background-image: url('../img/border.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .info-boxes--content-box h4 {
+        font-size: 28px;
+    }
+
+    .info-boxes--content-box p {
+        font-size: 16px;
+    }
+
+    .info-boxes--content-box--img {
+        width: 25%;
+    }
+
+    .primary-btn {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+
+    /* Footer */
+    .m-footer {
+        padding: 2rem 1rem;
+    }
+
+    .m-footer .col-3 {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .m-footer--logo {
+        width: 60%;
+    }
+
+    .m-footer--input-box {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .m-footer--input-box input,
+    .m-footer--input-box button {
+        width: 100%;
+    }
+}
+
+/* Small Mobile (max-width: 576px) */
+@media (max-width: 576px) {
+    .hero-banner-title {
+        font-size: 1.95rem;
+        line-height: 2.3rem;
+    }
+
+    .hero-banner-desc {
+        font-size: 17px;
+    }
+
+    .heading--lg {
+        font-size: 28px;
+    }
+
+    .heading-tag {
+        font-size: 14px;
+    }
+
+    .heading-tag .left,
+    .heading-tag .right {
+        width: 50px;
+        left: -4rem;
+        right: -4rem;
+    }
+
+    .about-section--creative {
+        width: 100%;
+        position: absolute;
+        bottom: -4rem;
+    }
+
+    /* Feature Section - Small Mobile */
+    .feature-section {
+        padding: 2rem 0.75rem;
+    }
+
+    .heading--lg {
+        font-size: 28px;
+    }
+
+    .f-card {
+        margin-bottom: 2rem;
+    }
+
+    .f-card:last-child {
+        margin-bottom: 0;
+    }
+
+    .f-card--img {
+        max-height: 100%;
+        order: 1;
+    }
+
+    .f-card--content {
+        padding: 8.5rem 1rem;
+        order: 2;
+    }
+
+    .f-card--logo {
+        width: 9rem;
+        margin-bottom: 1rem;
+    }
+
+    .f-card p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .f-card--border {
+        width: 95%;
+    }
+
+    .info-boxes-bg-2 .info-boxes--content-box:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        background-image: url('../img/border.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .info-boxes--content-box h4 {
+        font-size: 24px;
+    }
+
+    .m-footer--title {
+        font-size: 12px;
+    }
+}
+
+/* -------------------------------------
+        Winery Experience Page CSS Styles
+        These styles only affect winery-experience.html page
+        Separate from index.html to avoid conflicts
+------------------------------------- */
+
+.winery-experience-page {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Top Section: Slideshow */
+.winery-slideshow-section {
+    position: relative;
+    min-height: 1200px;
+    height: 1200px;
+    background-image: url('./../img/bg-2.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 228px;
+}
+
+.winery-slideshow--container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.winery-slideshow--header {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    z-index: 100;
+    left: 8rem;
+    top: 4rem;
+
+}
+
+.winery-slideshow--text {
+    color: var(--light-white-color);
+    font-size: 40px;
+    font-weight: 500;
+    margin: 0;
+    display: inline-block;
+}
+
+.winery-slideshow--image {
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+.winery-slideshow--image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.winery-slideshow--arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: var(--light-white-color);
+    font-size: 3rem;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.winery-slideshow--arrow:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.winery-slideshow--arrow-left {
+    left: 1rem;
+}
+
+.winery-slideshow--arrow-right {
+    right: 1rem;
+}
+
+/* Middle Section: About Kikeri Farms - Overlay Card */
+.winery-about-section {
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--terracotta);
+    max-width: 920px;
+    min-width: 393px;
+    width: 100%;
+    z-index: 20;
+}
+
+.winery-map-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+}
+
+.winery-about-col {
+    position: relative;
+    height: 100%;
+    padding: 0;
+}
+
+.winery-map--container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.winery-map--image {
+    width: 100%;
+    object-fit:contain;
+    height: auto;
+}
+
+.winery-map--marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.winery-map--marker-icon {
+    font-size: 2rem;
+}
+
+.winery-map--marker-text {
+    color: var(--green-1);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.winery-about--content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 70px;
+    width: 393px;
+    text-align: justify;
+}
+
+.winery-about--title {
+    color: var(--light-white-color);
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-family: var(--secondary-font);
+    letter-spacing: 0.5px;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--light-white-color);
+    display: inline-block;
+    width: 100%;
+}
+
+.winery-about--text {
+    color: var(--light-white-color);
+    font-size: 20px;
+    line-height: 1.6;
+    font-family: var(--secondary-font);
+    margin: 0;
+    padding-top: 0.5rem;
+    padding-top: 0.5rem;
+    padding-right: 19px;
+}
+
+/* Bottom Section: Winery Experience */
+.winery-experience-section {
+    position: relative;
+    background-color: black;
+    padding: 5rem 3rem;
+    min-height: 40vh;
+}
+
+.winery-experience--nav-btn {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.winery-experience--nav-btn:hover {
+    opacity: 1;
+}
+
+.winery-experience--nav-btn img {
+    width: auto;
+    height: auto;
+    max-width: 3rem;
+    max-height: 3rem;
+    display: block;
+}
+
+.winery-experience--nav-btn-left {
+    left: 6rem;
+}
+
+.winery-experience--nav-btn-right {
+    right: 6rem;
+
+}
+
+.winery-experience--title {
+    color: var(--light-white-color);
+    font-size: 37px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: var(--secondary-font);
+}
+
+.winery-experience--text {
+    color: var(--light-white-color);
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    font-family: var(--secondary-font);
+}
+
+.winery-experience--carousel {
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto 3rem;
+}
+
+.winery-experience--track {
+    display: flex;
+    transition: transform 0.4s ease-out;
+}
+
+.winery-experience--slide {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+}
+
+.winery-experience--boxes {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.winery-experience--placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    background-color: rgba(0, 0, 0, 0.06);
+    border: 1px dashed rgba(0, 0, 0, 0.12);
+}
+
+.winery-experience--box {
+    min-height: 500px;
+    padding: 3rem;
+    display: flex;
+}
+
+.winery-experience--box-beige {
+    background-color: var(--beige-light);
+    position: relative;
+}
+
+.winery-experience--box-beige .winery-experience--placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 0;
+}
+
+.winery-experience--box-green {
+    background-color: var(--green-dark);
+}
+
+.winery-experience--box-title {
+    color: var(--light-white-color);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    font-family: var(--secondary-font);
+}
+
+.winery-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.winery-pagination--dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--beige-light);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.winery-pagination--dot.active {
+    transform: scale(1.3);
+    background-color: var(--light-white-color);
+}
+
+.winery-experience--back-btn {
+    position: relative;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.winery-experience--back-btn img {
+    width: auto;
+    height: auto;
+    max-width: 3rem;
+    max-height: 3rem;
+    display: block;
+}
+
+.winery-experience--back-btn:hover {
+    opacity: 1;
+}
+
+/* Responsive adjustments for Winery Experience page */
+@media (max-width: 992px) {
+    /* Slideshow Section - Tablet */
+    .winery-slideshow-section {
+        min-height: auto;
+        height: auto;
+        padding-top: 150px;
+        padding-bottom: 2rem;
+    }
+    
+    .winery-slideshow--header {
+        left: 2rem;
+        top: 2rem;
+        gap: 1.5rem;
+    }
+    
+    .winery-slideshow--text {
+        font-size: 28px;
+    }
+
+    /* About Section - Convert to relative positioning on tablet */
+    .winery-about-section {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        max-width: 100%;
+        margin: 2rem auto;
+        padding: 0;
+    }
+
+    .winery-map-col {
+        padding: 2rem;
+        min-height: 300px;
+    }
+    
+    .winery-about-col {
+        padding: 2rem;
+        min-height: 300px;
+    }
+    
+    .winery-about--content {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .winery-about--title {
+        font-size: 22px;
+        margin-bottom: 1.5rem;
+    }
+
+    .winery-about--text {
+        font-size: 16px;
+        padding-right: 0;
+    }
+
+    /* Experience Section */
+    .winery-experience-section {
+        padding: 3rem 2rem;
+    }
+
+    .winery-experience--nav-btn-left {
+        left: 1rem;
+    }
+
+    .winery-experience--nav-btn-right {
+        right: 1rem;
+    }
+
+    .winery-experience--nav-btn img {
+        max-width: 2.5rem;
+        max-height: 2.5rem;
+    }
+
+    .winery-experience--title {
+        font-size: 28px;
+    }
+
+    .winery-experience--text {
+        font-size: 15px;
+    }
+
+    .winery-experience--box {
+        min-height: 250px;
+        padding: 2rem;
+    }
+
+    .winery-experience--box-title {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Slideshow Section - Mobile */
+    .winery-slideshow-section {
+        min-height: auto;
+        height: auto;
+        padding-top: 100px;
+        padding-bottom: 1.5rem;
+    }
+
+    .winery-slideshow--header {
+        left: 1rem;
+        top: 1rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .winery-experience--back-btn img {
+        max-width: 2rem;
+        max-height: 2rem;
+    }
+
+    .winery-slideshow--text {
+        font-size: 20px;
+    }
+
+    /* About Section - Stack vertically on mobile */
+    .winery-about-section {
+        margin: 1.5rem auto;
+    }
+
+    .winery-map-col {
+        padding: 1.5rem;
+        min-height: 250px;
+    }
+    
+    .winery-about-col {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+    
+    .winery-about--content {
+        padding: 0;
+    }
+
+    .winery-about--title {
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .winery-about--text {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Experience Section */
+    .winery-experience-section {
+        padding: 2rem 1rem;
+    }
+
+    .winery-experience--nav-btn-left {
+        left: 0.5rem;
+    }
+
+    .winery-experience--nav-btn-right {
+        right: 0.5rem;
+    }
+
+    .winery-experience--nav-btn img {
+        max-width: 2rem;
+        max-height: 2rem;
+    }
+
+    .winery-experience--title {
+        font-size: 24px;
+        margin-bottom: 1.5rem;
+    }
+
+    .winery-experience--text {
+        font-size: 14px;
+        margin-bottom: 2rem;
+    }
+
+    .winery-experience--box {
+        min-height: 200px;
+        padding: 1.5rem;
+    }
+
+    .winery-experience--box-title {
+        font-size: 20px;
+    }
+
+    .winery-pagination {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Slideshow Section - Small Mobile */
+    .winery-slideshow-section {
+        padding-top: 80px;
+        padding-bottom: 1rem;
+    }
+    
+    .winery-slideshow--header {
+        left: 0.5rem;
+        top: 0.5rem;
+        gap: 0.75rem;
+    }
+
+    .winery-experience--back-btn img {
+        max-width: 1.5rem;
+        max-height: 1.5rem;
+    }
+
+    .winery-slideshow--text {
+        font-size: 16px;
+    }
+    
+    /* About Section */
+    .winery-about-section {
+        margin: 1rem auto;
+    }
+
+    .winery-map-col {
+        padding: 1rem;
+        min-height: 200px;
+    }
+    
+    .winery-about-col {
+        padding: 1rem;
+    }
+    
+    .winery-about--content {
+        width: 100%;
+    }
+
+    .winery-about--title {
+        font-size: 18px;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .winery-about--text {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    /* Experience Section */
+    .winery-experience-section {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .winery-experience--nav-btn-left {
+        left: 0.25rem;
+    }
+
+    .winery-experience--nav-btn-right {
+        right: 0.25rem;
+    }
+
+    .winery-experience--nav-btn img {
+        max-width: 1.5rem;
+        max-height: 1.5rem;
+    }
+
+    .winery-experience--title {
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .winery-experience--text {
+        font-size: 12px;
+        margin-bottom: 1.5rem;
+    }
+
+    .winery-experience--box {
+        min-height: 180px;
+        padding: 1rem;
+    }
+
+    .winery-experience--box-title {
+        font-size: 18px;
+    }
+
+    .winery-pagination {
+        gap: 0.25rem;
+        margin-top: 1rem;
+    }
+
+    .winery-pagination--dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* -------------------------------------
+        Taliswa1 Single Bottle Page
+        Scoped so it doesn't affect other pages
+------------------------------------- */
+.taliswa1-page {
+    margin: 0;
+    padding: 0;
+    background-color: #87A740;
+    overflow: hidden;
+}
+
+.taliswa2-page {
+    margin: 0;
+    padding: 0;
+    background-color: #E59C26;
+    overflow: hidden;
+}
+
+.taliswa3-page {
+    margin: 0;
+    padding: 0;
+    background-color: #542BC6;
+    overflow: hidden;
+}
+
+.taliswa4-page {
+    margin: 0;
+    padding: 0;
+    background-color: #B8506A;
+    overflow: hidden;
+}
+
+.taliswa5-page {
+    margin: 0;
+    padding: 0;
+    background-color: #F9A21B;
+    overflow: hidden;
+}
+
+.taliswa6-page {
+    margin: 0;
+    padding: 0;
+    background-color: #5C3D6A;
+    overflow: hidden;
+}
+
+/* Taliswa3 hero & content (mirrors taliswa2 layout) */
+.taliswa3-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.taliswa3-slide-inner {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.taliswa3-hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.taliswa3-hero--left,
+.taliswa3-hero--right {
+    flex: 1;
+    position: relative;
+}
+
+.taliswa3-hero--left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 0;
+    position: relative;
+    left: -6rem;
+    bottom: 2rem;
+    min-width: 0;
+}
+
+.taliswa3-info-box {
+    position: absolute;
+    top: 15%;
+    right: -39px;
+    width: 60%;
+    max-width: 100%;
+    height: 63%;
+    border: 4px solid #FFFFFF;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.taliswa3-info-box::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.taliswa3-info-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    padding: 2.5rem 2.5rem 2.5rem 3rem;
+    color: #FFFFFF;
+    font-family: 'Rosario', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: visible;
+}
+
+.taliswa3-title {
+    font-family: 'Marcellus', serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-end;
+}
+
+.taliswa3-abv {
+    font-family: 'Rosario', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.taliswa3-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #FFFFFF;
+}
+
+.taliswa3-subtitle {
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.199rem;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+    max-width: 100%;
+}
+
+.taliswa3-copy {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0 0 0.75rem;
+    max-width: 100%;
+}
+
+.taliswa3-mrp {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+}
+
+.taliswa3-bird {
+    position: relative;
+    z-index: 2;
+    max-height: 110vh;
+    width: auto;
+    object-fit: contain;
+    left: -10.2rem;
+    bottom: -62px;
+}
+
+.taliswa3-hero--right {
+    display: flex;
+    justify-content: end;
+}
+
+.taliswa3-bottle {
+    max-height: 114vh;
+    width: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 992px) {
+    .taliswa3-hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .taliswa3-hero--left {
+        justify-content: center;
+        padding-top: 2rem;
+        padding-left: 0;
+    }
+
+    .taliswa3-bird {
+        max-height: 50vh;
+    }
+
+    .taliswa3-info-box {
+        top: 8%;
+        right: 5%;
+        width: 55%;
+        max-width: 90%;
+        height: 22%;
+    }
+
+    .taliswa3-hero--right {
+        padding-bottom: 2rem;
+    }
+
+    .taliswa3-bottle {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .taliswa3-hero {
+        padding: 1.5rem 1rem;
+    }
+
+    .taliswa3-bird {
+        max-height: 40vh;
+    }
+
+    .taliswa3-bottle {
+        max-height: 40vh;
+    }
+}
+
+/* Taliswa4 hero & content (mirrors taliswa3 layout, background #B8506A) */
+.taliswa4-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.taliswa4-slide-inner {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.taliswa4-hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.taliswa4-hero--left,
+.taliswa4-hero--right {
+    flex: 1;
+    position: relative;
+}
+
+.taliswa4-hero--left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 0;
+    position: relative;
+    left: -6rem;
+    bottom: 2rem;
+    min-width: 0;
+}
+
+.taliswa4-info-box {
+    position: absolute;
+    top: 12%;
+    right: -38px;
+    width: 64%;
+    max-width: 100%;
+    height: 60%;
+    border: 4px solid #FFFFFF;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.taliswa4-info-box::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.taliswa4-info-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    padding: 2.5rem 2.5rem 2.5rem 3rem;
+    color: #FFFFFF;
+    font-family: 'Rosario', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: visible;
+}
+
+.taliswa4-title {
+    font-family: 'Marcellus', serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-end;
+}
+
+.taliswa4-abv {
+    font-family: 'Rosario', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.taliswa4-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #FFFFFF;
+}
+
+.taliswa4-subtitle {
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.199rem;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+    max-width: 100%;
+}
+
+.taliswa4-copy {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0 0 0.75rem;
+    max-width: 100%;
+}
+
+.taliswa4-mrp {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+}
+
+.taliswa4-bird {
+    position: relative;
+    z-index: 2;
+    max-height: 110vh;
+    width: auto;
+    object-fit: contain;
+    left: -14.2rem;
+    bottom: -62px;
+}
+
+.taliswa4-hero--right {
+    display: flex;
+    justify-content: end;
+}
+
+.taliswa4-bottle {
+    max-height: 114vh;
+    width: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 992px) {
+    .taliswa4-hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .taliswa4-hero--left {
+        justify-content: center;
+        padding-top: 2rem;
+        padding-left: 0;
+    }
+
+    .taliswa4-bird {
+        max-height: 50vh;
+    }
+
+    .taliswa4-info-box {
+        top: 8%;
+        right: 5%;
+        width: 55%;
+        max-width: 90%;
+        height: 22%;
+    }
+
+    .taliswa4-hero--right {
+        padding-bottom: 2rem;
+    }
+
+    .taliswa4-bottle {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .taliswa4-hero {
+        padding: 1.5rem 1rem;
+    }
+
+    .taliswa4-bird {
+        max-height: 40vh;
+    }
+
+    .taliswa4-bottle {
+        max-height: 40vh;
+    }
+}
+
+/* Taliswa5 hero & content (background #F9A21B) */
+.taliswa5-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.taliswa5-slide-inner {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.taliswa5-hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.taliswa5-hero--left,
+.taliswa5-hero--right {
+    flex: 1;
+    position: relative;
+}
+
+.taliswa5-hero--left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 0;
+    position: relative;
+    left: -6rem;
+    bottom: 2rem;
+    min-width: 0;
+}
+
+.taliswa5-info-box {
+    position: absolute;
+    top: 15%;
+    right: -62px;
+    width: 60%;
+    max-width: 100%;
+    height: 63%;
+    border: 4px solid #FFFFFF;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.taliswa5-info-box::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.taliswa5-info-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    padding: 2.5rem 2.5rem 2.5rem 3rem;
+    color: #FFFFFF;
+    font-family: 'Rosario', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: visible;
+}
+
+.taliswa5-title {
+    font-family: 'Marcellus', serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-end;
+}
+
+.taliswa5-abv {
+    font-family: 'Rosario', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.taliswa5-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #FFFFFF;
+}
+
+.taliswa5-subtitle {
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.199rem;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+    max-width: 100%;
+}
+
+.taliswa5-copy {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0 0 0.75rem;
+    max-width: 100%;
+}
+
+.taliswa5-mrp {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+}
+
+.taliswa5-bird {
+    position: relative;
+    z-index: 2;
+    max-height: 110vh;
+    width: auto;
+    object-fit: contain;
+    left: -10.2rem;
+    bottom: -136px;
+}
+
+.taliswa5-hero--right {
+    display: flex;
+    justify-content: end;
+}
+
+.taliswa5-bottle {
+    max-height: 114vh;
+    width: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 992px) {
+    .taliswa5-hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .taliswa5-hero--left {
+        justify-content: center;
+        padding-top: 2rem;
+        padding-left: 0;
+    }
+
+    .taliswa5-bird {
+        max-height: 50vh;
+    }
+
+    .taliswa5-info-box {
+        top: 8%;
+        right: 5%;
+        width: 55%;
+        max-width: 90%;
+        height: 22%;
+    }
+
+    .taliswa5-hero--right {
+        padding-bottom: 2rem;
+    }
+
+    .taliswa5-bottle {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .taliswa5-hero {
+        padding: 1.5rem 1rem;
+    }
+
+    .taliswa5-bird {
+        max-height: 40vh;
+    }
+
+    .taliswa5-bottle {
+        max-height: 40vh;
+    }
+}
+
+/* Taliswa6 hero & content (Plum N Roll – background #5C3D6A) */
+.taliswa6-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.taliswa6-slide-inner {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.taliswa6-hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.taliswa6-hero--left,
+.taliswa6-hero--right {
+    flex: 1;
+    position: relative;
+}
+
+.taliswa6-hero--left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 0;
+    position: relative;
+    left: -6rem;
+    bottom: 2rem;
+    min-width: 0;
+}
+
+.taliswa6-info-box {
+    position: absolute;
+    top: 9%;
+    right: -112px;
+    width: 60%;
+    max-width: 100%;
+    height: 63%;
+    border: 4px solid #FFFFFF;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.taliswa6-info-box::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.taliswa6-info-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    padding: 2.5rem 2.5rem 2.5rem 3rem;
+    color: #FFFFFF;
+    font-family: 'Rosario', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: visible;
+}
+
+.taliswa6-title {
+    font-family: 'Marcellus', serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-end;
+}
+
+.taliswa6-abv {
+    font-family: 'Rosario', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.taliswa6-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #FFFFFF;
+}
+
+.taliswa6-subtitle {
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.199rem;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+    max-width: 100%;
+}
+
+.taliswa6-copy {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0 0 0.75rem;
+    max-width: 100%;
+}
+
+.taliswa6-mrp {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+}
+
+.taliswa6-bird {
+    position: relative;
+    z-index: 2;
+    max-height: 110vh;
+    width: auto;
+    object-fit: contain;
+    left: -10.2rem;
+    bottom: -62px;
+}
+
+.taliswa6-hero--right {
+    display: flex;
+    justify-content: end;
+}
+
+.taliswa6-bottle {
+    max-height: 114vh;
+    width: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 992px) {
+    .taliswa6-hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .taliswa6-hero--left {
+        justify-content: center;
+        padding-top: 2rem;
+        padding-left: 0;
+    }
+
+    .taliswa6-bird {
+        max-height: 50vh;
+    }
+
+    .taliswa6-info-box {
+        top: 8%;
+        right: 5%;
+        width: 55%;
+        max-width: 90%;
+        height: 22%;
+    }
+
+    .taliswa6-hero--right {
+        padding-bottom: 2rem;
+    }
+
+    .taliswa6-bottle {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .taliswa6-hero {
+        padding: 1.5rem 1rem;
+    }
+
+    .taliswa6-bird {
+        max-height: 40vh;
+    }
+
+    .taliswa6-bottle {
+        max-height: 40vh;
+    }
+}
+
+/* Modal mobile: hide left (bird) image and fix layout when viewport is narrow – desktop unchanged */
+@media (max-width: 992px) {
+    /* Allow modal content (taliswa pages in iframe) to scroll on mobile */
+    .taliswa1-page,
+    .taliswa2-page,
+    .taliswa3-page,
+    .taliswa4-page,
+    .taliswa5-page,
+    .taliswa6-page,
+    .nomad1-page,
+    .nomad2-page {
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .taliswa1-bird,
+    .taliswa2-bird,
+    .taliswa3-bird,
+    .taliswa4-bird,
+    .taliswa5-bird,
+    .taliswa6-bird {
+        display: none !important;
+    }
+    /* Reset left column positioning so it doesn’t break when stacked */
+    .taliswa1-hero--left,
+    .taliswa2-hero--left,
+    .taliswa3-hero--left,
+    .taliswa4-hero--left,
+    .taliswa5-hero--left,
+    .taliswa6-hero--left {
+        left: 0 !important;
+        bottom: 0 !important;
+        width: 100%;
+        min-width: 0;
+        flex: 0 0 auto;
+    }
+    /* Make info box flow in layout so column has height and text is visible */
+    .taliswa1-info-box,
+    .taliswa2-info-box,
+    .taliswa3-info-box,
+    .taliswa4-info-box,
+    .taliswa5-info-box,
+    .taliswa6-info-box {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 0;
+        margin: 0 1rem;
+    }
+    .taliswa1-info-content,
+    .taliswa2-info-content,
+    .taliswa3-info-content,
+    .taliswa4-info-content,
+    .taliswa5-info-content,
+    .taliswa6-info-content {
+        padding: 1.5rem 1.25rem;
+    }
+    /* Stack slide inner: image first, then text */
+    .taliswa2-slide-inner,
+    .taliswa3-slide-inner,
+    .taliswa4-slide-inner,
+    .taliswa5-slide-inner,
+    .taliswa6-slide-inner {
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .taliswa1-hero--left,
+    .taliswa2-hero--left,
+    .taliswa3-hero--left,
+    .taliswa4-hero--left,
+    .taliswa5-hero--left,
+    .taliswa6-hero--left {
+        order: 2;
+    }
+    .taliswa1-hero--right,
+    .taliswa2-hero--right,
+    .taliswa3-hero--right,
+    .taliswa4-hero--right,
+    .taliswa5-hero--right,
+    .taliswa6-hero--right {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 auto;
+        overflow: visible;
+        padding: 0 0.5rem 1rem;
+    }
+    .taliswa1-bottle,
+    .taliswa2-bottle,
+    .taliswa3-bottle,
+    .taliswa4-bottle,
+    .taliswa5-bottle,
+    .taliswa6-bottle {
+        max-height: 50vh;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .taliswa1-info-box,
+    .taliswa2-info-box,
+    .taliswa3-info-box,
+    .taliswa4-info-box,
+    .taliswa5-info-box,
+    .taliswa6-info-box {
+        margin: 0 0.75rem;
+    }
+    .taliswa1-info-content,
+    .taliswa2-info-content,
+    .taliswa3-info-content,
+    .taliswa4-info-content,
+    .taliswa5-info-content,
+    .taliswa6-info-content {
+        padding: 1rem 1rem;
+    }
+    .taliswa1-title,
+    .taliswa2-title,
+    .taliswa3-title,
+    .taliswa4-title,
+    .taliswa5-title,
+    .taliswa6-title {
+        font-size: 1.35rem;
+    }
+    .taliswa1-hero--right,
+    .taliswa2-hero--right,
+    .taliswa3-hero--right,
+    .taliswa4-hero--right,
+    .taliswa5-hero--right,
+    .taliswa6-hero--right {
+        padding: 0 0.25rem 0.75rem;
+    }
+    .taliswa1-bottle,
+    .taliswa2-bottle,
+    .taliswa3-bottle,
+    .taliswa4-bottle,
+    .taliswa5-bottle,
+    .taliswa6-bottle {
+        max-height: 45vh;
+        max-width: 100%;
+    }
+}
+
+/* Taliswa2 carousel wrapper */
+.taliswa2-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.taliswa2-slide-inner {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.taliswa2-hero {
+    position: relative; /* for winery-style nav buttons positioning */
+}
+
+/* Position arrows and dots specifically for taliswa2 hero
+   without affecting existing winery-experience layout */
+.taliswa2-hero .winery-experience--nav-btn {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.taliswa2-hero .winery-experience--nav-btn-left {
+    left: 2rem;
+}
+
+.taliswa2-hero .winery-experience--nav-btn-right {
+    right: 2rem;
+}
+
+.taliswa2-hero .winery-pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 7rem;
+    transform: translateX(-50%);
+    margin-top: 0; /* use bottom instead of margin */
+}
+
+.taliswa1-hero,
+.taliswa2-hero {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.taliswa1-hero--left,
+.taliswa1-hero--right,
+.taliswa2-hero--left,
+.taliswa2-hero--right {
+    flex: 1;
+    position: relative;
+}
+
+.taliswa1-hero--left,
+.taliswa2-hero--left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 0;
+    position: relative;
+    left: -6rem;
+    bottom: 2rem;
+    min-width: 0;
+}
+
+.taliswa1-info-box,
+.taliswa2-info-box {
+    position: absolute;
+    top: 15%;
+    right: -39px;
+    width: 63%;
+    max-width: 100%;
+    height: 60%;
+    border: 4px solid #FFFFFF;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.taliswa1-info-box::before,
+.taliswa2-info-box::before {
+    content: '';
+    position: absolute;
+    inset: 7px;              /* distance from outer border on all sides */
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    pointer-events: none;     /* so it never blocks clicks inside */
+}
+
+.taliswa1-info-content,
+.taliswa2-info-content {
+    position: relative;
+    z-index: 2; /* above borders but below bird */
+    height: 100%;
+    width: 100%;
+    padding: 2.5rem 2.5rem 2.5rem 3rem;
+    color: #FFFFFF;
+    font-family: 'Rosario', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: visible;
+}
+
+.taliswa1-title,
+.taliswa2-title {
+    font-family: 'Marcellus', serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-end;
+}
+
+.taliswa1-abv,
+.taliswa2-abv {
+    font-family: 'Rosario', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+/* Thin divider line under the FOREST PIPER heading */
+.taliswa1-title::after,
+.taliswa2-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #FFFFFF;
+}
+
+.taliswa1-subtitle,
+.taliswa2-subtitle {
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.199rem;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+    max-width: 100%;
+}
+
+.taliswa1-copy,
+.taliswa2-copy {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0 0 0.75rem;
+    max-width: 100%;
+}
+
+.taliswa1-mrp,
+.taliswa2-mrp {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+}
+
+.taliswa1-divider {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #FFFFFF;
+    margin: 0.75rem 0 1.25rem;
+}
+
+.taliswa1-bird,
+.taliswa2-bird {
+    position: relative;
+    z-index: 2;
+    max-height: 110vh;
+    width: auto;
+    object-fit: contain;
+    left: -43px;
+    bottom: -6px;
+}
+
+.taliswa1-hero--right,
+.taliswa2-hero--right {
+    display: flex;
+    justify-content: end;
+}
+
+.taliswa1-bottle,
+.taliswa2-bottle {
+    max-height: 114vh;
+    width: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 992px) {
+    .taliswa1-hero,
+    .taliswa2-hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .taliswa1-hero--left,
+    .taliswa2-hero--left {
+        justify-content: center;
+        padding-top: 2rem;
+        padding-left: 0;
+    }
+
+    .taliswa1-bird,
+    .taliswa2-bird {
+        max-height: 50vh;
+    }
+
+.taliswa1-info-box,
+.taliswa2-info-box {
+        top: 8%;
+        right: 5%;
+        width: 55%;
+        max-width: 90%;
+        height: 22%;
+    }
+
+    .taliswa1-hero--right,
+    .taliswa2-hero--right {
+        padding-bottom: 2rem;
+        justify-content: center;
+        padding-top: 14px;
+    }
+
+    .taliswa1-bottle,
+    .taliswa2-bottle {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .taliswa1-hero,
+    .taliswa2-hero {
+        padding: 1.5rem 1rem;
+    }
+
+    .taliswa1-bird,
+    .taliswa2-bird {
+        max-height: 40vh;
+    }
+
+    .taliswa1-bottle,
+    .taliswa2-bottle {
+        max-height: 60vh;
+    }
+}
+
+/* -------------------------------------
+        Nomad1 Single Bottle Page
+        Scoped so it doesn't affect other pages
+------------------------------------- */
+.nomad1-page {
+    margin: 0;
+    padding: 0;
+    background-color: #F05729;
+    overflow: hidden;
+}
+
+.nomad1-hero {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.nomad1-hero--left,
+.nomad1-hero--right {
+    flex: 1;
+    position: relative;
+}
+
+.nomad1-hero--left {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    padding-top: 0rem;
+}
+
+.nomad1-text-card {
+    position: relative;
+    width: 76%;
+    max-width: 545px;
+    aspect-ratio: 4 / 3;
+    background-image: url(../img/nomad/textbg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1; /* sit below decorative tree */
+    bottom: 28px;
+    left: 50px;
+}
+
+.nomad1-text-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.9rem;
+    /* text-align: center; */
+    color: #333092;
+    font-family: 'Newsreader', serif;
+    gap: 0.75rem; /* control vertical spacing via flex gap */
+}
+
+.nomad1-title {
+    font-family: 'Mode Court', serif;
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.nomad1-abv {
+    font-family: 'Newsreader', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.nomad1-tagline {
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+
+.nomad1-copy {
+    font-family: 'Newsreader', serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0; /* spacing now handled by gap on the flex container */
+}
+
+.nomad1-mrp {
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    margin: 0; /* spacing now handled by gap on the flex container */
+}
+
+.nomad1-tree {
+    position: absolute;
+    bottom: 11%;
+    left: 0px;
+    width: 35%;
+    max-width: 266px;
+    pointer-events: none;
+    z-index: 2; /* draw above the text card */
+}
+
+.nomad1-hero--right {
+    display: flex;
+    justify-content: end;
+}
+
+.nomad1-bottle {
+    max-height: 114vh;
+    width: auto;
+    object-fit: contain;
+    position: relative;
+    bottom: 76px;
+}
+
+@media (max-width: 992px) {
+    .nomad1-hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nomad1-hero--left {
+        padding: 2rem 2rem 0;
+    }
+
+    .nomad1-hero--right {
+        padding: 2rem 0 3rem;
+    }
+
+    .nomad1-tree {
+        width: 45%;
+    }
+
+    .nomad1-bottle {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .nomad1-hero {
+        padding: 1.5rem 1rem;
+    }
+
+    .nomad1-text-inner {
+        padding: 2rem;
+    }
+
+    .nomad1-title {
+        font-size: 2rem;
+    }
+
+    .nomad1-bottle {
+        max-height: 40vh;
+    }
+}
+
+/* -------------------------------------
+        Nomad2 Single Bottle Page (bg #89CBBC)
+------------------------------------- */
+.nomad2-page {
+    margin: 0;
+    padding: 0;
+    background-color: #89CBBC;
+    overflow: hidden;
+}
+
+.nomad2-hero {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.nomad2-hero--left,
+.nomad2-hero--right {
+    flex: 1;
+    position: relative;
+}
+
+.nomad2-hero--left {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    padding-top: 0;
+}
+
+.nomad2-text-card {
+    position: relative;
+    width: 76%;
+    max-width: 545px;
+    aspect-ratio: 4 / 3;
+    background-image: url(../img/nomad2/textbg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+    bottom: 28px;
+    left: 50px;
+}
+
+.nomad2-text-inner {
+    position: absolute;
+    top: 37px;
+    left: 0;
+    right: 80px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.9rem;
+    color: #333092;
+    font-family: 'Newsreader', serif;
+}
+
+.nomad2-title {
+    font-family: 'Mode Court', serif;
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.nomad2-abv {
+    font-family: 'Newsreader', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.nomad2-tagline {
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    /* margin-bottom: 1.25rem; */
+}
+
+.nomad2-copy {
+    font-family: 'Newsreader', serif;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+}
+
+.nomad2-mrp {
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    margin-top: 0.75rem;
+}
+
+.nomad2-tree {
+    position: absolute;
+    bottom: 11%;
+    left: 17px;
+    width: 35%;
+    max-width: 266px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.nomad2-hero--right {
+    display: flex;
+    justify-content: end;
+}
+
+.nomad2-bottle {
+    max-height: 114vh;
+    width: auto;
+    object-fit: contain;
+    position: relative;
+    bottom: 74px;
+}
+
+@media (max-width: 992px) {
+    .nomad2-hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nomad2-hero--left {
+        padding: 2rem 2rem 0;
+    }
+
+    .nomad2-hero--right {
+        padding: 2rem 0 3rem;
+    }
+
+    .nomad2-tree {
+        width: 45%;
+    }
+
+    .nomad2-bottle {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .nomad2-hero {
+        padding: 1.5rem 1rem;
+    }
+
+    .nomad2-text-inner {
+        padding: 2rem;
+    }
+
+    .nomad2-title {
+        font-size: 2rem;
+    }
+
+    .nomad2-bottle {
+        max-height: 40vh;
+    }
+}
+
+/* -------------------------------------
+        Nomad3 Single Bottle Page – Raspberry Melomel (bg pink/raspberry)
+------------------------------------- */
+.nomad3-page {
+    margin: 0;
+    padding: 0;
+    background-color: #E8B4BC;
+    overflow: hidden;
+}
+
+.nomad3-hero {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.nomad3-hero--left,
+.nomad3-hero--right {
+    flex: 1;
+    position: relative;
+}
+
+.nomad3-hero--left {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    padding-top: 0;
+}
+
+.nomad3-text-card {
+    position: relative;
+    width: 76%;
+    max-width: 545px;
+    aspect-ratio: 4 / 3;
+    background-image: url(../img/nomad2/textbg2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+    bottom: 28px;
+    left: 50px;
+}
+
+.nomad3-text-inner {
+    position: absolute;
+    top: 37px;
+    left: 0;
+    right: 80px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.9rem;
+    color: #333092;
+    font-family: 'Newsreader', serif;
+}
+
+.nomad3-title {
+    font-family: 'Mode Court', serif;
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.nomad3-abv {
+    font-family: 'Newsreader', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.nomad3-tagline {
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.nomad3-copy {
+    font-family: 'Newsreader', serif;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+}
+
+.nomad3-mrp {
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    margin-top: 0.75rem;
+}
+
+.nomad3-tree {
+    position: absolute;
+    bottom: 11%;
+    left: 17px;
+    width: 35%;
+    max-width: 266px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.nomad3-hero--right {
+    display: flex;
+    justify-content: end;
+}
+
+.nomad3-bottle {
+    max-height: 114vh;
+    width: auto;
+    object-fit: contain;
+    position: relative;
+    bottom: 74px;
+}
+
+@media (max-width: 992px) {
+    .nomad3-hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nomad3-hero--left {
+        padding: 2rem 2rem 0;
+    }
+
+    .nomad3-hero--right {
+        padding: 2rem 0 3rem;
+    }
+
+    .nomad3-tree {
+        width: 45%;
+    }
+
+    .nomad3-bottle {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .nomad3-hero {
+        padding: 1.5rem 1rem;
+    }
+
+    .nomad3-text-inner {
+        padding: 2rem;
+    }
+
+    .nomad3-title {
+        font-size: 2rem;
+    }
+
+    .nomad3-bottle {
+        max-height: 40vh;
+    }
+}
+
+/* -------------------------------------
+        Brand Experience Carousel Section
+        Slider similar to winery-experience
+------------------------------------- */
+.brand-experience-carousel-section {
+    position: relative;
+    padding: 5rem 3rem;
+    background-color: #F5F0E8;
+}
+
+.brand-experience-carousel-section .container-fluid {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.brand-experience-carousel-section .winery-experience--carousel.brand-carousel--wrap {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.brand-experience-carousel-section .brand-carousel--row {
+    min-height: 55vh;
+}
+
+.brand-experience-carousel-section .brand-carousel--left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 79vh;
+    /* padding: 2rem; */
+    background-color: #E8DFD4;
+}
+
+.brand-experience-carousel-section .brand-carousel--right {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    min-height: 55vh;
+    padding: 0;
+    background-color: #395D4C;
+}
+
+.brand-experience-carousel-section .brand-carousel--card {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+}
+
+.brand-experience-carousel-section .brand-carousel--title {
+    font-family: var(--secondary-font), 'Marcellus', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #F5F0E8;
+    margin: 0 0 1.5rem;
+}
+
+.brand-experience-carousel-section .brand-carousel--text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #F5F0E8;
+    margin: 0 0 1rem;
+}
+
+.brand-experience-carousel-section .brand-carousel--text:last-child {
+    margin-bottom: 0;
+}
+
+.brand-experience-carousel-section .brand-carousel--product-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-experience-carousel-section .brand-carousel--product {
+    max-width: 100%;
+    /* max-height: 55vh; */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.brand-experience-carousel-section .brand-carousel--flower-wrapper {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 180px;
+    height: auto;
+}
+
+.brand-experience-carousel-section .brand-carousel--flower {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.brand-experience-carousel-section .winery-pagination.brand-carousel--pagination {
+    margin-top: 2rem;
+}
+
+.brand-experience-carousel-section .winery-pagination--dot {
+    width: 2rem;
+    height: 8px;
+    border-radius: 4px;
+    background-color: rgba(45, 80, 22, 0.35);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.brand-experience-carousel-section .winery-pagination--dot.active {
+    background-color: #2D5016;
+}
+
+.brand-experience-carousel-section .winery-experience--nav-btn img {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(22%) saturate(900%) hue-rotate(115deg) brightness(0.5);
+}
+
+@media (max-width: 992px) {
+    .brand-experience-carousel-section {
+        padding: 3rem 2rem;
+    }
+
+    .brand-experience-carousel-section .winery-experience--nav-btn-left {
+        left: 1rem;
+    }
+
+    .brand-experience-carousel-section .winery-experience--nav-btn-right {
+        right: 1rem;
+    }
+
+    .brand-experience-carousel-section .brand-carousel--left,
+    .brand-experience-carousel-section .brand-carousel--right {
+        min-height: 40vh;
+        padding: 1rem;
+    }
+
+    .brand-experience-carousel-section .brand-carousel--product,
+    .brand-experience-carousel-section .brand-carousel--flower {
+        max-height: 40vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-experience-carousel-section {
+        padding: 2rem 1rem;
+    }
+
+    .brand-experience-carousel-section .winery-experience--nav-btn-left {
+        left: 0.5rem;
+    }
+
+    .brand-experience-carousel-section .winery-experience--nav-btn-right {
+        right: 0.5rem;
+    }
+
+    .brand-experience-carousel-section .brand-carousel--product,
+    .brand-experience-carousel-section .brand-carousel--flower {
+        max-height: 35vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .brand-experience-carousel-section {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .brand-experience-carousel-section .brand-carousel--left,
+    .brand-experience-carousel-section .brand-carousel--right {
+        min-height: 30vh;
+    }
+
+    .brand-experience-carousel-section .brand-carousel--product,
+    .brand-experience-carousel-section .brand-carousel--flower {
+        max-height: 30vh;
+    }
+}
+
+/* Taliswa1 modal (collection page) */
+#taliswa1Modal .modal-dialog {
+    max-width: 1320px;
+}
+.taliswa1-modal-content {
+    background: transparent;
+    border: none;
+}
+.taliswa1-modal-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1056;
+    border: none;
+    padding: 1rem;
+    background: transparent;
+}
+.taliswa1-modal-header .btn-close-white {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+#taliswa1Modal .modal-body,
+.taliswa1-modal-body {
+    overflow: hidden;
+    padding: 0;
+    min-height: 85vh;
+}
+@media (max-width: 991.98px) {
+    #taliswa1Modal .modal-body,
+    .taliswa1-modal-body {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+.taliswa1-modal-iframe {
+    width: 100%;
+    height: 85vh;
+    min-height: 400px;
+    border: none;
+    display: block;
+}
+@media (max-width: 991.98px) {
+    #taliswa1Modal .modal-dialog {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    .taliswa1-modal-body { min-height: 90vh; }
+    .taliswa1-modal-iframe { height: 90vh; min-height: 50vh; }
+}
+@media (max-width: 576px) {
+    #taliswa1Modal .modal-dialog { max-width: 100%; }
+    .taliswa1-modal-body { min-height: 85vh; }
+    .taliswa1-modal-iframe { height: 85vh; min-height: 400px; }
+    .taliswa1-modal-header { padding: 0.75rem; }
+}
+
+/* Taliswa2 modal (same as Taliswa1) */
+#taliswa2Modal .modal-dialog {
+    max-width: 1320px;
+}
+.taliswa2-modal-content {
+    background: transparent;
+    border: none;
+}
+.taliswa2-modal-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1056;
+    border: none;
+    padding: 1rem;
+    background: transparent;
+}
+.taliswa2-modal-header .btn-close-white {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+#taliswa2Modal .modal-body,
+.taliswa2-modal-body {
+    overflow: hidden;
+    padding: 0;
+    min-height: 85vh;
+    position: relative;
+}
+@media (max-width: 991.98px) {
+    #taliswa2Modal .modal-body,
+    .taliswa2-modal-body {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+.taliswa2-modal-carousel {
+    overflow: hidden;
+    width: 100%;
+}
+.taliswa2-modal-track {
+    display: flex;
+    transition: transform 0.4s ease-out;
+}
+.taliswa2-modal-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+}
+.taliswa2-modal-iframe {
+    width: 100%;
+    height: 85vh;
+    min-height: 400px;
+    border: none;
+    display: block;
+}
+.taliswa2-modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1056;
+    opacity: 0.8;
+    padding: 0.5rem;
+}
+.taliswa2-modal-nav:hover {
+    opacity: 1;
+}
+.taliswa2-modal-nav img {
+    width: auto;
+    height: auto;
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+    display: block;
+}
+.taliswa2-modal-nav-left {
+    left: 0.5rem;
+}
+.taliswa2-modal-nav-right {
+    right: 0.5rem;
+}
+.taliswa2-modal-pagination {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 1056;
+}
+.taliswa2-modal-dot {
+    width: 2rem;
+    height: 8px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.taliswa2-modal-dot.active {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+@media (max-width: 991.98px) {
+    #taliswa2Modal .modal-dialog {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    .taliswa2-modal-body { min-height: 90vh; }
+    .taliswa2-modal-iframe { height: 90vh; min-height: 50vh; }
+}
+@media (max-width: 576px) {
+    #taliswa2Modal .modal-dialog { max-width: 100%; }
+    .taliswa2-modal-body { min-height: 85vh; }
+    .taliswa2-modal-iframe { height: 85vh; min-height: 400px; }
+    .taliswa2-modal-header { padding: 0.75rem; }
+    .taliswa2-modal-nav img { max-width: 2rem; max-height: 2rem; }
+    .taliswa2-modal-nav-left { left: 0.25rem; }
+    .taliswa2-modal-nav-right { right: 0.25rem; }
+    .taliswa2-modal-pagination { bottom: 0.75rem; }
+}
+
+/* Taliswa4 modal (collection page – same as Taliswa1) */
+#taliswa4Modal .modal-dialog {
+    max-width: 1320px;
+}
+.taliswa4-modal-content {
+    background: transparent;
+    border: none;
+}
+.taliswa4-modal-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1056;
+    border: none;
+    padding: 1rem;
+    background: transparent;
+}
+.taliswa4-modal-header .btn-close-white {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+#taliswa4Modal .modal-body,
+.taliswa4-modal-body {
+    overflow: hidden;
+    padding: 0;
+    min-height: 85vh;
+}
+@media (max-width: 991.98px) {
+    #taliswa4Modal .modal-body,
+    .taliswa4-modal-body {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+.taliswa4-modal-iframe {
+    width: 100%;
+    height: 85vh;
+    min-height: 400px;
+    border: none;
+    display: block;
+}
+@media (max-width: 991.98px) {
+    #taliswa4Modal .modal-dialog {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    .taliswa4-modal-body { min-height: 90vh; }
+    .taliswa4-modal-iframe { height: 90vh; min-height: 50vh; }
+}
+@media (max-width: 576px) {
+    #taliswa4Modal .modal-dialog { max-width: 100%; }
+    .taliswa4-modal-body { min-height: 85vh; }
+    .taliswa4-modal-iframe { height: 85vh; min-height: 400px; }
+    .taliswa4-modal-header { padding: 0.75rem; }
+}
+
+/* Taliswa5 modal (collection page – same as Taliswa1/Taliswa4) */
+#taliswa5Modal .modal-dialog {
+    max-width: 1320px;
+}
+.taliswa5-modal-content {
+    background: transparent;
+    border: none;
+}
+.taliswa5-modal-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1056;
+    border: none;
+    padding: 1rem;
+    background: transparent;
+}
+.taliswa5-modal-header .btn-close-white {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+#taliswa5Modal .modal-body,
+.taliswa5-modal-body {
+    overflow: hidden;
+    padding: 0;
+    min-height: 85vh;
+}
+@media (max-width: 991.98px) {
+    #taliswa5Modal .modal-body,
+    .taliswa5-modal-body {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+.taliswa5-modal-iframe {
+    width: 100%;
+    height: 85vh;
+    min-height: 400px;
+    border: none;
+    display: block;
+}
+@media (max-width: 991.98px) {
+    #taliswa5Modal .modal-dialog {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    .taliswa5-modal-body { min-height: 90vh; }
+    .taliswa5-modal-iframe { height: 90vh; min-height: 50vh; }
+}
+@media (max-width: 576px) {
+    #taliswa5Modal .modal-dialog { max-width: 100%; }
+    .taliswa5-modal-body { min-height: 85vh; }
+    .taliswa5-modal-iframe { height: 85vh; min-height: 400px; }
+    .taliswa5-modal-header { padding: 0.75rem; }
+}
+
+/* Taliswa6 modal (collection page – same as Taliswa1/Taliswa5) */
+#taliswa6Modal .modal-dialog {
+    max-width: 1320px;
+}
+.taliswa6-modal-content {
+    background: transparent;
+    border: none;
+}
+.taliswa6-modal-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1056;
+    border: none;
+    padding: 1rem;
+    background: transparent;
+}
+.taliswa6-modal-header .btn-close-white {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+#taliswa6Modal .modal-body,
+.taliswa6-modal-body {
+    overflow: hidden;
+    padding: 0;
+    min-height: 85vh;
+}
+@media (max-width: 991.98px) {
+    #taliswa6Modal .modal-body,
+    .taliswa6-modal-body {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+.taliswa6-modal-iframe {
+    width: 100%;
+    height: 85vh;
+    min-height: 400px;
+    border: none;
+    display: block;
+}
+@media (max-width: 991.98px) {
+    #taliswa6Modal .modal-dialog {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    .taliswa6-modal-body { min-height: 90vh; }
+    .taliswa6-modal-iframe { height: 90vh; min-height: 50vh; }
+}
+@media (max-width: 576px) {
+    #taliswa6Modal .modal-dialog { max-width: 100%; }
+    .taliswa6-modal-body { min-height: 85vh; }
+    .taliswa6-modal-iframe { height: 85vh; min-height: 400px; }
+    .taliswa6-modal-header { padding: 0.75rem; }
+}
+
+/* Nomad1 modal (collection page – same as Taliswa modals) */
+#nomad1Modal .modal-dialog {
+    max-width: 1320px;
+}
+.nomad1-modal-content {
+    background: transparent;
+    border: none;
+}
+.nomad1-modal-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1056;
+    border: none;
+    padding: 1rem;
+    background: transparent;
+}
+.nomad1-modal-header .btn-close-white {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+#nomad1Modal .modal-body,
+.nomad1-modal-body {
+    overflow: hidden;
+    padding: 0;
+    min-height: 85vh;
+}
+@media (max-width: 991.98px) {
+    #nomad1Modal .modal-body,
+    .nomad1-modal-body {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+.nomad1-modal-iframe {
+    width: 100%;
+    height: 85vh;
+    min-height: 400px;
+    border: none;
+    display: block;
+}
+@media (max-width: 991.98px) {
+    #nomad1Modal .modal-dialog {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    .nomad1-modal-body { min-height: 90vh; }
+    .nomad1-modal-iframe { height: 90vh; min-height: 50vh; }
+}
+@media (max-width: 576px) {
+    #nomad1Modal .modal-dialog { max-width: 100%; }
+    .nomad1-modal-body { min-height: 85vh; }
+    .nomad1-modal-iframe { height: 85vh; min-height: 400px; }
+    .nomad1-modal-header { padding: 0.75rem; }
+}
+
+/* Nomad2 modal (collection page – same as Nomad1) */
+#nomad2Modal .modal-dialog {
+    max-width: 1320px;
+}
+.nomad2-modal-content {
+    background: transparent;
+    border: none;
+}
+.nomad2-modal-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1056;
+    border: none;
+    padding: 1rem;
+    background: transparent;
+}
+.nomad2-modal-header .btn-close-white {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+#nomad2Modal .modal-body,
+.nomad2-modal-body {
+    overflow: hidden;
+    padding: 0;
+    min-height: 85vh;
+    position: relative;
+}
+.nomad2-modal-carousel {
+    overflow: hidden;
+    width: 100%;
+}
+.nomad2-modal-track {
+    display: flex;
+    transition: transform 0.4s ease-out;
+}
+.nomad2-modal-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+}
+.nomad2-modal-iframe {
+    width: 100%;
+    height: 85vh;
+    min-height: 400px;
+    border: none;
+    display: block;
+}
+.nomad2-modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1056;
+    opacity: 0.8;
+    padding: 0.5rem;
+}
+.nomad2-modal-nav:hover {
+    opacity: 1;
+}
+.nomad2-modal-nav img {
+    width: auto;
+    height: auto;
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+    display: block;
+}
+.nomad2-modal-nav-left {
+    left: 0.5rem;
+}
+.nomad2-modal-nav-right {
+    right: 0.5rem;
+}
+.nomad2-modal-pagination {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 1056;
+}
+.nomad2-modal-dot {
+    width: 2rem;
+    height: 8px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.nomad2-modal-dot.active {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+@media (max-width: 991.98px) {
+    #nomad2Modal .modal-body,
+    .nomad2-modal-body {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    #nomad2Modal .modal-dialog {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    .nomad2-modal-body { min-height: 90vh; }
+    .nomad2-modal-iframe { height: 90vh; min-height: 50vh; }
+}
+@media (max-width: 576px) {
+    #nomad2Modal .modal-dialog { max-width: 100%; }
+    .nomad2-modal-body { min-height: 85vh; }
+    .nomad2-modal-iframe { height: 85vh; min-height: 400px; }
+    .nomad2-modal-header { padding: 0.75rem; }
+    .nomad2-modal-nav img { max-width: 2rem; max-height: 2rem; }
+    .nomad2-modal-nav-left { left: 0.25rem; }
+    .nomad2-modal-nav-right { right: 0.25rem; }
+    .nomad2-modal-pagination { bottom: 0.75rem; }
+}
