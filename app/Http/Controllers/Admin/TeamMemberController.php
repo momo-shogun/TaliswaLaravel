@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\TeamMember;
+use App\Services\ImageCompressionService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -53,7 +54,10 @@ class TeamMemberController extends Controller
             'image' => ['required', 'image', 'max:4096'],
         ]);
 
-        $imagePath = $request->file('image')->store('team-members', 'public');
+        $imagePath = app(ImageCompressionService::class)->compressAndStore(
+            $request->file('image'),
+            'team-members'
+        );
 
         TeamMember::create([
             'sort_order' => (int) $data['sort_order'],
@@ -100,7 +104,10 @@ class TeamMemberController extends Controller
                 Storage::disk('public')->delete($teamMember->image_path);
             }
 
-            $update['image_path'] = $request->file('image')->store('team-members', 'public');
+            $update['image_path'] = app(ImageCompressionService::class)->compressAndStore(
+                $request->file('image'),
+                'team-members'
+            );
         }
 
         $teamMember->update($update);

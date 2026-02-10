@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\WinerySlide;
+use App\Services\ImageCompressionService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -55,7 +56,10 @@ class WinerySlideController extends Controller
             'image' => ['required', 'image', 'max:4096'],
         ]);
 
-        $imagePath = $request->file('image')->store('winery-slides', 'public');
+        $imagePath = app(ImageCompressionService::class)->compressAndStore(
+            $request->file('image'),
+            'winery-slides'
+        );
 
         WinerySlide::create([
             'title' => $data['title'],
@@ -109,7 +113,10 @@ class WinerySlideController extends Controller
                 Storage::disk('public')->delete($winerySlide->image_path);
             }
 
-            $update['image_path'] = $request->file('image')->store('winery-slides', 'public');
+            $update['image_path'] = app(ImageCompressionService::class)->compressAndStore(
+                $request->file('image'),
+                'winery-slides'
+            );
         }
 
         $winerySlide->update($update);
