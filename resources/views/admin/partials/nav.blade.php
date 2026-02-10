@@ -1,36 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-    <div class="container">
-        <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
+<aside class="admin-sidebar d-flex flex-column">
+    <div class="admin-sidebar-header">
+        <span class="admin-sidebar-brand">
             Talisva Admin
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="adminNavbar">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('admin.winery-slides.*') ? 'active' : '' }}"
-                       href="{{ route('admin.winery-slides.index') }}">
-                        Winery Slides
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('admin.team-members.*') ? 'active' : '' }}"
-                       href="{{ route('admin.team-members.index') }}">
-                        Team Members
-                    </a>
-                </li>
-            </ul>
-
-            <form method="POST" action="{{ route('admin.logout') }}" class="d-flex">
-                @csrf
-                <button type="submit" class="btn btn-outline-danger btn-sm">
-                    Logout
-                </button>
-            </form>
-        </div>
+        </span>
     </div>
-</nav>
+
+    <nav class="admin-sidebar-nav flex-grow-1">
+        <ul class="list-unstyled mb-0">
+            <li>
+                <a href="{{ route('admin.winery-slides.index') }}"
+                   class="admin-sidebar-link {{ request()->routeIs('admin.winery-slides.*') ? 'is-active' : '' }}">
+                    Winery Slides
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('admin.team-members.index') }}"
+                   class="admin-sidebar-link {{ request()->routeIs('admin.team-members.*') ? 'is-active' : '' }}">
+                    Team Members
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="admin-sidebar-footer">
+        <form method="POST" action="{{ route('admin.logout') }}">
+            @csrf
+            <button type="submit" class="btn btn-outline-light btn-sm w-100">
+                Logout
+            </button>
+        </form>
+    </div>
+</aside>
 

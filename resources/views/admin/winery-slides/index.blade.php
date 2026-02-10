@@ -1,12 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'Winery Slides - Admin')
 
-@section('body-class', 'admin-page')
-
 @section('content')
-    @include('admin.partials.nav')
-
     <section class="py-4">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-3">

@@ -53,25 +53,13 @@
                         <div class="col-md-4">
                             <div class="about-team--box">
                                 @if ($member->image_path)
-                                    <div class="about-team--image-wrapper mb-3">
+                                    <div class="about-team--image-wrapper">
                                         <img
                                             src="{{ asset('storage/' . $member->image_path) }}"
-                                            alt="{{ $member->name }}"
+                                            alt="Team member"
                                             class="about-team--image img-fluid"
                                         >
                                     </div>
-                                @endif
-
-                                <h4 class="about-team--name">{{ $member->name }}</h4>
-
-                                @if ($member->role)
-                                    <p class="about-team--role">{{ $member->role }}</p>
-                                @endif
-
-                                @if ($member->description)
-                                    <p class="about-team--description">
-                                        {{ $member->description }}
-                                    </p>
                                 @endif
                             </div>
                         </div>

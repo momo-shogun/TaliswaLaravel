@@ -1,12 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'Edit Winery Slide - Admin')
 
-@section('body-class', 'admin-page')
-
 @section('content')
-    @include('admin.partials.nav')
-
     <section class="py-4">
         <div class="container">
             <h1 class="h4 mb-3">Edit Winery Experience Slide</h1>
@@ -54,14 +50,17 @@
 
                 <div class="mb-3">
                     <label for="sort_order" class="form-label">Sort Order</label>
-                    <input
-                        type="number"
-                        class="form-control"
-                        id="sort_order"
-                        name="sort_order"
-                        value="{{ old('sort_order', $slide->sort_order) }}"
-                        min="0"
-                    >
+                    <select class="form-select" id="sort_order" name="sort_order" required>
+                        @php
+                            $currentOrder = in_array($slide->sort_order, config('admin.sort_orders')) ? $slide->sort_order : 1;
+                        @endphp
+                        @foreach (config('admin.sort_orders') as $order)
+                            @php $taken = in_array($order, $sortOrdersTaken ?? []); @endphp
+                            <option value="{{ $order }}" {{ old('sort_order', $currentOrder) == $order ? 'selected' : '' }} {{ $taken ? 'disabled' : '' }}>
+                                {{ $order }}@if($taken) (already taken)@endif
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="mb-3">

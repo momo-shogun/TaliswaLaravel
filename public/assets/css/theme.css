@@ -1278,6 +1278,23 @@ body:has(.about-hero) {
     border: 1px solid var(--light-white-color);
     background-color: transparent;
     min-height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.about-team--box .about-team--image-wrapper {
+    position: absolute;
+    inset: 0;
+    display: block;
+    overflow: hidden;
+}
+
+.about-team--box .about-team--image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 /* SECTION 3: Timeline Infographic Section */

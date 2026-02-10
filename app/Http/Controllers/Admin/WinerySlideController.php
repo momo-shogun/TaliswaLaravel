@@ -7,6 +7,7 @@ use App\Models\WinerySlide;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
 /**
@@ -33,7 +34,13 @@ class WinerySlideController extends Controller
      */
     public function create(): View
     {
-        return view('admin.winery-slides.create');
+        $sortOrdersTaken = WinerySlide::whereIn('sort_order', config('admin.sort_orders'))
+            ->pluck('sort_order')
+            ->toArray();
+
+        return view('admin.winery-slides.create', [
+            'sortOrdersTaken' => $sortOrdersTaken,
+        ]);
     }
 
     /**
@@ -44,7 +51,7 @@ class WinerySlideController extends Controller
         $data = $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
-            'sort_order' => ['nullable', 'integer', 'min:0'],
+            'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
             'image' => ['required', 'image', 'max:4096'],
         ]);
 
@@ -53,7 +60,7 @@ class WinerySlideController extends Controller
         WinerySlide::create([
             'title' => $data['title'],
             'description' => $data['description'] ?? null,
-            'sort_order' => $data['sort_order'] ?? 0,
+            'sort_order' => (int) $data['sort_order'],
             'image_path' => $imagePath,
         ]);
 
@@ -67,8 +74,14 @@ class WinerySlideController extends Controller
      */
     public function edit(WinerySlide $winerySlide): View
     {
+        $sortOrdersTaken = WinerySlide::where('id', '!=', $winerySlide->id)
+            ->whereIn('sort_order', config('admin.sort_orders'))
+            ->pluck('sort_order')
+            ->toArray();
+
         return view('admin.winery-slides.edit', [
             'slide' => $winerySlide,
+            'sortOrdersTaken' => $sortOrdersTaken,
         ]);
     }
 
@@ -80,14 +93,14 @@ class WinerySlideController extends Controller
         $data = $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
-            'sort_order' => ['nullable', 'integer', 'min:0'],
+            'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
             'image' => ['nullable', 'image', 'max:4096'],
         ]);
 
         $update = [
             'title' => $data['title'],
             'description' => $data['description'] ?? null,
-            'sort_order' => $data['sort_order'] ?? 0,
+            'sort_order' => (int) $data['sort_order'],
         ];
 
         if ($request->hasFile('image')) {

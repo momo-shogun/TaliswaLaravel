@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TeamMemberController;
 use App\Http\Controllers\Admin\WinerySlideController;
 use App\Http\Controllers\WineryExperienceController;
@@ -32,10 +33,9 @@ Route::prefix('admin-panel')->name('admin.')->group(function () {
         Route::post('/logout', [AdminAuthController::class, 'logout'])
             ->name('logout');
 
-        // Admin home redirects to winery slides index
-        Route::get('/', function () {
-            return redirect()->route('admin.winery-slides.index');
-        })->name('dashboard');
+        // Admin dashboard
+        Route::get('/', [DashboardController::class, 'index'])
+            ->name('dashboard');
 
         // CRUD for winery experience slides
         Route::resource('winery-slides', WinerySlideController::class)

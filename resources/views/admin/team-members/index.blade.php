@@ -1,12 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'Team Members - Admin')
 
-@section('body-class', 'admin-page')
-
 @section('content')
-    @include('admin.partials.nav')
-
     <section class="py-4">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -31,8 +27,6 @@
                         <tr>
                             <th scope="col">Order</th>
                             <th scope="col">Image</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Role</th>
                             <th scope="col">Updated</th>
                             <th scope="col" class="text-end">Actions</th>
                         </tr>
@@ -45,13 +39,11 @@
                                     @if ($member->image_path)
                                         <img
                                             src="{{ asset('storage/' . $member->image_path) }}"
-                                            alt="{{ $member->name }}"
+                                            alt="Team member"
                                             class="img-fluid rounded"
                                         >
                                     @endif
                                 </td>
-                                <td>{{ $member->name }}</td>
-                                <td>{{ $member->role }}</td>
                                 <td>{{ $member->updated_at?->format('Y-m-d H:i') }}</td>
                                 <td class="text-end">
                                     <a href="{{ route('admin.team-members.edit', $member) }}" class="btn btn-sm btn-outline-secondary">

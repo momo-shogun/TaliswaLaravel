@@ -7,6 +7,7 @@ use App\Models\TeamMember;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
 /**
@@ -33,7 +34,13 @@ class TeamMemberController extends Controller
      */
     public function create(): View
     {
-        return view('admin.team-members.create');
+        $sortOrdersTaken = TeamMember::whereIn('sort_order', config('admin.sort_orders'))
+            ->pluck('sort_order')
+            ->toArray();
+
+        return view('admin.team-members.create', [
+            'sortOrdersTaken' => $sortOrdersTaken,
+        ]);
     }
 
     /**
@@ -42,20 +49,14 @@ class TeamMemberController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $data = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'role' => ['nullable', 'string', 'max:255'],
-            'description' => ['nullable', 'string'],
-            'sort_order' => ['nullable', 'integer', 'min:0'],
+            'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
             'image' => ['required', 'image', 'max:4096'],
         ]);
 
         $imagePath = $request->file('image')->store('team-members', 'public');
 
         TeamMember::create([
-            'name' => $data['name'],
-            'role' => $data['role'] ?? null,
-            'description' => $data['description'] ?? null,
-            'sort_order' => $data['sort_order'] ?? 0,
+            'sort_order' => (int) $data['sort_order'],
             'image_path' => $imagePath,
         ]);
 
@@ -69,8 +70,14 @@ class TeamMemberController extends Controller
      */
     public function edit(TeamMember $teamMember): View
     {
+        $sortOrdersTaken = TeamMember::where('id', '!=', $teamMember->id)
+            ->whereIn('sort_order', config('admin.sort_orders'))
+            ->pluck('sort_order')
+            ->toArray();
+
         return view('admin.team-members.edit', [
             'member' => $teamMember,
+            'sortOrdersTaken' => $sortOrdersTaken,
         ]);
     }
 
@@ -80,18 +87,12 @@ class TeamMemberController extends Controller
     public function update(Request $request, TeamMember $teamMember): RedirectResponse
     {
         $data = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'role' => ['nullable', 'string', 'max:255'],
-            'description' => ['nullable', 'string'],
-            'sort_order' => ['nullable', 'integer', 'min:0'],
+            'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
             'image' => ['nullable', 'image', 'max:4096'],
         ]);
 
         $update = [
-            'name' => $data['name'],
-            'role' => $data['role'] ?? null,
-            'description' => $data['description'] ?? null,
-            'sort_order' => $data['sort_order'] ?? 0,
+            'sort_order' => (int) $data['sort_order'],
         ];
 
         if ($request->hasFile('image')) {

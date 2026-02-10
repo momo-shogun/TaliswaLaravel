@@ -26,12 +26,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Seed a default admin user for the admin panel.
-        // NOTE: Change this email/password in production via tinker or a proper UI.
+        // NOTE: Credentials below are for local development only.
         AdminUser::query()->firstOrCreate(
-            ['email' => 'admin@talisva.test'],
+            ['email' => 'admin@talisva.local'],
             [
-                'name' => 'Talisva Admin',
-                'password' => 'password', // Will be hashed automatically by the model cast.
+                'name' => 'admin',
+                // "123456" - will be hashed automatically by the model cast.
+                'password' => '123456',
             ]
         );
 

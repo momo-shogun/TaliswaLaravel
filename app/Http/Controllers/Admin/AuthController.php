@@ -27,21 +27,25 @@ class AuthController extends Controller
 
     /**
      * Handle an incoming login request.
+     *
+     * This implementation uses a simple username + password pair and
+     * does not support password reset or multiple admins.
      */
     public function login(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
+            'username' => ['required', 'string'],
             'password' => ['required', 'string'],
         ]);
 
-        $admin = AdminUser::where('email', $credentials['email'])->first();
+        // We treat the "name" column on AdminUser as the username.
+        $admin = AdminUser::where('name', $credentials['username'])->first();
 
         if (! $admin || ! Hash::check($credentials['password'], $admin->password)) {
             return back()
-                ->withInput($request->only('email'))
+                ->withInput($request->only('username'))
                 ->withErrors([
-                    'email' => 'The provided credentials do not match our records.',
+                    'username' => 'The provided credentials do not match our records.',
                 ]);
         }
 
