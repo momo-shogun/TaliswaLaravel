@@ -14,6 +14,12 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('admin.brand-experience-slides.index') }}"
+                   class="admin-sidebar-link {{ request()->routeIs('admin.brand-experience-slides.*') ? 'is-active' : '' }}">
+                    Brand Experience Slides
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('admin.team-members.index') }}"
                    class="admin-sidebar-link {{ request()->routeIs('admin.team-members.*') ? 'is-active' : '' }}">
                     Team Members

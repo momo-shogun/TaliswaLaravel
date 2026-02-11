@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TeamMemberController;
+use App\Http\Controllers\Admin\BrandExperienceSlideController;
 use App\Http\Controllers\Admin\WinerySlideController;
 use App\Http\Controllers\BrandExperienceController;
 use App\Http\Controllers\WineryExperienceController;
@@ -45,6 +46,11 @@ Route::prefix('admin-panel')->name('admin.')->group(function () {
         Route::resource('winery-slides', WinerySlideController::class)
             ->except(['show'])
             ->names('winery-slides');
+
+        // CRUD for brand experience slides
+        Route::resource('brand-experience-slides', BrandExperienceSlideController::class)
+            ->except(['show'])
+            ->names('brand-experience-slides');
 
         // CRUD for team members
         Route::resource('team-members', TeamMemberController::class)

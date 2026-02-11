@@ -56,98 +56,45 @@
             <!-- Brand Experience Carousel -->
             <div class="winery-experience--carousel brand-carousel--wrap">
                 <div class="winery-experience--track">
-                    <!-- Slide 1 -->
-                    <div class="winery-experience--slide">
-                        <div class="row g-0 brand-carousel--row">
-                            <!-- Left: warm beige, bottle -->
-                            <div class="col-lg-6 brand-carousel--left">
-
-                                    <img src="{{ asset('assets/img/brandExperience/bottole.png') }}" alt="Talisva Product" class="brand-carousel--product">
-
-                            </div>
-                            <!-- Right: dark green card, title + text + flower -->
-                            <div class="col-lg-6 brand-carousel--right">
-                                <div class="brand-carousel--card">
-                                    <h3 class="brand-carousel--title">Chill The Bottles</h3>
-                                    <p class="brand-carousel--text">Chill Talisva and Nomad wines in the refridgerator for 1-2 hours before serving, so each pour bursts with lively flavours and irresistable aromas. Share it straight from the fridge for a refreshingly crisp taste. Let each sip surprise and delight at the perfect temperature</p>
-                                    <p class="brand-carousel--text">We can also add pairings here.</p>
+                    @forelse ($slides as $index => $slide)
+                        <div class="winery-experience--slide">
+                            <div class="row g-0 brand-carousel--row">
+                                <div class="col-lg-6 brand-carousel--left">
+                                    <div class="brand-carousel--product-wrapper">
+                                        @if ($slide->image_path)
+                                            <img src="{{ asset('storage/' . $slide->image_path) }}" alt="{{ $slide->title }}" class="brand-carousel--product">
+                                        @endif
+                                    </div>
                                 </div>
-                                <div class="brand-carousel--flower-wrapper">
-                                    <img src="{{ asset('assets/img/flower.png') }}" alt="Flower" class="brand-carousel--flower">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="winery-experience--slide">
-                        <div class="row g-0 brand-carousel--row">
-                            <div class="col-lg-6 brand-carousel--left">
-                                <div class="brand-carousel--product-wrapper">
-                                    <img src="{{ asset('assets/img/brandExperience/bottole.png') }}" alt="Talisva Product" class="brand-carousel--product">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 brand-carousel--right">
-                                <div class="brand-carousel--card">
-                                    <h3 class="brand-carousel--title">Chill The Bottles</h3>
-                                    <p class="brand-carousel--text">Chill Talisva and Nomad wines for optimal flavour and taste.</p>
-                                    <p class="brand-carousel--text">We can also add pairings here.</p>
-                                </div>
-                                <div class="brand-carousel--flower-wrapper">
-                                    <img src="{{ asset('assets/img/flower.png') }}" alt="Flower" class="brand-carousel--flower">
+                                <div class="col-lg-6 brand-carousel--right">
+                                    <div class="brand-carousel--card">
+                                        <h3 class="brand-carousel--title">{{ $slide->title }}</h3>
+                                        @if ($slide->description)
+                                            @foreach (array_filter(explode("\n", $slide->description)) as $para)
+                                                <p class="brand-carousel--text">{{ $para }}</p>
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                    <div class="brand-carousel--flower-wrapper">
+                                        <img src="{{ asset('assets/img/flower.png') }}" alt="Flower" class="brand-carousel--flower">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="winery-experience--slide">
-                        <div class="row g-0 brand-carousel--row">
-                            <div class="col-lg-6 brand-carousel--left">
-                                <div class="brand-carousel--product-wrapper">
-                                    <img src="{{ asset('assets/img/brandExperience/bottole.png') }}" alt="Talisva Product" class="brand-carousel--product">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 brand-carousel--right">
-                                <div class="brand-carousel--card">
-                                    <h3 class="brand-carousel--title">Chill The Bottles</h3>
-                                    <p class="brand-carousel--text">Chill Talisva and Nomad wines for optimal flavour and taste.</p>
-                                    <p class="brand-carousel--text">We can also add pairings here.</p>
-                                </div>
-                                <div class="brand-carousel--flower-wrapper">
-                                    <img src="{{ asset('assets/img/flower.png') }}" alt="Flower" class="brand-carousel--flower">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 4 -->
-                    <div class="winery-experience--slide">
-                        <div class="row g-0 brand-carousel--row">
-                            <div class="col-lg-6 brand-carousel--left">
-                                <div class="brand-carousel--product-wrapper">
-                                    <img src="{{ asset('assets/img/brandExperience/bottole.png') }}" alt="Talisva Product" class="brand-carousel--product">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 brand-carousel--right">
-                                <div class="brand-carousel--card">
-                                    <h3 class="brand-carousel--title">Chill The Bottles</h3>
-                                    <p class="brand-carousel--text">Chill Talisva and Nomad wines for optimal flavour and taste.</p>
-                                    <p class="brand-carousel--text">We can also add pairings here.</p>
-                                </div>
-                                <div class="brand-carousel--flower-wrapper">
-                                    <img src="{{ asset('assets/img/flower.png') }}" alt="Flower" class="brand-carousel--flower">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @empty
+                        <p class="mt-4">No brand experience slides are configured yet. Please add some from the admin panel.</p>
+                    @endforelse
                 </div>
             </div>
 
             <!-- Pagination dots -->
-            <div class="winery-pagination brand-carousel--pagination">
-                <span class="winery-pagination--dot active" data-slide="0" aria-label="Slide 1"></span>
-                <span class="winery-pagination--dot" data-slide="1" aria-label="Slide 2"></span>
-                <span class="winery-pagination--dot" data-slide="2" aria-label="Slide 3"></span>
-                <span class="winery-pagination--dot" data-slide="3" aria-label="Slide 4"></span>
-            </div>
+            @if ($slides->count())
+                <div class="winery-pagination brand-carousel--pagination">
+                    @foreach ($slides as $index => $slide)
+                        <span class="winery-pagination--dot {{ $loop->first ? 'active' : '' }}" data-slide="{{ $index }}" aria-label="Slide {{ $index + 1 }}"></span>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </section>
 
