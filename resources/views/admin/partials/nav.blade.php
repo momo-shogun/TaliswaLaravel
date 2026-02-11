@@ -25,6 +25,18 @@
                     Team Members
                 </a>
             </li>
+            <li>
+                <a href="{{ route('admin.subscribed.index') }}"
+                   class="admin-sidebar-link {{ request()->routeIs('admin.subscribed.*') ? 'is-active' : '' }}">
+                    Subscribed
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('admin.tanoma-club-members.index') }}"
+                   class="admin-sidebar-link {{ request()->routeIs('admin.tanoma-club-members.*') ? 'is-active' : '' }}">
+                    Tanoma Club Members
+                </a>
+            </li>
         </ul>
     </nav>
 
