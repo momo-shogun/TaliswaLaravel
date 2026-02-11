@@ -12,13 +12,17 @@
 /.vscode
 /.zed
 /auth.json
+/.cursor
 /node_modules
 /public/build
 /public/hot
 /public/storage
 /storage/*.key
+/storage/logs
+/storage/framework/*
 /storage/pail
 /vendor
+/error_log
 Homestead.json
 Homestead.yaml
 Thumbs.db
