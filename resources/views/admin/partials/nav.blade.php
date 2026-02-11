@@ -10,7 +10,7 @@
             <li>
                 <a href="{{ route('admin.winery-slides.index') }}"
                    class="admin-sidebar-link {{ request()->routeIs('admin.winery-slides.*') ? 'is-active' : '' }}">
-                    Winery Slides
+                    Winery Experience Slides
                 </a>
             </li>
             <li>

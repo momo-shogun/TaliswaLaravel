@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TeamMemberController;
 use App\Http\Controllers\Admin\WinerySlideController;
+use App\Http\Controllers\BrandExperienceController;
 use App\Http\Controllers\WineryExperienceController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +16,9 @@ Route::get('/', function () {
 // Public pages
 Route::get('/winery-experience', [WineryExperienceController::class, 'index'])
     ->name('winery-experience');
+
+Route::get('/brand-experience', [BrandExperienceController::class, 'index'])
+    ->name('brand-experience');
 
 Route::get('/about-us', [AboutController::class, 'about'])
     ->name('about-us');

@@ -61,7 +61,9 @@
 
     <!-- ABOUT SECTION  -->
     <section class="about-section">
-        <img src="{{ asset('assets/img/brand-label.png') }}" class="img-fluid about-section--label" alt="">
+        <a href="{{ route('brand-experience') }}" style="text-align: center;">
+            <img src="{{ asset('assets/img/brand-label.png') }}" class="img-fluid about-section--label" alt="">
+        </a>
         <p class="desc">Our wines and melomels are handcrafted adventures- where tradition dances with innovation to
             awaken your senses and spark your curiosity</p>
         <img src="{{ asset('assets/img/green-bg.png') }}" class="img-fluid about-section--bg" alt="">
