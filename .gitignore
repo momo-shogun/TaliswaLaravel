@@ -25,4 +25,7 @@
 /error_log
 Homestead.json
 Homestead.yaml
+.cursor/
+error_log
+
 Thumbs.db
