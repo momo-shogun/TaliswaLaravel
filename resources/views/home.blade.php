@@ -8,7 +8,7 @@
     <!--  NAVBAR  -->
     <nav class="navbar">
         <a href="{{ route('winery-experience') }}" class="navbar--link">Winery Experience</a>
-        <a href="{{ url('/collection') }}" class="navbar--link">Products</a>
+        <a href="{{ route('collection') }}" class="navbar--link">Products</a>
         <a href="{{ url('/') }}" class="navbar--logo">
             <img src="{{ asset('assets/img/logos/main-logo.png') }}" class="img-fluid" alt="Talisva logo">
         </a>

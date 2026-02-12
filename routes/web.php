@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\SubscriberController;
 use App\Http\Controllers\Admin\TanomaClubMemberController;
 use App\Http\Controllers\Admin\WinerySlideController;
 use App\Http\Controllers\BrandExperienceController;
+use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TanomaClubController;
 use App\Http\Controllers\TanomaClubJoinController;
@@ -31,6 +32,20 @@ Route::get('/about-us', [AboutController::class, 'about'])
 
 Route::get('/tanoma-club', [TanomaClubController::class, 'index'])
     ->name('tanoma-club');
+
+Route::get('/collection', [CollectionController::class, 'index'])
+    ->name('collection');
+
+// Product iframe routes (for collection page modals)
+Route::get('/taliswa1', fn () => view('taliswa1'))->name('collection.taliswa1');
+Route::get('/taliswa2', fn () => view('taliswa2'))->name('collection.taliswa2');
+Route::get('/taliswa3', fn () => view('taliswa3'))->name('collection.taliswa3');
+Route::get('/taliswa4', fn () => view('taliswa4'))->name('collection.taliswa4');
+Route::get('/taliswa5', fn () => view('taliswa5'))->name('collection.taliswa5');
+Route::get('/taliswa6', fn () => view('taliswa6'))->name('collection.taliswa6');
+Route::get('/nomad1', fn () => view('nomad1'))->name('collection.nomad1');
+Route::get('/nomad2', fn () => view('nomad2'))->name('collection.nomad2');
+Route::get('/nomad3', fn () => view('nomad3'))->name('collection.nomad3');
 
 Route::post('/subscribe', [SubscribeController::class, 'store'])
     ->name('subscribe');
