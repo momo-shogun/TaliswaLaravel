@@ -34,7 +34,7 @@
         <span class="heading-tag"> <span class="left"></span>our <span class="right"></span></span>
         <h3 class="heading--lg mb-12">Fruit Wines</h3>
 
-        <div class="f-card mb-10">
+        <a href="{{ route('collection') }}#fruit-wines-collection" class="f-card f-card--link mb-10 text-decoration-none">
             <div class="f-card--img">
                 <img src="{{ asset('assets/img/product-images/product-1.png') }}" class="img-fluid" alt="">
             </div>
@@ -44,9 +44,9 @@
                     your senses and spark your curiosity</p>
                 <img src="{{ asset('assets/img/khaki-border.png') }}" class="img-fluid f-card--border" alt="">
             </div>
-        </div>
+        </a>
 
-        <div class="f-card">
+        <a href="{{ route('collection') }}#nomad-collection" class="f-card f-card--link text-decoration-none">
             <div class="f-card--content bg-2">
                 <img src="{{ asset('assets/img/logos/nomad-logo.png') }}" class="img-fluid f-card--logo" alt="">
                 <p>A delicious category of honey wines (meads) made by fermenting honey with fruit, adding vibrant
@@ -56,7 +56,7 @@
             <div class="f-card--img">
                 <img src="{{ asset('assets/img/product-images/product-2.png') }}" class="img-fluid" alt="">
             </div>
-        </div>
+        </a>
     </section>
 
     <!-- ABOUT SECTION  -->

@@ -310,6 +310,10 @@ body {
     display: flex;
 }
 
+.f-card--link {
+    color: inherit;
+}
+
 .f-card--img {
     width: 50%;
     background-color: orange;

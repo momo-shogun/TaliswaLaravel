@@ -15,7 +15,7 @@
 
         <div class="container">
             <!-- COLLECTION 1 -->
-            <div class="row">
+            <div class="row" id="fruit-wines-collection">
                 <div class="col-12">
                     <div class="collection-card--1">
                         <div class="row">
@@ -57,7 +57,7 @@
             </div>
 
             <!-- COLLECTION 2 -->
-            <div class="row mt-20">
+            <div class="row mt-20" id="nomad-collection">
                 <div class="col-12">
                     <div class="collection-card--2">
                         <img src="{{ asset('assets/img/border-shape.png') }}" class="img-fluid collection-card--2--leftTop" alt="" srcset="">
