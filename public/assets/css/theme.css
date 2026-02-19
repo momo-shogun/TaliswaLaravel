@@ -272,6 +272,49 @@ body {
     flex-shrink: 0;
 }
 
+/* Desktop only: header centered, equal spacing left & right */
+@media (min-width: 992px) {
+    .navbar--custom {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        justify-content: center;
+    }
+
+    .navbar--custom .container-fluid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+
+    .navbar--custom .navbar-collapse--custom {
+        display: flex !important;
+        flex-basis: 100%;
+        width: 100%;
+        max-width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar--custom .navbar-nav--left {
+        margin-right: auto;
+    }
+
+    .navbar--custom .navbar-nav--right {
+        margin-left: auto;
+    }
+
+    .navbar--custom .navbar--logo-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
 /* Hamburger toggler: clear border, theme color icon */
 .navbar-toggler--custom {
     border: 1px solid rgba(51, 48, 146, 0.3);
