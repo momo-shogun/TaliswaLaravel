@@ -5,15 +5,42 @@
 @section('body-class', '')
 
 @section('content')
-    <!--  NAVBAR  -->
-    <nav class="navbar">
-        <a href="{{ route('winery-experience') }}" class="navbar--link">Winery Experience</a>
-        <a href="{{ route('collection') }}" class="navbar--link">Products</a>
-        <a href="{{ url('/') }}" class="navbar--logo">
-            <img src="{{ asset('assets/img/logos/main-logo.png') }}" class="img-fluid" alt="Talisva logo">
-        </a>
-        <a href="{{ url('/tanoma-club') }}" class="navbar--link">Tanoma Club</a>
-        <a href="{{ route('about-us') }}" class="navbar--link">About US</a>
+    <!--  NAVBAR (Bootstrap: logo centered on mobile, hamburger right) -->
+    <nav class="navbar navbar-expand-lg navbar--custom">
+        <div class="container-fluid">
+            <!-- Mobile row: spacer + centered logo + toggler -->
+            <div class="navbar--mobile-header d-flex d-lg-none align-items-center w-100">
+                <span class="navbar-toggler-spacer" aria-hidden="true"></span>
+                <a href="{{ url('/') }}" class="navbar-brand navbar--logo navbar--logo-mobile flex-grow-1 text-center p-0">
+                    <img src="{{ asset('assets/img/logos/main-logo.png') }}" class="img-fluid" alt="Talisva logo">
+                </a>
+                <button class="navbar-toggler navbar-toggler--custom" type="button" data-bs-toggle="collapse" data-bs-target="#homeNavbar" aria-controls="homeNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <!-- Collapse: nav links (desktop + mobile menu) -->
+            <div class="collapse navbar-collapse navbar-collapse--custom" id="homeNavbar">
+                <ul class="navbar-nav navbar-nav--left me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="{{ route('winery-experience') }}" class="nav-link navbar--link">Winery Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('collection') }}" class="nav-link navbar--link">Products</a>
+                    </li>
+                </ul>
+                <a href="{{ url('/') }}" class="navbar--logo d-none d-lg-block navbar--logo-center">
+                    <img src="{{ asset('assets/img/logos/main-logo.png') }}" class="img-fluid" alt="Talisva logo">
+                </a>
+                <ul class="navbar-nav navbar-nav--right mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="{{ url('/tanoma-club') }}" class="nav-link navbar--link">Tanoma Club</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('about-us') }}" class="nav-link navbar--link">About US</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <!--  HERO SECTION  -->
