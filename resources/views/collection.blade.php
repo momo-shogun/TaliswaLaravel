@@ -95,8 +95,8 @@
                 <div class="modal-header taliswa1-modal-header">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body p-0 taliswa1-modal-body">
-                    <iframe id="taliswa1ModalFrame" src="" title="Talisva – Forest Piper" class="taliswa1-modal-iframe"></iframe>
+                <div class="modal-body p-0 taliswa1-modal-body d-flex align-items-center justify-content-center">
+                    <img src="{{ asset('assets/img/product-images/products/Talisva 1.png') }}" alt="Forest Piper – India's first betel leaf wine" class="taliswa1-modal-img">
                 </div>
             </div>
         </div>
@@ -245,16 +245,13 @@
             };
             function initModals() {
                 var modal1 = document.getElementById('taliswa1Modal');
-                var frame1 = document.getElementById('taliswa1ModalFrame');
-                if (modal1 && frame1) {
-                    document.querySelectorAll('a[href*="taliswa1"]').forEach(function (a) {
+                if (modal1) {
+                    document.querySelectorAll('.taliswa1-modal-trigger').forEach(function (a) {
                         a.addEventListener('click', function (e) {
                             e.preventDefault();
-                            frame1.src = routes.taliswa1;
                             new bootstrap.Modal(modal1).show();
                         });
                     });
-                    modal1.addEventListener('hidden.bs.modal', function () { frame1.src = ''; });
                 }
                 var modal2 = document.getElementById('taliswa2Modal');
                 var track2 = document.querySelector('.taliswa2-modal-track');
