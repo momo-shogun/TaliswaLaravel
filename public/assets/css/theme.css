@@ -2089,8 +2089,8 @@ body:has(.about-hero) {
 /* Small Mobile (max-width: 576px) */
 @media (max-width: 576px) {
     .hero-banner-title {
-        font-size: 1.95rem;
-        line-height: 2.3rem;
+        font-size: 2.95rem;
+        line-height: 3.7rem;
     }
 
     .hero-banner-desc {
@@ -2120,7 +2120,7 @@ body:has(.about-hero) {
     .about-section--creative {
         width: 100%;
         position: absolute;
-        bottom: -4rem;
+        bottom: -3rem;
     }
 
     /* Feature Section - Small Mobile */
