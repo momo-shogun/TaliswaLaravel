@@ -272,23 +272,13 @@ body {
     flex-shrink: 0;
 }
 
-/* Desktop only: header centered, equal spacing left & right */
+/* Desktop only: logo viewport ke bilkul center mein */
 @media (min-width: 992px) {
-    .navbar--custom {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        justify-content: center;
-    }
-
     .navbar--custom .container-fluid {
         display: flex;
         align-items: center;
-        justify-content: center;
         flex-wrap: nowrap;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding-left: 8rem;
-        padding-right: 8rem;
+        position: relative;
     }
 
     .navbar--custom .navbar-collapse--custom {
@@ -308,10 +298,12 @@ body {
         margin-left: auto;
     }
 
+    /* Logo hamesha screen ke exact center */
     .navbar--custom .navbar--logo-center {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        flex-shrink: 0;
     }
 }
 
@@ -2113,11 +2105,16 @@ body:has(.about-hero) {
         font-size: 14px;
     }
 
-    .heading-tag .left,
+    .heading-tag .left {
+        width: 40px;
+        left: -3rem;
+        right: auto;
+    }
+
     .heading-tag .right {
-        width: 50px;
-        left: -4rem;
-        right: -4rem;
+        width: 40px;
+        right: -3rem;
+        left: auto;
     }
 
     .about-section--creative {
@@ -2449,7 +2446,7 @@ body:has(.about-hero) {
 
 .winery-experience--carousel {
     overflow: hidden;
-    max-width: 1000px;
+    max-width: 1320px;
     margin: 0 auto 3rem;
 }
 
@@ -2465,7 +2462,7 @@ body:has(.about-hero) {
 }
 
 .winery-experience--boxes {
-    max-width: 1000px;
+    max-width: 1320px;
     margin: 0 auto;
 }
 
