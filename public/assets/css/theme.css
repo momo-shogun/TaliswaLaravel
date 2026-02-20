@@ -1768,7 +1768,7 @@ body:has(.about-hero) {
 
     .hero-banner-title {
         font-size: 2.85rem;
-        width: 90%;
+        width: 92%;
         line-height: 3.2rem;
     }
 
@@ -1934,13 +1934,13 @@ body:has(.about-hero) {
 
     /* Hero Banner */
     .hero-banner {
-        height: 70vh;
+        height: 51vh;
         padding: 1rem;
     }
 
     .hero-banner-title {
         font-size: 2.2rem;
-        width: 95%;
+        width: 91%;
         line-height: 2.6rem;
     }
 
@@ -1963,8 +1963,8 @@ body:has(.about-hero) {
 
     .hero-banner--left-bee2 {
         width: 4rem;
-        left: 8rem;
-        bottom: 8rem;
+        left: 7rem;
+        bottom: 2rem;
     }
 
     .hero-banner--bird {
@@ -2113,9 +2113,17 @@ body:has(.about-hero) {
 
 /* Small Mobile (max-width: 576px) */
 @media (max-width: 576px) {
+    .hero-banner--bg {
+        width: 15rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 2rem;
+        z-index: 2;
+    }
+
     .hero-banner-title {
-        font-size: 2.95rem;
-        line-height: 3.7rem;
+        font-size: 2.25rem;
+        line-height: 2.7rem;
     }
 
     .hero-banner-desc {
