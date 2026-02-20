@@ -122,6 +122,9 @@
     <section class="info-boxes info-boxes-bg-2">
         <div class="info-boxes--content-box" style="background-color: var(--green-2);">
             <h4><a href="{{ route('tanoma-club') }}" class="info-boxes--content-box--title-link">Tanoma Club</a></h4>
+            <p class="info-boxes--content-box--title-desc">
+            Deals, Subscriptions, Rewards and much more!
+            </p>
             <img src="{{ asset('assets/img/house.png') }}" class="img-fluid info-boxes--content-box--img" alt="">
             <button type="button" class="primary-btn" id="tanoma-join-now-btn">Join Now</button>
         </div>

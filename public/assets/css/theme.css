@@ -787,7 +787,7 @@ body {
 ------------------------------------- */
 .about-section {
     background-color: var(--green-2);
-    height: 1000px;
+    height: 1200px;
     overflow: hidden;
     padding: 8rem 2rem;
     display: flex;
@@ -832,7 +832,7 @@ body {
 .about-section p {
     font-size: 16px;
     text-align: center;
-    width: 45%;
+    width: 31%;
     color: var(--light-white-color);
     position: relative;
 }
@@ -934,6 +934,12 @@ body {
     text-align: center;
     color: var(--light-white-color);
 
+}
+
+.info-boxes--content-box--title-desc {
+    text-transform: uppercase;
+    position: relative;
+    bottom: 20px;
 }
 
 .info-boxes--content-box--img {
