@@ -1762,7 +1762,7 @@ body:has(.about-hero) {
 
     /* Hero Banner */
     .hero-banner {
-        height: 80vh;
+        height: 59vh;
         padding: 2rem;
     }
 
@@ -1974,7 +1974,7 @@ body:has(.about-hero) {
     }
 
     .hero-banner--bottom-img {
-        bottom: -10rem;
+        bottom: 0;
     }
 
     /* Feature Section */
