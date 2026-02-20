@@ -89,7 +89,7 @@
     <div class="modal fade" id="collectionImageModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
             <div class="modal-content" style="background: transparent; border: none;">
-                <div class="modal-header position-absolute border-0 py-2 pe-2" style="z-index: 1056; top: 78px !important; right: 10px !important;">
+                <div class="modal-header collection-image-modal-header">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0 position-relative d-flex align-items-center justify-content-center" style="min-height: 85vh;">
