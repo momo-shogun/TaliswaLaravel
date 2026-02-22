@@ -1323,6 +1323,12 @@ body:has(.about-hero) {
     background-size: contain;
 }
 
+@media (min-width: 1339px) {
+    .tanoma-club--content-box {
+        max-width: 74%;
+    }
+}
+
 .tanoma-club--title {
     font-size: 50px;
     font-weight: 100;
