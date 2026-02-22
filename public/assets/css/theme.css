@@ -919,6 +919,7 @@ body {
     font-weight: 100;
     text-transform: uppercase;
     color: var(--light-white-color);
+    z-index: 9;
 }
 
 .info-boxes--content-box--title-link {
@@ -945,6 +946,7 @@ body {
 
 .info-boxes--content-box--img {
     width: 50%;
+    z-index: 9;
 }
 
 .info-boxes-bg-1 {
@@ -1911,6 +1913,7 @@ body:has(.about-hero) {
 
     .info-boxes--content-box--img {
         width: 70%;
+        z-index: 9;
     }
 
     /* Footer */
@@ -2113,6 +2116,7 @@ body:has(.about-hero) {
 
     .info-boxes--content-box--img {
         width: 25%;
+        z-index: 9;
     }
 
     .primary-btn {

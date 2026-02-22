@@ -120,7 +120,7 @@
     </section>
 
     <section class="info-boxes info-boxes-bg-2">
-        <div class="info-boxes--content-box" style="background-color: var(--green-2);">
+        <div class="info-boxes--content-box">
             <h4><a href="{{ route('tanoma-club') }}" class="info-boxes--content-box--title-link">Tanoma Club</a></h4>
             <p class="info-boxes--content-box--title-desc">
             Deals, Subscriptions, Rewards and much more!
