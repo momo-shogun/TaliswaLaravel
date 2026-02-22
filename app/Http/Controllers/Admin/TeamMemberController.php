@@ -50,6 +50,8 @@ class TeamMemberController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $data = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'role' => ['nullable', 'string', 'max:255'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
             'image' => ['required', 'image', 'max:4096'],
         ]);
@@ -60,6 +62,8 @@ class TeamMemberController extends Controller
         );
 
         TeamMember::create([
+            'name' => $data['name'],
+            'role' => $data['role'] ?? null,
             'sort_order' => (int) $data['sort_order'],
             'image_path' => $imagePath,
         ]);
@@ -91,11 +95,15 @@ class TeamMemberController extends Controller
     public function update(Request $request, TeamMember $teamMember): RedirectResponse
     {
         $data = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'role' => ['nullable', 'string', 'max:255'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
             'image' => ['nullable', 'image', 'max:4096'],
         ]);
 
         $update = [
+            'name' => $data['name'],
+            'role' => $data['role'] ?? null,
             'sort_order' => (int) $data['sort_order'],
         ];
 
@@ -133,4 +141,3 @@ class TeamMemberController extends Controller
             ->with('status', 'Team member deleted successfully.');
     }
 }
-

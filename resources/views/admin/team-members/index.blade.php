@@ -26,6 +26,8 @@
                         <thead>
                         <tr>
                             <th scope="col">Order</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Role</th>
                             <th scope="col">Image</th>
                             <th scope="col">Updated</th>
                             <th scope="col" class="text-end">Actions</th>
@@ -35,11 +37,13 @@
                         @foreach ($members as $member)
                             <tr>
                                 <td>{{ $member->sort_order }}</td>
+                                <td>{{ $member->name }}</td>
+                                <td>{{ $member->role ?? '—' }}</td>
                                 <td style="width: 120px;">
                                     @if ($member->image_path)
                                         <img
                                             src="{{ asset('storage/' . $member->image_path) }}"
-                                            alt="Team member"
+                                            alt="{{ $member->name }}"
                                             class="img-fluid rounded"
                                         >
                                     @endif

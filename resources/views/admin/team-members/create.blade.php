@@ -21,6 +21,32 @@
                 @csrf
 
                 <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        value="{{ old('name') }}"
+                        required
+                        maxlength="255"
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <label for="role" class="form-label">Role</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="role"
+                        name="role"
+                        value="{{ old('role') }}"
+                        maxlength="255"
+                        placeholder="e.g. Founder, Winemaker"
+                    >
+                </div>
+
+                <div class="mb-3">
                     <label for="image" class="form-label">Image</label>
                     <input
                         type="file"

@@ -56,11 +56,21 @@
                                     <div class="about-team--image-wrapper">
                                         <img
                                             src="{{ asset('storage/' . $member->image_path) }}"
-                                            alt="Team member"
+                                            alt="{{ $member->name }}"
                                             class="about-team--image img-fluid"
                                         >
                                     </div>
                                 @endif
+                                <div class="about-team--overlay">
+                                    <div class="about-team--overlay-inner">
+                                        @if ($member->name)
+                                            <div class="about-team--name">{{ $member->name }}</div>
+                                        @endif
+                                        @if ($member->role)
+                                            <div class="about-team--role">{{ $member->role }}</div>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     @endforeach
