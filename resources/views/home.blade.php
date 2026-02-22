@@ -144,9 +144,9 @@
                     </p>
 
                     <ul class="m-footer--social-links mt-3">
-                        <li><a href="#" class="m-footer--social-link"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="#" class="m-footer--social-link"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="#" class="m-footer--social-link"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a href="https://www.facebook.com/talisvawinery?mibextid=wwXIfr" class="m-footer--social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com/talisva_winery?igsh=M2NsOHNqbGtpc3Vy" class="m-footer--social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/talisva-winery/" class="m-footer--social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-8">
@@ -154,31 +154,30 @@
                         <div class="col-3">
                             <h5 class="m-footer--title">Wines <span></span></h5>
                             <ul class="m-footer--links">
-                                <li><a href="#" class="m-footer--link" style="text-transform: uppercase;">Talisva Fruit
-                                        wines</a></li>
-                                <li><a href="#" class="m-footer--link" style="text-transform: uppercase;">Nomad</a></li>
+                                <li><a href="{{ route('collection') }}#fruit-wines-collection" class="m-footer--link" style="text-transform: uppercase;">Talisva Fruit wines</a></li>
+                                <li><a href="{{ route('collection') }}#nomad-collection" class="m-footer--link" style="text-transform: uppercase;">Nomad</a></li>
                             </ul>
                         </div>
                         <div class="col-3">
                             <h5 class="m-footer--title">About<span></span></h5>
                             <ul class="m-footer--links">
-                                <li><a href="#" class="m-footer--link">Our Family</a></li>
-                                <li><a href="#" class="m-footer--link">Practice</a></li>
-                                <li><a href="#" class="m-footer--link">Contact Us</a></li>
+                                <li><a href="{{ route('about-us') }}" class="m-footer--link">Our Family</a></li>
+                                <li><a href="{{ route('about-us') }}" class="m-footer--link">Practice</a></li>
+                                <li><a href="{{ route('about-us') }}" class="m-footer--link">Contact Us</a></li>
                             </ul>
                         </div>
                         <div class="col-3">
                             <h5 class="m-footer--title">Experience<span></span></h5>
                             <ul class="m-footer--links">
-                                <li><a href="#" class="m-footer--link">Tours</a></li>
+                                <li><a href="{{ route('winery-experience') }}" class="m-footer--link">Tours</a></li>
                             </ul>
                         </div>
                         <div class="col-3">
                             <h5 class="m-footer--title">Tanoma Club<span></span></h5>
                             <ul class="m-footer--links">
-                                <li><a href="#" class="m-footer--link">Subcriptions</a></li>
-                                <li><a href="#" class="m-footer--link">Rewards</a></li>
-                                <li><a href="#" class="m-footer--link">Benefits</a></li>
+                                <li><a href="{{ route('tanoma-club') }}" class="m-footer--link">Subcriptions</a></li>
+                                <li><a href="{{ route('tanoma-club') }}" class="m-footer--link">Rewards</a></li>
+                                <li><a href="{{ route('tanoma-club') }}" class="m-footer--link">Benefits</a></li>
                             </ul>
                         </div>
                         <div class="col-12">
