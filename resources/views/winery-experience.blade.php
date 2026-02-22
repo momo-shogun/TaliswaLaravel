@@ -12,7 +12,7 @@
             <a href="{{ url('/') }}" class="winery-experience--back-btn">
                 <img src="{{ asset('assets/img/backbtn.png') }}" alt="Back">
             </a>
-            <p class="winery-slideshow--text">Slideshow of Images from the Farm</p>
+            <!-- <p class="winery-slideshow--text">Slideshow of Images from the Farm</p> -->
         </div>
 
         <!-- About Kikeri Farms Card - Overlay on background (kept static for now) -->

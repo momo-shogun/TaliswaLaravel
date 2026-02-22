@@ -752,6 +752,15 @@ body {
     .collection-section .row .col-4.mx-auto {
         flex: 0 0 100%;
         max-width: 100%;
+        text-align: center;
+    }
+
+    /* Even smaller logos on small mobile */
+    #fruit-wines-collection .collection-card--1 .row .col-4.mx-auto {
+        max-width: 53%;
+    }
+    #nomad-collection .collection-card--2 .col-4.mx-auto img {
+        max-width: 53%;
     }
 
     .collection-section .row.gap-4 {
@@ -2106,14 +2115,22 @@ body:has(.about-hero) {
         bottom: -4rem;
     }
 
-    /* Info Boxes */
+    /* Info Boxes - mobile only */
     .info-boxes {
-        /* padding: 3rem 1rem; */
+        padding: 3rem 1rem;
+        overflow-x: hidden;
     }
 
     .info-boxes--content-box {
-        padding: 2rem 1.5rem;
-        margin-top: 65px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 2.5rem 1.5rem;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 16px;
     }
 
     .info-boxes-bg-2 .info-boxes--content-box:before {
@@ -2133,15 +2150,29 @@ body:has(.about-hero) {
 
     .info-boxes--content-box h4 {
         font-size: 28px;
+        text-align: center;
+        word-wrap: break-word;
     }
 
     .info-boxes--content-box p {
         font-size: 16px;
+        word-wrap: break-word;
+    }
+
+    .info-boxes--content-box--title-desc {
+        bottom: 8px;
+        font-size: 11px;
     }
 
     .info-boxes--content-box--img {
-        width: 25%;
+        width: 50%;
+        max-width: 200px;
         z-index: 9;
+    }
+
+    .info-boxes--content-box .primary-btn {
+        padding: 12px 28px;
+        font-size: 15px;
     }
 
     .primary-btn {
@@ -2260,6 +2291,22 @@ body:has(.about-hero) {
         width: 95%;
     }
 
+    .info-boxes {
+        padding: 2rem 0.75rem;
+        overflow-x: hidden;
+    }
+
+    .info-boxes--content-box {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 1.75rem 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 12px;
+    }
+
     .info-boxes-bg-2 .info-boxes--content-box:before {
         content: '';
         position: absolute;
@@ -2276,7 +2323,29 @@ body:has(.about-hero) {
     }
 
     .info-boxes--content-box h4 {
-        font-size: 24px;
+        font-size: 22px;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    .info-boxes--content-box p {
+        font-size: 11px;
+        word-wrap: break-word;
+    }
+
+    .info-boxes--content-box--title-desc {
+        bottom: 4px;
+        font-size: 9px;
+    }
+
+    .info-boxes--content-box--img {
+        width: 25%;
+        max-width: 160px;
+    }
+
+    .info-boxes--content-box .primary-btn {
+        padding: 10px 24px;
+        font-size: 14px;
     }
 
     .m-footer--title {
@@ -2302,8 +2371,7 @@ body:has(.about-hero) {
     min-height: 1200px;
     height: 1200px;
     background-image: url('./../img/bg-2.jpg');
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
     display: flex;
     align-items: flex-start;
     justify-content: center;
