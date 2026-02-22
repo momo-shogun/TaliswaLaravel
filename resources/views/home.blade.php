@@ -243,7 +243,7 @@
         .subscribe-modal__close--outline { background: transparent; color: #333; border: 1px solid #ccc; }
         /* Tanoma Club modal – improved UI */
         .tanoma-modal__box { position: relative; background: #fff; max-width: 400px; width: 100%; border-radius: 16px; box-shadow: 0 24px 48px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.04); overflow: hidden; text-align: center; }
-        .tanoma-modal__header { background: linear-gradient(135deg, #2D5016 0%, #375F4D 100%); padding: 1.75rem 1.5rem; color: #fff; }
+        .tanoma-modal__header { background: #365b49; padding: 1.75rem 1.5rem; color: #fff; }
         .tanoma-modal__title { margin: 0; font-family: 'Marcellus', serif; font-size: 1.5rem; font-weight: 500; letter-spacing: 0.02em; }
         .tanoma-modal__subtitle { margin: 0.35rem 0 0; font-size: 0.875rem; opacity: 0.92; }
         .tanoma-modal__message { margin: 0 0 1rem; padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.875rem; }
@@ -253,11 +253,11 @@
         .tanoma-modal__field { margin-bottom: 1rem; }
         .tanoma-modal__input { width: 100%; padding: 0.75rem 1rem; border: 2px solid #e8e8e8; border-radius: 10px; font-size: 1rem; transition: border-color 0.2s, box-shadow 0.2s; }
         .tanoma-modal__input::placeholder { color: #9e9e9e; }
-        .tanoma-modal__input:focus { outline: none; border-color: #2D5016; box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.15); }
+        .tanoma-modal__input:focus { outline: none; border-color: #365b49; box-shadow: 0 0 0 3px rgba(54, 91, 73, 0.2); }
         .tanoma-modal__actions { display: flex; gap: 0.75rem; margin-top: 1.25rem; }
         .tanoma-modal__btn { flex: 1; padding: 0.75rem 1.25rem; border: none; border-radius: 10px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; }
-        .tanoma-modal__btn--primary { background: linear-gradient(135deg, #2D5016 0%, #375F4D 100%); color: #fff; }
-        .tanoma-modal__btn--primary:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(45, 80, 22, 0.35); }
+        .tanoma-modal__btn--primary { background: #365b49; background-image: none; color: #fff; }
+        .tanoma-modal__btn--primary:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(54, 91, 73, 0.4); }
         .tanoma-modal__btn--secondary { background: #fff; color: #555; border: 2px solid #e0e0e0; }
         .tanoma-modal__btn--secondary:hover { border-color: #bdbdbd; background: #fafafa; }
     </style>
