@@ -849,7 +849,7 @@ body {
 }
 
 .info-boxes--content-box {
-    padding: 6rem;
+    padding: 8rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2123,7 +2123,7 @@ body:has(.about-hero) {
         width: 15rem;
         position: absolute;
         right: 1rem;
-        bottom: 2rem;
+        bottom: 1rem;
         z-index: 2;
     }
 
