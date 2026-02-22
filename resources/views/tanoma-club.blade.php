@@ -14,11 +14,26 @@
 
         <div class="tanoma-club--content-box">
             <h4 class="tanoma-club--title">Tanoma Club</h4>
+            <p class="info-boxes--content-box--title-desc" style="color: var(--light-white-color);">
+            Deals, Subscriptions, Rewards and much more!
+            </p>
             <img src="{{ asset('assets/img/house.png') }}" class="img-fluid tanoma-club--img" alt="" srcset="">
 
             <button type="button" class="tanoma-club--btn primary-btn" id="tanoma-join-now-btn">Join Now</button>
         </div>
 
+    </section>
+
+    <!-- Description section (same style as Winery Experience) -->
+    <section class="tanoma-club-description">
+        <div class="container">
+            <h3 class="winery-experience--title">Tanoma Club</h3>
+            <p class="winery-experience--text">
+                Deals, Subscriptions, Rewards and much more! Join the Tanoma Club to get exclusive access to member-only
+                offers, early updates on new releases, and rewards that make every sip more rewarding. Be the first to
+                know about events, tastings, and special drops from Talisva.
+            </p>
+        </div>
     </section>
 
     <!-- Tanoma Club Join modal (same as home) -->
