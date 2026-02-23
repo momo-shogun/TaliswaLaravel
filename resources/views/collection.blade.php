@@ -191,6 +191,24 @@
             if (dots) dots.forEach(function (d, i) {
                 d.addEventListener('click', function () { showSlide(i); });
             });
+
+            /* Swipe / touch: slide left = next, slide right = prev (when carousel has >1 image) */
+            var touchStartX = 0;
+            var touchEndX = 0;
+            var minSwipe = 50;
+            var swipeTarget = carouselWrap || (modal ? modal.querySelector('.modal-body') : null);
+            if (swipeTarget) {
+                swipeTarget.addEventListener('touchstart', function (e) {
+                    touchStartX = e.changedTouches ? e.changedTouches[0].screenX : e.screenX;
+                }, { passive: true });
+                swipeTarget.addEventListener('touchend', function (e) {
+                    if (images.length <= 1) return;
+                    touchEndX = e.changedTouches ? e.changedTouches[0].screenX : e.screenX;
+                    var diff = touchStartX - touchEndX;
+                    if (diff > minSwipe) showSlide(currentIndex + 1);
+                    else if (diff < -minSwipe) showSlide(currentIndex - 1);
+                }, { passive: true });
+            }
         })();
     </script>
 @endpush
