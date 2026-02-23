@@ -21,6 +21,7 @@
 /storage/logs
 /storage/framework/*
 /storage/pail
+/storage/team-members
 /vendor
 /error_log
 Homestead.json
