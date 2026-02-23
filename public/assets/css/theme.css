@@ -1457,7 +1457,7 @@ body:has(.about-hero) {
 
     .tanoma-club--img {
         width: 80%;
-        max-width: 101px;
+        max-width: 100px;
     }
 }
 
@@ -2182,7 +2182,7 @@ body:has(.about-hero) {
     }
 
     .primary-btn {
-        padding: 12px 30px;
+        padding: 2% 6%;
         font-size: 16px;
     }
 
