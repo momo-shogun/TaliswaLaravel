@@ -1838,7 +1838,7 @@ body:has(.about-hero) {
 
     /* Hero Banner */
     .hero-banner {
-        /* height: 500px; */
+        height: 500px;
         padding: 2rem;
     }
 
