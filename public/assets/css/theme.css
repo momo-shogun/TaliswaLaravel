@@ -1444,7 +1444,7 @@ body:has(.about-hero) {
 
     .tanoma-club--content-box {
         padding: 2rem 1.25rem;
-        gap: 1.25rem;
+        gap: 0.25rem;
     }
 
     .tanoma-club--content-box:before {
