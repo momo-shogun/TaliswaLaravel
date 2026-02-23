@@ -29,6 +29,12 @@
 
 @yield('content')
 
+@if(config('app.whatsapp_number'))
+    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', config('app.whatsapp_number')) }}" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+@endif
+
 <!-- Bootstrap JS -->
 <script src="{{ asset('assets/js/popper.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>

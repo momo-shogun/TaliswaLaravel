@@ -123,4 +123,14 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | WhatsApp Contact (floating button)
+    |--------------------------------------------------------------------------
+    | Full number with country code, no + or spaces (e.g. 919876543210).
+    |
+    */
+
+    'whatsapp_number' => env('WHATSAPP_NUMBER', '+917275408525'),
+
 ];
