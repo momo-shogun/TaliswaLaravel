@@ -5183,14 +5183,15 @@ body:has(.about-hero) {
     .modal-fullscreen-lg-down .modal-footer,
     .modal-fullscreen-lg-down .modal-header {
         top: 350px !important;
+        right: 10px !important;
     }
 }
 
 /* Collection image modal (single modal for 1 or 2 images) */
 .collection-image-modal-header {
     position: absolute;
-    top: 78px;
-    right: 10px;
+    top: 2%;
+    right: 7%;
     z-index: 1056;
     border: none;
     padding: 0.5rem;
