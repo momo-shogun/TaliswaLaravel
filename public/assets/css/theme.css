@@ -1333,7 +1333,7 @@ body:has(.about-hero) {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
     position: relative;
     /* background-color: var(--green-2); */
     max-width: 75%;
