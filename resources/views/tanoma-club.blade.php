@@ -24,15 +24,17 @@
 
     </section>
 
-    <!-- Description section (same style as Winery Experience) -->
+    <!-- Description section (same style as Winery Experience) – content from admin Tanoma Club Rewards -->
     <section class="tanoma-club-description">
         <div class="container">
-            <h3 class="winery-experience--title">Tanoma Club</h3>
-            <p class="winery-experience--text">
-                Deals, Subscriptions, Rewards and much more! Join the Tanoma Club to get exclusive access to member-only
-                offers, early updates on new releases, and rewards that make every sip more rewarding. Be the first to
-                know about events, tastings, and special drops from Talisva.
-            </p>
+            <h3 class="winery-experience--title">{{ $reward->title }}</h3>
+            <div class="winery-experience--text">
+                @if ($reward->description)
+                    @foreach (array_filter(explode("\n", $reward->description)) as $para)
+                        <p>{{ $para }}</p>
+                    @endforeach
+                @endif
+            </div>
         </div>
     </section>
 
