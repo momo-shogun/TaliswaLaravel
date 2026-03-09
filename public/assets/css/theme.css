@@ -5341,14 +5341,16 @@ body:has(.about-hero) {
 }
 
 /* Collection image modal (single modal for 1 or 2 images) */
-.collection-image-modal-header {
-    position: absolute;
-    top: 2%;
-    right: 7%;
-    z-index: 1056;
-    border: none;
-    padding: 0.5rem;
-    background: transparent;
+@media (min-width: 1440px) {
+    .collection-image-modal-header {
+        position: absolute;
+        top: 2%;
+        right: 10%;
+        z-index: 1056;
+        border: none;
+        padding: 0.5rem;
+        background: transparent;
+    }
 }
 
 /* Taliswa2 modal (same as Taliswa1) */
