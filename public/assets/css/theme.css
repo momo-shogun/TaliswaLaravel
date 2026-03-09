@@ -2755,6 +2755,20 @@ body:has(.about-hero) {
     pointer-events: none;
 }
 
+.gallery-section--heading {
+    position: relative;
+    z-index: 2;
+    font-family: var(--secondary-font);
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: var(--green-dark);
+    text-align: center;
+    margin: 0 auto 1.5rem;
+    max-width: 1320px;
+    padding: 0 1rem;
+}
+
 .gallery--nav-btn {
     position: absolute;
     top: 50%;
@@ -2821,6 +2835,11 @@ body:has(.about-hero) {
         padding: 3rem 3rem 2rem;
     }
 
+    .gallery-section--heading {
+        font-size: 1.1rem;
+        margin-bottom: 1.25rem;
+    }
+
     .gallery--nav-btn-left {
         left: 1rem;
     }
@@ -2840,6 +2859,12 @@ body:has(.about-hero) {
         padding: 2rem 2.5rem 1.5rem;
     }
 
+    .gallery-section--heading {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+    }
+
     .gallery--nav-btn-left {
         left: 0.5rem;
     }
@@ -2857,6 +2882,11 @@ body:has(.about-hero) {
 @media (max-width: 576px) {
     .gallery-section {
         padding: 1.5rem 2rem 1rem;
+    }
+
+    .gallery-section--heading {
+        font-size: 0.95rem;
+        margin-bottom: 0.875rem;
     }
 
     .gallery--nav-btn-left {

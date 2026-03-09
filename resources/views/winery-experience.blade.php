@@ -124,6 +124,7 @@
     <!-- Gallery Section (Swiper infinite carousel) -->
     <section class="gallery-section">
         <div class="gallery-section--overlay"></div>
+        <h3 class="gallery-section--heading">Moments captured at Talisva winery</h3>
         <button type="button" class="gallery--nav-btn gallery--nav-btn-left gallery-swiper-prev" aria-label="Previous">
             <img src="{{ asset('assets/img/backbtn.png') }}" alt="">
         </button>
