@@ -119,9 +119,64 @@
             @endif
         </div>
     </section>
+
+    @if (isset($galleryItems) && $galleryItems->isNotEmpty())
+    <!-- Gallery Section (Swiper infinite carousel) -->
+    <section class="gallery-section">
+        <div class="gallery-section--overlay"></div>
+        <button type="button" class="gallery--nav-btn gallery--nav-btn-left gallery-swiper-prev" aria-label="Previous">
+            <img src="{{ asset('assets/img/backbtn.png') }}" alt="">
+        </button>
+        <button type="button" class="gallery--nav-btn gallery--nav-btn-right gallery-swiper-next" aria-label="Next">
+            <img src="{{ asset('assets/img/rightbtn.png') }}" alt="">
+        </button>
+        <div class="swiper gallery-swiper">
+            <div class="swiper-wrapper">
+                @foreach ($galleryItems as $index => $item)
+                <div class="swiper-slide">
+                    <div class="gallery--slide-inner">
+                        @if ($item->image_path)
+                        <img src="{{ asset('storage/' . $item->image_path) }}" alt="Gallery {{ $index + 1 }}" class="gallery--slide-img">
+                        @endif
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    @endif
 @endsection
+
+@push('head')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+@endpush
 
 @push('scripts')
     <script src="{{ asset('assets/js/winery-experience-carousel.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var el = document.querySelector('.gallery-swiper');
+            if (el && el.querySelectorAll('.swiper-slide').length > 0) {
+                new Swiper('.gallery-swiper', {
+                    loop: true,
+                    slidesPerView: 3,
+                    spaceBetween: 16,
+                    centeredSlides: false,
+                    speed: 500,
+                    autoplay: { delay: 1000, disableOnInteraction: false },
+                    navigation: {
+                        nextEl: '.gallery-swiper-next',
+                        prevEl: '.gallery-swiper-prev'
+                    },
+                    breakpoints: {
+                        992: { slidesPerView: 3 },
+                        768: { slidesPerView: 2 },
+                        0: { slidesPerView: 1 }
+                    }
+                });
+            }
+        });
+    </script>
 @endpush
 

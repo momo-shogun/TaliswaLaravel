@@ -53,7 +53,7 @@ class BrandExperienceSlideController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
-            'image' => ['required', 'image', 'max:4096'],
+            'image' => ['required', 'image', 'max:2048'],
         ]);
 
         $imagePath = app(ImageCompressionService::class)->compressAndStore(
@@ -98,7 +98,7 @@ class BrandExperienceSlideController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
-            'image' => ['nullable', 'image', 'max:4096'],
+            'image' => ['nullable', 'image', 'max:2048'],
         ]);
 
         $update = [

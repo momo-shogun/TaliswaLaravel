@@ -33,6 +33,28 @@
 <script src="{{ asset('assets/js/popper.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 
+<script>
+(function () {
+    var MAX_FILE_SIZE = 2 * 1024 * 1024;
+    document.querySelectorAll('form[enctype="multipart/form-data"]').forEach(function (form) {
+        form.addEventListener('submit', function (e) {
+            var inputs = form.querySelectorAll('input[type="file"]');
+            for (var i = 0; i < inputs.length; i++) {
+                var files = inputs[i].files;
+                if (!files || !files.length) continue;
+                for (var j = 0; j < files.length; j++) {
+                    if (files[j].size > MAX_FILE_SIZE) {
+                        e.preventDefault();
+                        alert('File "' + files[j].name + '" is too large. Please use an image under 2MB.');
+                        return;
+                    }
+                }
+            }
+        });
+    });
+})();
+</script>
+
 @stack('scripts')
 </body>
 </html>

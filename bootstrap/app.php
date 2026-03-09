@@ -15,8 +15,15 @@ return Application::configure(basePath: dirname(__DIR__))
         // Register a simple alias for admin authentication middleware
         $middleware->alias([
             'admin.auth' => AdminAuthenticated::class,
+            'check.request.size' => \App\Http\Middleware\CheckRequestSize::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
+        $exceptions->renderable(function (\Symfony\Component\HttpKernel\Exception\HttpException $e) {
+            if ($e->getStatusCode() === 413) {
+                return response()->view('errors.413', [
+                    'message' => $e->getMessage() ?: 'The file or data you are uploading is too large. Please use an image under 2MB.',
+                ], 413);
+            }
+        });
     })->create();

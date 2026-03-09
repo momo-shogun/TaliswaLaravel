@@ -8,15 +8,15 @@ use Illuminate\Support\Str;
 
 /**
  * Compress uploaded images with minimal quality loss.
- * Uses PHP GD: resizes if too large, saves as JPEG (quality 85) for smaller size.
+ * Uses PHP GD: resizes if too large, saves as JPEG for smaller size.
  */
 class ImageCompressionService
 {
     /** Max dimension (width or height) – resize only if larger. */
-    public const MAX_DIMENSION = 1920;
+    public const MAX_DIMENSION = 1600;
 
-    /** JPEG quality 0–100. 85 = high quality, good compression (minimal visible loss). */
-    public const JPEG_QUALITY = 85;
+    /** JPEG quality 0–100. 80 = good balance of quality and file size. */
+    public const JPEG_QUALITY = 80;
 
     /**
      * Compress image and store in the given directory (e.g. 'team-members', 'winery-slides').

@@ -43,6 +43,12 @@
                     Tanoma Club Rewards
                 </a>
             </li>
+            <li>
+                <a href="{{ route('admin.gallery.index') }}"
+                   class="admin-sidebar-link {{ request()->routeIs('admin.gallery.*') ? 'is-active' : '' }}">
+                    Gallery
+                </a>
+            </li>
         </ul>
     </nav>
 

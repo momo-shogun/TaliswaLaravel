@@ -3,12 +3,14 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\GalleryItemController;
 use App\Http\Controllers\Admin\TeamMemberController;
 use App\Http\Controllers\Admin\BrandExperienceSlideController;
 use App\Http\Controllers\Admin\SubscriberController;
 use App\Http\Controllers\Admin\TanomaClubMemberController;
 use App\Http\Controllers\Admin\TanomaClubRewardController;
 use App\Http\Controllers\Admin\WinerySlideController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BrandExperienceController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\SubscribeController;
@@ -17,9 +19,7 @@ use App\Http\Controllers\TanomaClubJoinController;
 use App\Http\Controllers\WineryExperienceController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Public pages
 Route::get('/winery-experience', [WineryExperienceController::class, 'index'])
@@ -64,7 +64,7 @@ Route::prefix('admin-panel')->name('admin.')->group(function () {
         ->name('login.submit');
 
     // Routes that require the admin session
-    Route::middleware('admin.auth')->group(function () {
+    Route::middleware(['admin.auth', 'check.request.size'])->group(function () {
         Route::post('/logout', [AdminAuthController::class, 'logout'])
             ->name('logout');
 
@@ -100,6 +100,11 @@ Route::prefix('admin-panel')->name('admin.')->group(function () {
             ->name('tanoma-club-rewards.edit');
         Route::put('/tanoma-club-rewards', [TanomaClubRewardController::class, 'update'])
             ->name('tanoma-club-rewards.update');
+
+        // Gallery (home page carousel)
+        Route::resource('gallery', GalleryItemController::class)
+            ->except(['show'])
+            ->names('gallery');
     });
 });
 
