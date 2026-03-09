@@ -323,7 +323,7 @@ body {
         left: 52%;
         transform: translateX(-50%);
         flex-shrink: 0;
-        width: 9rem;
+        width: 11rem;
     }
 
     .navbar--custom .navbar--logo-center img {
