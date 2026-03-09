@@ -11,6 +11,6 @@ return [
     | team members. Items are ordered by this value (1 = first).
     |
     */
-    'sort_orders' => [1, 2, 3, 4, 5, 6],
+    'sort_orders' => [1, 2, 3, 4, 5, 6, 7],
 
 ];

@@ -69,9 +69,7 @@
                             <div class="brand-carousel--card">
                                 <h3 class="brand-carousel--title">{{ $slide->title }}</h3>
                                 @if ($slide->description)
-                                @foreach (array_filter(explode("\n", $slide->description)) as $para)
-                                <p class="brand-carousel--text">{{ $para }}</p>
-                                @endforeach
+                                <div class="brand-carousel--text">{!! nl2br(e($slide->description)) !!}</div>
                                 @endif
                             </div>
                             <div class="brand-carousel--flower-wrapper">

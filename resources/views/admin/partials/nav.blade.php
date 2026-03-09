@@ -37,6 +37,12 @@
                     Tanoma Club Members
                 </a>
             </li>
+            <li>
+                <a href="{{ route('admin.tanoma-club-rewards.edit') }}"
+                   class="admin-sidebar-link {{ request()->routeIs('admin.tanoma-club-rewards.*') ? 'is-active' : '' }}">
+                    Tanoma Club Rewards
+                </a>
+            </li>
         </ul>
     </nav>
 

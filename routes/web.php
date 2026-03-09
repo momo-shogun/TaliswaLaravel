@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\TeamMemberController;
 use App\Http\Controllers\Admin\BrandExperienceSlideController;
 use App\Http\Controllers\Admin\SubscriberController;
 use App\Http\Controllers\Admin\TanomaClubMemberController;
+use App\Http\Controllers\Admin\TanomaClubRewardController;
 use App\Http\Controllers\Admin\WinerySlideController;
 use App\Http\Controllers\BrandExperienceController;
 use App\Http\Controllers\CollectionController;
@@ -93,6 +94,12 @@ Route::prefix('admin-panel')->name('admin.')->group(function () {
         // Tanoma Club members list
         Route::get('/tanoma-club-members', [TanomaClubMemberController::class, 'index'])
             ->name('tanoma-club-members.index');
+
+        // Tanoma Club rewards (description section) – edit/update only
+        Route::get('/tanoma-club-rewards', [TanomaClubRewardController::class, 'edit'])
+            ->name('tanoma-club-rewards.edit');
+        Route::put('/tanoma-club-rewards', [TanomaClubRewardController::class, 'update'])
+            ->name('tanoma-club-rewards.update');
     });
 });
 
