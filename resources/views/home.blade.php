@@ -185,7 +185,7 @@
                             <p id="subscribe-message" class="mt-2 small" style="display: none;"></p>
                             <form id="subscribe-form" action="{{ route('subscribe') }}" method="POST" class="m-footer--input-box mt-2">
                                 @csrf
-                                <input type="email" name="email" id="subscribe-email" placeholder="Your email" required>
+                                <input type="email" name="email" id="subscribe-email" placeholder="Enter your email" required>
                                 <button type="submit">Subscribe</button>
                             </form>
                         </div>

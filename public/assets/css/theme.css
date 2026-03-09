@@ -133,7 +133,7 @@ body {
 ------------------------------------- */
 .hero-banner {
     background-color: var(--light-blue-bg);
-    height: 110vh;
+    height: 107vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,7 +163,7 @@ body {
     width: 30.29rem;
     position: absolute;
     left: 0rem;
-    bottom: -8rem;
+    bottom: -9rem;
     z-index: 10;
 }
 
@@ -171,7 +171,7 @@ body {
     width: 24rem;
     position: absolute;
     right: 0rem;
-    bottom: -8rem;
+    bottom: -6rem;
     z-index: 10;
 }
 
@@ -829,7 +829,7 @@ body {
 
 .about-section--bg {
     position: absolute;
-    bottom: -4rem;
+    bottom: 0;
     width: 100%;
 }
 

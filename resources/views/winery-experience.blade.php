@@ -87,9 +87,9 @@
                                     <div class="winery-experience--box winery-experience--box-green">
                                         <h4 class="winery-experience--box-title">{{ $slide->title }}</h4>
                                         @if ($slide->description)
-                                            <!-- <p class="winery-experience--box-description">
+                                            <p class="winery-experience--box-description">
                                                 {{ $slide->description }}
-                                            </p> -->
+                                            </p>
                                         @endif
                                     </div>
                                 </div>
