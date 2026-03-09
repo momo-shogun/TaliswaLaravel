@@ -85,12 +85,14 @@
                                 </div>
                                 <div class="col-md-6 p-0">
                                     <div class="winery-experience--box winery-experience--box-green">
-                                        <h4 class="winery-experience--box-title">{{ $slide->title }}</h4>
-                                        @if ($slide->description)
-                                            <p class="winery-experience--box-description">
-                                                {{ $slide->description }}
-                                            </p>
-                                        @endif
+                                        <div class="winery-experience--box-content">
+                                            <h4 class="winery-experience--box-title">{{ $slide->title }}</h4>
+                                            @if ($slide->description)
+                                                <div class="winery-experience--box-description">
+                                                    {!! nl2br(e($slide->description)) !!}
+                                                </div>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                             </div>
