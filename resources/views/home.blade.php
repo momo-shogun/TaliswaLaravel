@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse navbar-collapse--custom" id="homeNavbar">
                 <ul class="navbar-nav navbar-nav--left me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="{{ route('winery-experience') }}" class="nav-link navbar--link">Winery Experience</a>
+                        <a href="{{ route('winery-experience') }}" class="nav-link navbar--link" style="position: relative; right: 30px;">Winery Experience</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('collection') }}" class="nav-link navbar--link">Products</a>
@@ -49,7 +49,8 @@
         <img src="{{ asset('assets/img/right-flower.png') }}" alt="" class="img-fluid hero-banner--right-img">
         <img src="{{ asset('assets/img/header-bottom.png') }}" alt="" class="img-fluid hero-banner--bottom-img">
         <img src="{{ asset('assets/img/header-bg.png') }}" alt="" class="img-fluid hero-banner--bg">
-        <h1 class="hero-banner-title">Where fruit becomes a journey</h1>
+        <h1 class="hero-banner-title">Where fruit becomes  <br>
+            a journey</h1>
         <p class="hero-banner-desc">From tropical fruit to handcrafted wine</p>
         <img src="{{ asset('assets/img/left-bee-1.png') }}" id="HEADER_BEE_1" alt="" class="hero-banner--left-bee1">
         <img src="{{ asset('assets/img/left-bee-2.png') }}" id="HEADER_BEE_2" alt="" class="hero-banner--left-bee2">
@@ -99,22 +100,24 @@
 
     <!-- CONTENT & BANNERS SECTIONS  -->
     <section class="info-boxes info-boxes-bg-1">
-        <marquee behavior="" direction="">
+        //infinite marquee loop 
+        <marquee behavior="" direction="" style="animation-duration: 10s; animation-iteration-count: infinite;">
             <div>
-                <p><span></span>From Kakeri Farms, Authentic wines with a wild spirit</p>
-                <p><span></span>From Kakeri Farms, Authentic wines with a wild spirit</p>
-                <p><span></span>From Kakeri Farms, Authentic wines with a wild spirit</p>
-                <p><span></span>From Kakeri Farms, Authentic wines with a wild spirit</p>
-                <p><span></span>From Kakeri Farms, Authentic wines with a wild spirit</p>
+                <p><span></span>From Kikkeri Farms, Authentic wines with a wild spirit</p>
+                <p><span></span>From Kikkeri Farms, Authentic wines with a wild spirit</p>
+                <p><span></span>From Kikkeri Farms, Authentic wines with a wild spirit</p>
+                <p><span></span>From Kikkeri Farms, Authentic wines with a wild spirit</p>
+                <p><span></span>From Kikkeri Farms, Authentic wines with a wild spirit</p>
             </div>
         </marquee>
 
         <div class="info-boxes--content-box" style="background-color: var(--orange-1);">
             <h4>Winery Experience</h4>
-            <p>At Talisva, wine is more than a drink- it’s an experience. Whether youre . curious to explore fruit wines
-                for the first time or an already seasoned enthusiast, we have something special for you. Join us for a
-                guided tasting, walk through our orchards and winery to see where the magic happens, or spend the day
-                soaking in nature with a glass in hand. Every visit is a journey into flavour, craft and discovery</p>
+            <p>At Talisva, wine goes beyond the glass—it becomes an experience. Whether you’re
+newly curious about fruit wines or a devoted connoisseur, we offer something truly
+memorable. Enjoy a guided tasting, wander through our areca farm and winery to
+witness the craft behind each bottle, or simply relax in nature with a glass by your
+side. Every visit invites you into a world of Alavor, artistry, and exploration.</p>
             <a href="{{ route('winery-experience') }}" class="primary-btn">Explore</a>
         </div>
     </section>

@@ -19,8 +19,8 @@
 <section class="about-section">
 
     <img src="{{ asset('assets/img/brand-label.png') }}" class="img-fluid about-section--label" alt="" srcset="">
-    <p class="desc">Our wines and melomels are handcrafted adventures- where tradition dances with innovation to
-        awaken your senses and spark your curiosity</p>
+    <p class="desc">Talisva X Nomad celebrates the joy of fruit beverages in every sip. Talisva Premium offers carefully crafted fruit wines — elegant, balanced, and perfect for savoring slowly. Nomad by Talisva brings a playful twist with Melomel variants, lightly effervescent fruit “beer-style” bursting with flavor and character. Chill, pour, sniff, sip… and enjoy the journey, whether it’s the sophistication of wine or the spirited fun of a Melomel.
+    </p>
     <img src="{{ asset('assets/img/green-bg.png') }}" class="img-fluid about-section--bg" alt="" srcset="">
     <img src="{{ asset('assets/img/brand-bg.png') }}" class="img-fluid about-section--creative" alt="" srcset="">
 

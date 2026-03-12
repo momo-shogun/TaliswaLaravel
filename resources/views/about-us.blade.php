@@ -23,25 +23,32 @@
                 <div class="col-lg-6 about-hero--content-col">
                     <div class="about-hero--content">
                         <p class="about-hero--text">
-                            It all began with one determined woman, Sushma Sanjay. Her passion and endless
-                            curiosity grew a one-woman enterprise/ journey into a thriving family-owned business.
-                            The Sanjay's positively impacted the lives of many women employed under their care
-                            and brought recognition and development towards the small-town of Kikkeri.
+                        <span style="font-size: 24px; font-weight: 600;">Sushma Sanjay</span>
+                        <br>
+                            <em>Founder &amp; Managing Director</em>
                         </p>
                         <p class="about-hero--text">
-                            Today, Talisva encompasses a beautiful winery and areca estate that extends over 25 acres
-                            and produces small batches of delicious hand-crafted fruit wines. Their current favorites
-                            are jamun (java plum), grape, pineapple and betel leaf.
+                            <strong>Talisva</strong> is a self-made dream turned thriving family-owned enterprise, born from the passion
+                            and curiosity of <strong>Sushma Sanjay</strong>. From humble beginnings in 2005, experimenting with seasonal fruits,
+                            vegetables, and nuts without added flavors or colors, her commitment to natural processes led to the creation
+                            of distinctive, hand-crafted wines. Early small-batch successes grew into a recognized brand, positively
+                            impacting the local community of <strong>Kikkeri</strong> and inspiring women along the way.
+                        </p>
+                        <p class="about-hero--text">
+                            Today, <strong>Talisva</strong> spans a 25-acre winery and areca estate in the Western Ghats, producing small batches
+                            of fruit wines in flavors like jamun, grape, pineapple, and betel leaf. Guided by integrity and authenticity,
+                            each bottle blends carefully hand-picked ingredients, aromatic complexity, and balanced flavors — a reflection
+                            of Sushma’s journey and the art of crafting perfect wines.
                         </p>
                         <p class="about-hero--text" style="padding-top: 30px;">
-                            With integrity and authenticity,
-                            <br> we hope you will welcome Talisva into your lifestyle.
+                            <strong>With integrity and authenticity, we hope you will welcome Talisva into your lifestyle.</strong>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- SECTION 2: Our Team Section (dynamic) -->
     <section class="about-team">

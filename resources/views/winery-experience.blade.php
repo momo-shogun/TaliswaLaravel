@@ -28,13 +28,13 @@
                     <!-- Right: Text Content -->
                     <div class="col-lg-6 winery-about-col">
                         <div class="winery-about--content">
-                            <h3 class="winery-about--title">ABOUT KIKERI FARMS</h3>
+                            <h3 class="winery-about--title">
+                            ABOUT KIKKERI FARMS
+                            </h3>
                             <p class="winery-about--text">
-                                Copy (TBD) At Talisva, wine is more than a drink- it’s an experience. Whether youre
-                                curious to explore fruit wines for the first time  or an already seasoned enthusiast,
-                                we have something special for you. Join us for a guided tasting, walk through our
-                                orchards and winery to see where the magic happens, or spend the day soaking in
-                                nature with a glass in hand. Every visit is a journey into flavour, craft and discovery
+                            Nestled in the serene landscapes of Karnataka, Kikkeri Farms is the home of the Talisva winery and the starting point of every bottle we create. The estate represents a careful balance between nature and craft, where exceptional fruit and thoughtful winemaking come together.
+
+At Kikkeri Farms, fruit is selected with precision and transformed through meticulous fermentation and aging to create wines and melomels with depth and character. Guided by patience and attention to detail, the winery reflects a commitment to quality that defines the Talisva name. It is here that the essence of the land is captured and expressed in every bottle.
                             </p>
                         </div>
                     </div>

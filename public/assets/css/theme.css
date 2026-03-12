@@ -148,7 +148,7 @@ body {
     font-size: 3.9rem;
     width: 50%;
     text-align: center;
-    line-height: 4rem;
+    line-height: 5rem;
     letter-spacing: 0px;
     font-weight: bolder;
 }
@@ -300,7 +300,7 @@ body {
     .navbar--custom .navbar-nav--left {
         display: flex;
         flex-direction: row;
-        gap: 4.5rem;
+        gap: 1.5rem;
         margin-right: auto;
     }
 
@@ -320,10 +320,10 @@ body {
     /* Logo exactly in center */
     .navbar--custom .navbar--logo-center {
         position: absolute;
-        left: 52%;
+        left: 50%;
         transform: translateX(-50%);
         flex-shrink: 0;
-        width: 11rem;
+        width: 12rem;
     }
 
     .navbar--custom .navbar--logo-center img {
@@ -513,8 +513,8 @@ body {
 }
 
 .f-card p {
-    font-size: 15px;
-    font-weight: 800;
+    font-size: 17px;
+    font-weight: 900px;
     line-height: 22px;
     padding: 0px;
     text-align: center;
@@ -532,12 +532,12 @@ body {
 
 .f-card .bg-1 p {
     color: var(--khaki);
-    max-width: 54%;
+    max-width: 85%;
 }
 
 .f-card .bg-2 p {
     color: var(--blue-1);
-    max-width: 59%;
+    max-width: 85%;
 }
 
 /* COLLECTION CARD */
@@ -842,9 +842,10 @@ body {
 .about-section p {
     font-size: 16px;
     text-align: center;
-    width: 31%;
+    width: 44%;
     color: var(--light-white-color);
     position: relative;
+    text-align: justify;
 }
 
 /* -------------------------------------
@@ -1499,7 +1500,7 @@ body:has(.about-hero) {
     font-size: 16px;
     line-height: 1.8;
     margin-bottom: 2rem;
-    text-align: left;
+    text-align: justify;
     font-family: var(--secondary-font);
 }
 
@@ -2469,11 +2470,11 @@ body:has(.about-hero) {
 /* Middle Section: About Kikeri Farms - Overlay Card */
 .winery-about-section {
     position: absolute;
-    top: 500px;
+    top: 450px;
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--terracotta);
-    max-width: 920px;
+    max-width: 1055px;
     min-width: 393px;
     width: 100%;
     z-index: 20;
@@ -2534,7 +2535,7 @@ body:has(.about-hero) {
     justify-content: center;
     align-items: center;
     top: 70px;
-    width: 393px;
+    width: 450px;
     text-align: justify;
 }
 
@@ -2550,6 +2551,7 @@ body:has(.about-hero) {
     border-bottom: 1px solid var(--light-white-color);
     display: inline-block;
     width: 100%;
+    text-align: center;
 }
 
 .winery-about--text {
@@ -2560,7 +2562,7 @@ body:has(.about-hero) {
     margin: 0;
     padding-top: 0.5rem;
     padding-top: 0.5rem;
-    padding-right: 19px;
+
 }
 
 /* Bottom Section: Winery Experience */

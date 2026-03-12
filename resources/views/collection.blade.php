@@ -75,7 +75,9 @@
                             </div>
                             <div class="col-4 position-relative">
                                 <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Nomad 2.png'), asset('assets/img/product-images/products/Nomad 3.png')]) }}">
-                                    <img src="{{ asset('assets/img/collections/n-2.png') }}" class="img-fluid" alt="" srcset="">
+                                    <img src="{{ asset('assets/img/collections/n-2.png') }}" class="img-fluid" alt="" srcset=""
+                                    
+                                    style="position: relative; top: 6px;">
                                 </a>
                             </div>
                         </div>

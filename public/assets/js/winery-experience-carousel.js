@@ -38,6 +38,51 @@
                 goToSlide(i);
             });
         });
+
+        // Basic touch swipe support for mobile
+        if (track && 'ontouchstart' in window) {
+            var touchStartX = null;
+            var touchEndX = null;
+            var swipeThreshold = 40; // pixels
+
+            track.addEventListener('touchstart', function (e) {
+                if (!e.touches || !e.touches.length) {
+                    return;
+                }
+                touchStartX = e.touches[0].clientX;
+                touchEndX = null;
+            });
+
+            track.addEventListener('touchmove', function (e) {
+                if (!touchStartX || !e.touches || !e.touches.length) {
+                    return;
+                }
+                touchEndX = e.touches[0].clientX;
+            });
+
+            track.addEventListener('touchend', function () {
+                if (touchStartX === null || touchEndX === null) {
+                    touchStartX = null;
+                    touchEndX = null;
+                    return;
+                }
+
+                var diffX = touchStartX - touchEndX;
+
+                if (Math.abs(diffX) > swipeThreshold) {
+                    if (diffX > 0) {
+                        // swipe left -> next
+                        goToSlide(currentIndex + 1);
+                    } else {
+                        // swipe right -> previous
+                        goToSlide(currentIndex - 1);
+                    }
+                }
+
+                touchStartX = null;
+                touchEndX = null;
+            });
+        }
     }
 
     if (document.readyState === 'loading') {
