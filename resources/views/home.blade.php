@@ -143,7 +143,11 @@ side. Every visit invites you into a world of Alavor, artistry, and exploration.
                         <span style="text-transform: uppercase;display: block;">
                             Kikkeri Farm Food &amp; Beverages Pvt. Ltd.
                         </span>
-                        Talisva Winery, Thirthahalli, Karnataka India</br> info@talisva.com
+                        Talisva Winery, Thirthahalli, Karnataka India</br>
+                        info@talisva.com</br>
+                        <a href="https://wa.me/919686369899" class="m-footer--link" aria-label="WhatsApp Talisva Winery">
+                            Talisva Winery - +91 96863 69899 (WhatsApp)
+                        </a>
                     </p>
 
                     <ul class="m-footer--social-links mt-3">
