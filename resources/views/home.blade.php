@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse navbar-collapse--custom" id="homeNavbar">
                 <ul class="navbar-nav navbar-nav--left me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="{{ route('winery-experience') }}" class="nav-link navbar--link" style="position: relative; right: 30px;">Winery Experience</a>
+                        <a href="{{ route('winery-experience') }}" class="nav-link navbar--link navbar--link-winery-offset">Winery Experience</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('collection') }}" class="nav-link navbar--link">Products</a>
