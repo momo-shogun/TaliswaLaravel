@@ -12,6 +12,10 @@
                 </a>
             </div>
 
+            <div class="alert alert-info py-2 mb-3" role="status">
+                <strong>Recommended image size:</strong> 800 × 1000 px (4:5 aspect ratio). Images are displayed in the &quot;Moments captured at Talisva winery&quot; carousel and will be cropped to fit this ratio.
+            </div>
+
             @if (session('status'))
                 <div class="alert alert-success">
                     {{ session('status') }}

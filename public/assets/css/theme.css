@@ -2906,6 +2906,43 @@ body:has(.about-hero) {
     }
 }
 
+/* 16-inch MacBook viewport: prevent gallery carousel overlap (e.g. 1728px / 1920px) */
+@media (min-width: 1600px) and (max-width: 1920px) {
+    .gallery-section {
+        overflow: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .gallery-swiper {
+        width: 100%;
+        max-width: 1320px;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+    }
+
+    .gallery-swiper .swiper-wrapper {
+        box-sizing: border-box;
+    }
+
+    .gallery-swiper .swiper-slide {
+        height: auto;
+        min-width: 0;
+        max-width: calc((100% - 32px) / 3);
+        box-sizing: border-box;
+        flex-shrink: 0;
+    }
+
+    .gallery--slide-inner {
+        min-height: 0;
+        width: 100%;
+    }
+}
+
 .winery-experience--back-btn {
     position: relative;
     cursor: pointer;

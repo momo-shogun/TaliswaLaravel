@@ -166,6 +166,11 @@ At Kikkeri Farms, fruit is selected with precision and transformed through metic
                     centeredSlides: false,
                     speed: 500,
                     autoplay: { delay: 1000, disableOnInteraction: false },
+                    allowTouchMove: true,
+                    touchRatio: 1,
+                    simulateTouch: true,
+                    touchStartPreventDefault: false,
+                    grabCursor: false,
                     navigation: {
                         nextEl: '.gallery-swiper-next',
                         prevEl: '.gallery-swiper-prev'
