@@ -12,6 +12,10 @@
                 </a>
             </div>
 
+            <div class="alert alert-info py-2 mb-3" role="status">
+                <strong>Recommended image size:</strong> 800 × 600 px (4:3 aspect ratio). Images are displayed in the Winery Experience section carousel and will be cropped to fit.
+            </div>
+
             @if (session('status'))
                 <div class="alert alert-success">
                     {{ session('status') }}

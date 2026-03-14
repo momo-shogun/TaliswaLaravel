@@ -5201,9 +5201,10 @@ body:has(.about-hero) {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 79vh;
-    /* padding: 2rem; */
+    aspect-ratio: 4 / 5;
+    min-height: 0;
     background-color: #E8DFD4;
+    overflow: hidden;
 }
 
 .brand-experience-carousel-section .brand-carousel--right {
@@ -5246,17 +5247,16 @@ body:has(.about-hero) {
 
 .brand-experience-carousel-section .brand-carousel--product-wrapper {
     width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .brand-experience-carousel-section .brand-carousel--product {
-    max-width: 100%;
-    /* max-height: 55vh; */
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .brand-experience-carousel-section .brand-carousel--flower-wrapper {
@@ -5307,13 +5307,16 @@ body:has(.about-hero) {
         right: 1rem;
     }
 
-    .brand-experience-carousel-section .brand-carousel--left,
+    .brand-experience-carousel-section .brand-carousel--left {
+        aspect-ratio: 4 / 5;
+        min-height: 0;
+    }
+
     .brand-experience-carousel-section .brand-carousel--right {
         min-height: 40vh;
         padding: 1rem;
     }
 
-    .brand-experience-carousel-section .brand-carousel--product,
     .brand-experience-carousel-section .brand-carousel--flower {
         max-height: 40vh;
     }
@@ -5332,7 +5335,6 @@ body:has(.about-hero) {
         right: 0.5rem;
     }
 
-    .brand-experience-carousel-section .brand-carousel--product,
     .brand-experience-carousel-section .brand-carousel--flower {
         max-height: 35vh;
     }
@@ -5343,12 +5345,15 @@ body:has(.about-hero) {
         padding: 1.5rem 0.75rem;
     }
 
-    .brand-experience-carousel-section .brand-carousel--left,
+    .brand-experience-carousel-section .brand-carousel--left {
+        aspect-ratio: 4 / 5;
+        min-height: 0;
+    }
+
     .brand-experience-carousel-section .brand-carousel--right {
         min-height: 30vh;
     }
 
-    .brand-experience-carousel-section .brand-carousel--product,
     .brand-experience-carousel-section .brand-carousel--flower {
         max-height: 30vh;
     }

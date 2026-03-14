@@ -86,6 +86,9 @@
                         name="image"
                         accept="image/*"
                     >
+                    <div class="form-text">
+                        Recommended: 800 × 1000 px (4:5) for the Brand Experience carousel.
+                    </div>
                 </div>
 
                 <div class="d-flex justify-content-between">

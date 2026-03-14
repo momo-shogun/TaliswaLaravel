@@ -12,6 +12,10 @@
                 </a>
             </div>
 
+            <div class="alert alert-info py-2 mb-3" role="status">
+                <strong>Recommended image size:</strong> 600 × 600 px (1:1 square). Images are displayed in the About Us “Our Team” section.
+            </div>
+
             @if (session('status'))
                 <div class="alert alert-success">
                     {{ session('status') }}

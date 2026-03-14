@@ -68,7 +68,7 @@
                         required
                     >
                     <div class="form-text">
-                        Recommended aspect ratio similar to existing placeholder area.
+                        Recommended: 800 × 1000 px (4:5) for the Brand Experience carousel.
                     </div>
                 </div>
 

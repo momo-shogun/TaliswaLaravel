@@ -18,6 +18,10 @@
                 </div>
             @endif
 
+            <div class="alert alert-info small mb-3">
+                <strong>Recommended image size:</strong> 800 × 1000 px (4:5) for the Brand Experience carousel.
+            </div>
+
             @if ($slides->isEmpty())
                 <p>No slides found. Click “Add Slide” to create one.</p>
             @else

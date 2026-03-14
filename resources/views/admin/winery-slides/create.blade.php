@@ -67,9 +67,8 @@
                         accept="image/*"
                         required
                     >
-                    <div class="form-text">
-                        Recommended aspect ratio similar to existing placeholder area.
-                    </div>
+                    <div class="form-text">Max 2MB. Images are compressed automatically.</div>
+                    <div class="form-text fw-semibold text-dark mt-1">Recommended size: 800 × 600 px (4:3 aspect ratio) for the Winery Experience carousel.</div>
                 </div>
 
                 <div class="d-flex justify-content-between">

@@ -75,6 +75,7 @@
                         name="image"
                         accept="image/*"
                     >
+                    <div class="form-text fw-semibold text-dark mt-1">Recommended size: 600 × 600 px (1:1 square) for the About Us team section.</div>
                 </div>
 
                 <div class="mb-3">
