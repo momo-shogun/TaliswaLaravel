@@ -11,10 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const flowerWrapper = document.querySelector('.brand-carousel--flower-wrapper');
     const flowerImg = document.querySelector('.brand-carousel--flower');
 
-    if (!productWrapper || !productImg || !flowerWrapper || !flowerImg) {
+    if (!productWrapper || !productImg) {
         console.warn('Carousel elements not found');
         return;
     }
+
+    const hasFlower = flowerWrapper && flowerImg;
 
     // Register ScrollTrigger plugin
     if (typeof ScrollTrigger !== 'undefined') {
@@ -28,12 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
         y: 50
     });
 
-    gsap.set(flowerImg, {
-        scale: 0.8,
-        opacity: 0,
-        y: 50,
-        rotation: -10
-    });
+    if (hasFlower) {
+        gsap.set(flowerImg, {
+            scale: 0.8,
+            opacity: 0,
+            y: 50,
+            rotation: -10
+        });
+    }
 
     // Create timeline for carousel animation
     const carouselTl = gsap.timeline({
@@ -56,23 +60,25 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: 'power2.out'
     }, 0);
 
-    // Animate flower image (right side)
-    carouselTl.to(flowerImg, {
-        scale: 1,
-        opacity: 1,
-        y: 0,
-        rotation: 0,
-        duration: 1,
-        ease: 'power2.out'
-    }, 0.2);
+    // Animate flower image (right side) if present
+    if (hasFlower) {
+        carouselTl.to(flowerImg, {
+            scale: 1,
+            opacity: 1,
+            y: 0,
+            rotation: 0,
+            duration: 1,
+            ease: 'power2.out'
+        }, 0.2);
 
-    // Continuous rotation animation for flower
-    gsap.to(flowerImg, {
-        rotation: 360,
-        duration: 20,
-        ease: 'none',
-        repeat: -1
-    });
+        // Continuous rotation animation for flower
+        gsap.to(flowerImg, {
+            rotation: 360,
+            duration: 20,
+            ease: 'none',
+            repeat: -1
+        });
+    }
 
     // Subtle floating animation for product
     gsap.to(productImg, {
@@ -95,15 +101,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        gsap.to(flowerImg, {
-            y: -80,
-            rotation: 15,
-            scrollTrigger: {
-                trigger: '.brand-experience-carousel',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true
-            }
-        });
+        if (hasFlower) {
+            gsap.to(flowerImg, {
+                y: -80,
+                rotation: 15,
+                scrollTrigger: {
+                    trigger: '.brand-experience-carousel',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            });
+        }
     }
 });

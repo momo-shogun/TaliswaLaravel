@@ -5264,12 +5264,13 @@ body:has(.about-hero) {
     right: 1.5rem;
     bottom: 1.5rem;
     width: 180px;
-    height: auto;
+    height: 180px;
+    flex-shrink: 0;
 }
 
 .brand-experience-carousel-section .brand-carousel--flower {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -5317,8 +5318,9 @@ body:has(.about-hero) {
         padding: 1rem;
     }
 
-    .brand-experience-carousel-section .brand-carousel--flower {
-        max-height: 40vh;
+    .brand-experience-carousel-section .brand-carousel--flower-wrapper {
+        width: 140px;
+        height: 140px;
     }
 }
 
@@ -5335,8 +5337,9 @@ body:has(.about-hero) {
         right: 0.5rem;
     }
 
-    .brand-experience-carousel-section .brand-carousel--flower {
-        max-height: 35vh;
+    .brand-experience-carousel-section .brand-carousel--flower-wrapper {
+        width: 120px;
+        height: 120px;
     }
 }
 
@@ -5354,8 +5357,9 @@ body:has(.about-hero) {
         min-height: 30vh;
     }
 
-    .brand-experience-carousel-section .brand-carousel--flower {
-        max-height: 30vh;
+    .brand-experience-carousel-section .brand-carousel--flower-wrapper {
+        width: 100px;
+        height: 100px;
     }
 }
 

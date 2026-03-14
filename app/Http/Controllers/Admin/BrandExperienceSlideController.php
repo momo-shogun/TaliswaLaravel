@@ -8,6 +8,7 @@ use App\Services\ImageCompressionService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
@@ -54,6 +55,7 @@ class BrandExperienceSlideController extends Controller
             'description' => ['nullable', 'string'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
             'image' => ['required', 'image', 'max:2048'],
+            'decoration' => ['nullable', 'image', 'max:2048'],
         ]);
 
         $imagePath = app(ImageCompressionService::class)->compressAndStore(
@@ -61,11 +63,17 @@ class BrandExperienceSlideController extends Controller
             'brand-experience-slides'
         );
 
+        $decorationPath = null;
+        if ($request->hasFile('decoration')) {
+            $decorationPath = $this->storeDecorationImage($request->file('decoration'));
+        }
+
         BrandExperienceSlide::create([
             'title' => $data['title'],
             'description' => $data['description'] ?? null,
             'sort_order' => (int) $data['sort_order'],
             'image_path' => $imagePath,
+            'decoration_image_path' => $decorationPath,
         ]);
 
         return redirect()
@@ -99,6 +107,7 @@ class BrandExperienceSlideController extends Controller
             'description' => ['nullable', 'string'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
             'image' => ['nullable', 'image', 'max:2048'],
+            'decoration' => ['nullable', 'image', 'max:2048'],
         ]);
 
         $update = [
@@ -118,11 +127,36 @@ class BrandExperienceSlideController extends Controller
             );
         }
 
+        if ($request->hasFile('decoration')) {
+            if ($brandExperienceSlide->decoration_image_path && Storage::disk('public')->exists($brandExperienceSlide->decoration_image_path)) {
+                Storage::disk('public')->delete($brandExperienceSlide->decoration_image_path);
+            }
+
+            $update['decoration_image_path'] = $this->storeDecorationImage($request->file('decoration'));
+        }
+
         $brandExperienceSlide->update($update);
 
         return redirect()
             ->route('admin.brand-experience-slides.index')
             ->with('status', 'Brand experience slide updated successfully.');
+    }
+
+    /**
+     * Store decoration image as-is to preserve transparency (PNG/WebP).
+     * Does not use ImageCompressionService so transparent backgrounds are kept.
+     */
+    private function storeDecorationImage(\Illuminate\Http\UploadedFile $file): string
+    {
+        $ext = strtolower($file->getClientOriginalExtension() ?: 'png');
+        $allowed = ['png', 'webp', 'gif', 'jpg', 'jpeg'];
+        if (! in_array($ext, $allowed)) {
+            $ext = 'png';
+        }
+
+        $filename = Str::random(40).'.'.$ext;
+
+        return $file->storeAs('brand-experience-decoration', $filename, 'public');
     }
 
     /**
@@ -132,6 +166,10 @@ class BrandExperienceSlideController extends Controller
     {
         if ($brandExperienceSlide->image_path && Storage::disk('public')->exists($brandExperienceSlide->image_path)) {
             Storage::disk('public')->delete($brandExperienceSlide->image_path);
+        }
+
+        if ($brandExperienceSlide->decoration_image_path && Storage::disk('public')->exists($brandExperienceSlide->decoration_image_path)) {
+            Storage::disk('public')->delete($brandExperienceSlide->decoration_image_path);
         }
 
         $brandExperienceSlide->delete();

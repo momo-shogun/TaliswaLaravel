@@ -91,6 +91,44 @@
                     </div>
                 </div>
 
+                <div class="mb-3">
+                    <label class="form-label d-block">Current Decoration (right panel)</label>
+                    @if ($slide->decoration_image_path)
+                        <img
+                            src="{{ asset('storage/' . $slide->decoration_image_path) }}"
+                            alt="Decoration"
+                            class="img-fluid rounded mb-2 border"
+                            style="max-width: 120px;"
+                        >
+                    @else
+                        <p class="text-muted small">No decoration image.</p>
+                    @endif
+                </div>
+
+                <div class="mb-3">
+                    <label for="decoration" class="form-label">Replace Decoration Image (optional)</label>
+                    <input
+                        type="file"
+                        class="form-control"
+                        id="decoration"
+                        name="decoration"
+                        accept="image/*"
+                    >
+                    <div class="form-text">
+                        Shown in the bottom-right of the green panel. Use PNG or WebP to keep transparent background. Recommended: 400 × 400 px (1:1) or similar.
+                    </div>
+                </div>
+
+                @if ($slide->decoration_image_path)
+                <div class="mb-3 p-3 rounded" style="background-color: #395D4C; max-width: 280px; position: relative; min-height: 140px;">
+                    <p class="small text-white mb-1 fw-bold">{{ $slide->title }}</p>
+                    <p class="small text-white opacity-75 mb-0">{{ \Illuminate\Support\Str::limit(strip_tags($slide->description ?? ''), 60) }}</p>
+                    <div style="position: absolute; right: 0.75rem; bottom: 0.75rem; width: 60px;">
+                        <img src="{{ asset('storage/' . $slide->decoration_image_path) }}" alt="" class="img-fluid">
+                    </div>
+                </div>
+                @endif
+
                 <div class="d-flex justify-content-between">
                     <a href="{{ route('admin.brand-experience-slides.index') }}" class="btn btn-outline-secondary">
                         Back

@@ -72,9 +72,11 @@
                                 <div class="brand-carousel--text">{!! nl2br(e($slide->description)) !!}</div>
                                 @endif
                             </div>
+                            @if ($slide->decoration_image_path)
                             <div class="brand-carousel--flower-wrapper">
-                                <img src="{{ asset('assets/img/flower.png') }}" alt="Flower" class="brand-carousel--flower">
+                                <img src="{{ asset('storage/' . $slide->decoration_image_path) }}" alt="" class="brand-carousel--flower">
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>

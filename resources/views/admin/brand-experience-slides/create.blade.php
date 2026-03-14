@@ -72,6 +72,20 @@
                     </div>
                 </div>
 
+                <div class="mb-3">
+                    <label for="decoration" class="form-label">Decoration image (right panel, optional)</label>
+                    <input
+                        type="file"
+                        class="form-control"
+                        id="decoration"
+                        name="decoration"
+                        accept="image/*"
+                    >
+                    <div class="form-text">
+                        Shown in the bottom-right of the green panel. Use PNG or WebP to keep transparent background. Recommended: 400 × 400 px (1:1) or similar.
+                    </div>
+                </div>
+
                 <div class="d-flex justify-content-between">
                     <a href="{{ route('admin.brand-experience-slides.index') }}" class="btn btn-outline-secondary">
                         Cancel
