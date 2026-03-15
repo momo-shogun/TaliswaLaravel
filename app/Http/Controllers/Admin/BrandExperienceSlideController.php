@@ -56,6 +56,7 @@ class BrandExperienceSlideController extends Controller
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
             'image' => ['required', 'image', 'max:2048'],
             'decoration' => ['nullable', 'image', 'max:2048'],
+            'decoration_size' => ['nullable', 'integer', 'min:60', 'max:300'],
         ]);
 
         $imagePath = app(ImageCompressionService::class)->compressAndStore(
@@ -74,6 +75,7 @@ class BrandExperienceSlideController extends Controller
             'sort_order' => (int) $data['sort_order'],
             'image_path' => $imagePath,
             'decoration_image_path' => $decorationPath,
+            'decoration_size' => isset($data['decoration_size']) ? (int) $data['decoration_size'] : 180,
         ]);
 
         return redirect()
@@ -108,12 +110,14 @@ class BrandExperienceSlideController extends Controller
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
             'image' => ['nullable', 'image', 'max:2048'],
             'decoration' => ['nullable', 'image', 'max:2048'],
+            'decoration_size' => ['nullable', 'integer', 'min:60', 'max:300'],
         ]);
 
         $update = [
             'title' => $data['title'],
             'description' => $data['description'] ?? null,
             'sort_order' => (int) $data['sort_order'],
+            'decoration_size' => isset($data['decoration_size']) ? (int) $data['decoration_size'] : ($brandExperienceSlide->decoration_size ?? 180),
         ];
 
         if ($request->hasFile('image')) {

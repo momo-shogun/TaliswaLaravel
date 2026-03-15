@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * - description: text, optional detailed copy for the slide (can contain multiple paragraphs).
  * - image_path: string, relative path to the stored image on the public disk.
  * - decoration_image_path: string|null, optional right-panel decoration image path.
+ * - decoration_size: int|null, optional box size in px (60-300) for the decoration on frontend.
  * - sort_order: integer, lower values are shown first.
  */
 class BrandExperienceSlide extends Model
@@ -29,6 +30,7 @@ class BrandExperienceSlide extends Model
         'description',
         'image_path',
         'decoration_image_path',
+        'decoration_size',
         'sort_order',
     ];
 }

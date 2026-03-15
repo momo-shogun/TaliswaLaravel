@@ -89,11 +89,11 @@
 
     <!-- Single image modal (1 or 2 images; nav + dots only when 2) -->
     <div class="modal fade" id="collectionImageModal" tabindex="-1" aria-hidden="true">
+        <div class="collection-image-modal-header">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
         <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
             <div class="modal-content" style="background: transparent; border: none;">
-                <div class="modal-header collection-image-modal-header">
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
                 <div class="modal-body p-0 position-relative d-flex align-items-center justify-content-center" style="min-height: 85vh;">
                     <button type="button" class="taliswa2-modal-nav taliswa2-modal-nav-left collection-modal-prev" style="display: none;" aria-label="Previous">
                         <img src="{{ asset('assets/img/backbtn.png') }}" alt="Previous">
@@ -180,13 +180,13 @@
             }
 
             document.querySelectorAll('.collection-modal-trigger').forEach(function (a) {
-                a.addEventListener('click', function (e) {
-                    e.preventDefault();
+                        a.addEventListener('click', function (e) {
+                            e.preventDefault();
                     var data = this.getAttribute('data-images');
                     var urls = data ? JSON.parse(data) : [];
                     openModal(urls);
-                });
-            });
+                        });
+                    });
 
             if (prevBtn) prevBtn.addEventListener('click', function () { showSlide(currentIndex - 1); });
             if (nextBtn) nextBtn.addEventListener('click', function () { showSlide(currentIndex + 1); });

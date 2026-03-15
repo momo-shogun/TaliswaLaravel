@@ -119,15 +119,47 @@
                     </div>
                 </div>
 
-                @if ($slide->decoration_image_path)
-                <div class="mb-3 p-3 rounded" style="background-color: #395D4C; max-width: 280px; position: relative; min-height: 140px;">
-                    <p class="small text-white mb-1 fw-bold">{{ $slide->title }}</p>
-                    <p class="small text-white opacity-75 mb-0">{{ \Illuminate\Support\Str::limit(strip_tags($slide->description ?? ''), 60) }}</p>
-                    <div style="position: absolute; right: 0.75rem; bottom: 0.75rem; width: 60px;">
-                        <img src="{{ asset('storage/' . $slide->decoration_image_path) }}" alt="" class="img-fluid">
+                <div class="mb-3">
+                    <label for="decoration_size" class="form-label">Decoration size (px)</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        id="decoration_size"
+                        name="decoration_size"
+                        value="{{ old('decoration_size', $slide->decoration_size ?? 180) }}"
+                        min="60"
+                        max="300"
+                        style="max-width: 120px;"
+                    >
+                    <div class="form-text">
+                        Frontend par is slide ke decoration ka box size (square). 60–300 px.
                     </div>
                 </div>
-                @endif
+
+                <div class="mb-4">
+                    <p class="form-label mb-2">Live preview</p>
+                    <div class="brand-experience-preview rounded overflow-hidden border" style="max-width: 600px; background: #f5f0e8;">
+                        <div class="row g-0">
+                            <div class="col-6" style="aspect-ratio: 4/5; background: #E8DFD4; display: flex; align-items: center; justify-content: center;">
+                                <img id="preview-slide-image" src="{{ $slide->image_path ? asset('storage/' . $slide->image_path) : '' }}" alt="" style="width: 100%; height: 100%; object-fit: cover; {{ $slide->image_path ? '' : 'display: none;' }}">
+                                <span id="preview-slide-image-placeholder" class="text-muted small" style="{{ $slide->image_path ? 'display: none;' : '' }}">Slide image</span>
+                            </div>
+                            <div class="col-6" style="background: #395D4C; padding: 1.25rem; position: relative; min-height: 200px; display: flex; flex-direction: column;">
+                                <h3 id="preview-title" class="h6 text-white mb-2" style="font-weight: 500;">{{ old('title', $slide->title) ?: 'Title' }}</h3>
+                                <p id="preview-description" class="text-white small mb-0 opacity-75" style="flex: 1;">{{ \Illuminate\Support\Str::limit(strip_tags(old('description', $slide->description) ?? ''), 120) ?: 'Description text.' }}</p>
+                                <div id="preview-decoration-wrapper" style="position: absolute; right: 1rem; bottom: 1rem; width: {{ $slide->decoration_size ?? 180 }}px; height: {{ $slide->decoration_size ?? 180 }}px; flex-shrink: 0;">
+                                    @if ($slide->decoration_image_path)
+                                    <img id="preview-decoration-img" src="{{ asset('storage/' . $slide->decoration_image_path) }}" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+                                    <span id="preview-decoration-placeholder" class="text-white-50 small" style="display: none;">Decoration</span>
+                                    @else
+                                    <img id="preview-decoration-img" src="" alt="" style="width: 100%; height: 100%; object-fit: contain; display: none;">
+                                    <span id="preview-decoration-placeholder" class="text-white-50 small">Decoration</span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="d-flex justify-content-between">
                     <a href="{{ route('admin.brand-experience-slides.index') }}" class="btn btn-outline-secondary">
@@ -140,4 +172,69 @@
             </form>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var sizeInput = document.getElementById('decoration_size');
+            var wrapper = document.getElementById('preview-decoration-wrapper');
+            var titleInput = document.getElementById('title');
+            var descInput = document.getElementById('description');
+            var previewTitle = document.getElementById('preview-title');
+            var previewDesc = document.getElementById('preview-description');
+            var imageInput = document.getElementById('image');
+            var decorationInput = document.getElementById('decoration');
+            var previewSlideImg = document.getElementById('preview-slide-image');
+            var previewSlidePlaceholder = document.getElementById('preview-slide-image-placeholder');
+            var previewDecorationImg = document.getElementById('preview-decoration-img');
+            var previewDecorationPlaceholder = document.getElementById('preview-decoration-placeholder');
+
+            function updateDecorationSize() {
+                if (!sizeInput || !wrapper) return;
+                var val = parseInt(sizeInput.value, 10);
+                if (isNaN(val) || val < 60) val = 60;
+                if (val > 300) val = 300;
+                var px = val + 'px';
+                wrapper.style.width = px;
+                wrapper.style.height = px;
+            }
+
+            if (sizeInput && wrapper) {
+                sizeInput.addEventListener('input', updateDecorationSize);
+                sizeInput.addEventListener('change', updateDecorationSize);
+                updateDecorationSize();
+            }
+
+            if (titleInput && previewTitle) {
+                titleInput.addEventListener('input', function() { previewTitle.textContent = titleInput.value || 'Title'; });
+            }
+            if (descInput && previewDesc) {
+                descInput.addEventListener('input', function() { previewDesc.textContent = descInput.value || 'Description text.'; });
+            }
+
+            if (imageInput && previewSlideImg && previewSlidePlaceholder) {
+                imageInput.addEventListener('change', function() {
+                    var f = imageInput.files[0];
+                    if (f) {
+                        var r = new FileReader();
+                        r.onload = function() { previewSlideImg.src = r.result; previewSlideImg.style.display = 'block'; previewSlidePlaceholder.style.display = 'none'; };
+                        r.readAsDataURL(f);
+                    } else {
+                        previewSlideImg.src = ''; previewSlideImg.style.display = 'none'; previewSlidePlaceholder.style.display = 'inline';
+                    }
+                });
+            }
+            if (decorationInput && previewDecorationImg && previewDecorationPlaceholder) {
+                decorationInput.addEventListener('change', function() {
+                    var f = decorationInput.files[0];
+                    if (f) {
+                        var r = new FileReader();
+                        r.onload = function() { previewDecorationImg.src = r.result; previewDecorationImg.style.display = 'block'; previewDecorationPlaceholder.style.display = 'none'; };
+                        r.readAsDataURL(f);
+                    } else {
+                        previewDecorationImg.src = ''; previewDecorationImg.style.display = 'none'; previewDecorationPlaceholder.style.display = 'inline';
+                    }
+                });
+            }
+        });
+    </script>
 @endsection

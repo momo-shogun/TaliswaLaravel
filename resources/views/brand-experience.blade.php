@@ -73,7 +73,8 @@
                                 @endif
                             </div>
                             @if ($slide->decoration_image_path)
-                            <div class="brand-carousel--flower-wrapper">
+                            @php $decorationSize = (int) ($slide->decoration_size ?? 180); $decorationSize = max(60, min(300, $decorationSize)); @endphp
+                            <div class="brand-carousel--flower-wrapper" style="width: {{ $decorationSize }}px; height: {{ $decorationSize }}px;">
                                 <img src="{{ asset('storage/' . $slide->decoration_image_path) }}" alt="" class="brand-carousel--flower">
                             </div>
                             @endif
