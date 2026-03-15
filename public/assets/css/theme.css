@@ -5392,8 +5392,11 @@ body:has(.about-hero) {
     }
 
     .brand-experience-carousel-section .brand-carousel--flower-wrapper {
-        width: 120px;
-        height: 120px;
+        display: none;
+    }
+
+    .brand-experience-carousel-section .brand-carousel--card {
+        padding: 1.5rem;
     }
 }
 
@@ -5412,8 +5415,11 @@ body:has(.about-hero) {
     }
 
     .brand-experience-carousel-section .brand-carousel--flower-wrapper {
-        width: 100px;
-        height: 100px;
+        display: none;
+    }
+
+    .brand-experience-carousel-section .brand-carousel--card {
+        padding: 1rem;
     }
 }
 
