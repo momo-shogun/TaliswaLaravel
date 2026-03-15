@@ -40,14 +40,16 @@
                         @foreach ($slides as $slide)
                             <tr>
                                 <td>{{ $slide->sort_order }}</td>
-                                <td style="width: 120px;">
+                                <td class="admin-table-image-cell">
                                     @if ($slide->image_path)
-                                        <img
-                                            src="{{ asset('storage/' . $slide->image_path) }}"
-                                            alt="{{ $slide->title }}"
-                                            class="img-fluid rounded"
-                                            style="transform: rotate({{ (int) ($slide->image_orientation ?? 0) }}deg);"
-                                        >
+                                        <div class="admin-table-thumb">
+                                            <img
+                                                src="{{ asset('storage/' . $slide->image_path) }}"
+                                                alt="{{ $slide->title }}"
+                                                class="admin-table-thumb-img rounded"
+                                                style="transform: rotate({{ (int) ($slide->image_orientation ?? 0) }}deg);"
+                                            >
+                                        </div>
                                     @endif
                                 </td>
                                 <td>

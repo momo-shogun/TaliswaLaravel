@@ -66,12 +66,13 @@
                 <div class="mb-3">
                     <label class="form-label d-block">Current Image</label>
                     @if ($slide->image_path)
-                        <div class="mb-2" style="max-width: 240px;">
+                        <div class="admin-current-image-wrap mb-2">
                             <img
+                                id="winery-slide-preview-img"
                                 src="{{ asset('storage/' . $slide->image_path) }}"
                                 alt="{{ $slide->title }}"
-                                class="img-fluid rounded winery-slide-preview-img"
-                                style="max-width: 100%; transform: rotate({{ (int) ($slide->image_orientation ?? 0) }}deg);"
+                                class="admin-current-image rounded"
+                                style="transform: rotate({{ (int) ($slide->image_orientation ?? 0) }}deg);"
                             >
                         </div>
                     @else
@@ -119,4 +120,18 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+    <script>
+        (function () {
+            var sel = document.getElementById('image_orientation');
+            var img = document.getElementById('winery-slide-preview-img');
+            if (sel && img) {
+                sel.addEventListener('change', function () {
+                    img.style.transform = 'rotate(' + this.value + 'deg)';
+                });
+            }
+        })();
+    </script>
+@endpush
 

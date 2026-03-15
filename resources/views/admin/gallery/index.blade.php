@@ -37,14 +37,16 @@
                         <tbody>
                         @foreach ($items as $item)
                             <tr>
-                                <td style="width: 120px;">
+                                <td class="admin-table-image-cell">
                                     @if ($item->image_path)
-                                        <img
-                                            src="{{ asset('storage/' . $item->image_path) }}"
-                                            alt="Gallery {{ $item->id }}"
-                                            class="img-fluid rounded"
-                                            style="transform: rotate({{ (int) ($item->image_orientation ?? 0) }}deg);"
-                                        >
+                                        <div class="admin-table-thumb">
+                                            <img
+                                                src="{{ asset('storage/' . $item->image_path) }}"
+                                                alt="Gallery {{ $item->id }}"
+                                                class="admin-table-thumb-img rounded"
+                                                style="transform: rotate({{ (int) ($item->image_orientation ?? 0) }}deg);"
+                                            >
+                                        </div>
                                     @endif
                                 </td>
                                 <td>{{ $item->updated_at?->format('Y-m-d H:i') }}</td>

@@ -26,9 +26,9 @@
                 @csrf
                 @method('PUT')
 
-                <div class="mb-3">
-                    <label for="image_orientation" class="form-label">Image orientation</label>
-                    <select class="form-select" id="image_orientation" name="image_orientation">
+                <div class="mb-4">
+                    <label for="image_orientation" class="form-label fw-semibold">Image orientation</label>
+                    <select class="form-select form-select-md" id="image_orientation" name="image_orientation" style="max-width: 280px;">
                         @foreach (\App\Models\GalleryItem::IMAGE_ORIENTATIONS as $deg)
                             <option value="{{ $deg }}" {{ (int) old('image_orientation', $item->image_orientation ?? 0) === $deg ? 'selected' : '' }}>
                                 @if ($deg === 0)
@@ -39,27 +39,28 @@
                             </option>
                         @endforeach
                     </select>
-                    <div class="form-text">Use this if the image displays with wrong orientation (e.g. from phone photos).</div>
+                    <div class="form-text mt-1">Use this if the image displays with wrong orientation (e.g. from phone photos).</div>
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label d-block">Current Image</label>
+                <div class="mb-4">
+                    <label class="form-label fw-semibold d-block">Current image</label>
                     @if ($item->image_path)
-                        <div class="mb-2" style="max-width: 240px;">
+                        <div class="admin-gallery-preview border rounded bg-light p-1" style="max-width: 280px;">
                             <img
+                                id="gallery-preview-img"
                                 src="{{ asset('storage/' . $item->image_path) }}"
-                                alt="Gallery"
+                                alt="Gallery preview"
                                 class="img-fluid rounded"
-                                style="max-width: 100%; transform: rotate({{ (int) ($item->image_orientation ?? 0) }}deg);"
+                                style="display: block; max-width: 100%; height: auto; transform: rotate({{ (int) ($item->image_orientation ?? 0) }}deg);"
                             >
                         </div>
                     @else
-                        <p class="text-muted">No image uploaded.</p>
+                        <p class="text-muted mb-0">No image uploaded.</p>
                     @endif
                 </div>
 
-                <div class="mb-3">
-                    <label for="image" class="form-label">Replace Image (optional)</label>
+                <div class="mb-4">
+                    <label for="image" class="form-label fw-semibold">Replace image (optional)</label>
                     <input
                         type="file"
                         class="form-control"
@@ -67,11 +68,11 @@
                         name="image"
                         accept="image/*"
                     >
-                    <div class="form-text">Max 2MB. Images are compressed automatically.</div>
+                    <div class="form-text mt-1">Max 2MB. Images are compressed automatically.</div>
                     <div class="form-text fw-semibold text-dark mt-1">Recommended size: 800 × 1000 px (4:5 aspect ratio) for the gallery carousel.</div>
                 </div>
 
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between pt-2">
                     <a href="{{ route('admin.gallery.index') }}" class="btn btn-outline-secondary">
                         Back
                     </a>
@@ -83,3 +84,17 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+    <script>
+        (function () {
+            var sel = document.getElementById('image_orientation');
+            var img = document.getElementById('gallery-preview-img');
+            if (sel && img) {
+                sel.addEventListener('change', function () {
+                    img.style.transform = 'rotate(' + this.value + 'deg)';
+                });
+            }
+        })();
+    </script>
+@endpush
