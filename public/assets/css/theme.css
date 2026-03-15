@@ -4234,7 +4234,7 @@ body:has(.about-hero) {
     .taliswa4-info-content,
     .taliswa5-info-content,
     .taliswa6-info-content {
-        padding: 1rem 1rem;
+        padding: 3rem 1rem;
     }
     .taliswa1-title,
     .taliswa2-title,
@@ -4538,8 +4538,7 @@ body:has(.about-hero) {
 @media (max-width: 992px) {
     .nomad1-page {
         overflow-x: hidden;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
+        overflow: hidden;
     }
 }
 
@@ -4656,27 +4655,33 @@ body:has(.about-hero) {
     .nomad1-hero {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
     }
 
     .nomad1-hero--left {
         order: 2;
-        padding:  0;
+        padding: 0;
         padding-top: 2rem;
         width: 100%;
         left: 0;
         bottom: 0;
-        flex: 0 0 auto;
+        flex: 1 1 0;
+        min-height: 0;
+        overflow: hidden;
     }
 
     .nomad1-hero--right {
         order: 1;
         padding: 2rem 0 1rem;
+        margin: 0;
         width: 100%;
         justify-content: center;
         align-items: center;
         flex: 0 0 auto;
+        max-height: 44vh;
     }
 
     .nomad1-text-card {
@@ -4684,11 +4689,23 @@ body:has(.about-hero) {
         left: 0;
         width: 100%;
         max-width: 100%;
-        margin: 0 1rem;
+        margin: 0 0.5rem;
+        height: 100%;
+        min-height: 0;
+        max-height: 100%;
+        aspect-ratio: auto;
+        display: flex;
+        flex-direction: column;
+        background-size: 133%;
+        background-position: center;
     }
 
     .nomad1-text-inner {
         position: relative;
+        flex: 1 1 0;
+        min-height: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nomad1-title {
@@ -4708,7 +4725,7 @@ body:has(.about-hero) {
     }
 
     .nomad1-bottle {
-        max-height: 50vh;
+        max-height: 44vh;
         bottom: 0;
         object-fit: inherit;
     }
@@ -4716,7 +4733,7 @@ body:has(.about-hero) {
 
 @media (max-width: 576px) {
     .nomad1-hero {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 0.5rem;
     }
 
     .nomad1-hero--left {
@@ -4725,11 +4742,12 @@ body:has(.about-hero) {
 
     .nomad1-hero--right {
         order: 1;
-        padding: 0 0.25rem 0.75rem;
+        padding: 0 0 0.75rem;
+        margin: 0;
     }
 
     .nomad1-text-card {
-        margin: 0 0.75rem;
+        margin: 0 0.5rem;
     }
 
     .nomad1-text-inner {
@@ -4742,7 +4760,7 @@ body:has(.about-hero) {
     }
 
     .nomad1-bottle {
-        max-height: 45vh;
+        max-height: 40vh;
         max-width: 100%;
     }
 }
@@ -4760,8 +4778,7 @@ body:has(.about-hero) {
 @media (max-width: 992px) {
     .nomad2-page {
         overflow-x: hidden;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
+        overflow: hidden;
     }
 }
 
@@ -4878,8 +4895,10 @@ body:has(.about-hero) {
     .nomad2-hero {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
     }
 
     .nomad2-hero--left {
@@ -4888,16 +4907,20 @@ body:has(.about-hero) {
         width: 100%;
         left: 0;
         bottom: 0;
-        flex: 0 0 auto;
+        flex: 1 1 0;
+        min-height: 0;
+        overflow: hidden;
     }
 
     .nomad2-hero--right {
         order: 1;
         padding: 2rem 0 1rem;
+        margin: 0;
         width: 100%;
         justify-content: center;
         align-items: center;
         flex: 0 0 auto;
+        max-height: 44vh;
     }
 
     .nomad2-text-card {
@@ -4905,12 +4928,24 @@ body:has(.about-hero) {
         left: 0;
         width: 100%;
         max-width: 100%;
-        margin: 0 1rem;
+        margin: 0 0.5rem;
+        height: 100%;
+        min-height: 0;
+        max-height: 100%;
+        aspect-ratio: auto;
+        display: flex;
+        flex-direction: column;
+        background-size: 133%;
+        background-position: center;
     }
 
     .nomad2-text-inner {
         position: relative;
         right: 0;
+        flex: 1 1 0;
+        min-height: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nomad2-tree {
@@ -4918,18 +4953,18 @@ body:has(.about-hero) {
     }
 
     .nomad2-bottle {
-        max-height: 50vh;
+        max-height: 44vh;
         bottom: 0;
     }
 }
 
 @media (max-width: 576px) {
     .nomad2-hero {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 0.5rem;
     }
 
     .nomad2-text-card {
-        margin: 0 0.75rem;
+        margin: 0 0.5rem;
     }
 
     .nomad2-text-inner {
@@ -4942,11 +4977,12 @@ body:has(.about-hero) {
     }
 
     .nomad2-hero--right {
-        padding: 0 0.25rem 0.75rem;
+        padding: 0 0 0.75rem;
+        margin: 0;
     }
 
     .nomad2-bottle {
-        max-height: 45vh;
+        max-height: 40vh;
         max-width: 100%;
     }
 }
@@ -4964,8 +5000,7 @@ body:has(.about-hero) {
 @media (max-width: 992px) {
     .nomad3-page {
         overflow-x: hidden;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
+        overflow: hidden;
     }
 }
 
@@ -5004,7 +5039,7 @@ body:has(.about-hero) {
 
 .nomad3-text-inner {
     position: absolute;
-    top: 37px;
+    top: 0;
     left: 0;
     right: 80px;
     bottom: 0;
@@ -5081,8 +5116,10 @@ body:has(.about-hero) {
     .nomad3-hero {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
     }
 
     .nomad3-hero--left {
@@ -5091,16 +5128,20 @@ body:has(.about-hero) {
         width: 100%;
         left: 0;
         bottom: 0;
-        flex: 0 0 auto;
+        flex: 1 1 0;
+        min-height: 0;
+        overflow: hidden;
     }
 
     .nomad3-hero--right {
         order: 1;
         padding: 2rem 0 1rem;
+        margin: 0;
         width: 100%;
         justify-content: center;
         align-items: center;
         flex: 0 0 auto;
+        max-height: 44vh;
     }
 
     .nomad3-text-card {
@@ -5108,17 +5149,29 @@ body:has(.about-hero) {
         left: 0;
         width: 100%;
         max-width: 100%;
-        margin: 0 1rem;
-        height: 609px;
+        margin: 0 0.5rem;
+        height: 100%;
+        min-height: 0;
+        max-height: 100%;
+        aspect-ratio: auto;
+        display: flex;
+        flex-direction: column;
+        background-size: 133%;
+        background-position: center;
     }
 
     .nomad3-text-inner {
         position: relative;
+        top: 0;
         right: 0;
+        flex: 1 1 0;
+        min-height: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nomad3-title {
-        margin-top: 6.5rem;
+        margin-top: 0;
     }
 
     .nomad3-copy {
@@ -5134,14 +5187,14 @@ body:has(.about-hero) {
     }
 
     .nomad3-bottle {
-        max-height: 50vh;
+        max-height: 44vh;
         bottom: 0;
     }
 }
 
 @media (max-width: 576px) {
     .nomad3-hero {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 0.5rem;
     }
 
     .nomad3-hero--left {
@@ -5150,11 +5203,12 @@ body:has(.about-hero) {
 
     .nomad3-hero--right {
         order: 1;
-        padding: 0 0.25rem 0.75rem;
+        padding: 0 0 0.75rem;
+        margin: 0;
     }
 
     .nomad3-text-card {
-        margin: 0 0.75rem;
+        margin: 0 0.5rem;
     }
 
     .nomad3-text-inner {
@@ -5168,7 +5222,7 @@ body:has(.about-hero) {
     }
 
     .nomad3-bottle {
-        max-height: 45vh;
+        max-height: 40vh;
         max-width: 100%;
     }
 }
@@ -5405,6 +5459,12 @@ body:has(.about-hero) {
     object-fit: contain;
     display: block;
 }
+.taliswa1-modal-iframe {
+    width: 100%;
+    height: 85vh;
+    border: none;
+    display: block;
+}
 @media (max-width: 991.98px) {
     #taliswa1Modal .modal-dialog {
         margin: 0;
@@ -5413,11 +5473,13 @@ body:has(.about-hero) {
     }
     .taliswa1-modal-body { min-height: 90vh; }
     .taliswa1-modal-img { max-height: 90vh; }
+    .taliswa1-modal-iframe { height: 90vh; min-height: 50vh; }
 }
 @media (max-width: 576px) {
     #taliswa1Modal .modal-dialog { max-width: 100%; }
     .taliswa1-modal-body { min-height: 85vh; }
     .taliswa1-modal-img { max-height: 85vh; }
+    .taliswa1-modal-iframe { height: 85vh; min-height: 400px; }
     .taliswa1-modal-header { padding: 0.75rem; }
 }
 
@@ -5426,6 +5488,71 @@ body:has(.about-hero) {
     .modal-fullscreen-lg-down .modal-header {
         top: 350px !important;
         right: 10px !important;
+    }
+    /* Collection iframe modals: full viewport height on mobile */
+    .modal-fullscreen-lg-down .modal-dialog {
+        height: 100vh;
+        max-height: 100vh;
+    }
+    .modal-fullscreen-lg-down .modal-content {
+        height: 100%;
+    }
+    #taliswa1Modal .modal-body,
+    .taliswa1-modal-body,
+    #taliswa2Modal .modal-body,
+    .taliswa2-modal-body,
+    #taliswa4Modal .modal-body,
+    .taliswa4-modal-body,
+    #taliswa5Modal .modal-body,
+    .taliswa5-modal-body,
+    #taliswa6Modal .modal-body,
+    .taliswa6-modal-body,
+    #nomad1Modal .modal-body,
+    .nomad1-modal-body,
+    #nomad2Modal .modal-body,
+    .nomad2-modal-body {
+        min-height: 100vh;
+        height: 100%;
+    }
+    .taliswa1-modal-iframe,
+    .taliswa2-modal-iframe,
+    .taliswa4-modal-iframe,
+    .taliswa5-modal-iframe,
+    .taliswa6-modal-iframe,
+    .nomad1-modal-iframe,
+    .nomad2-modal-iframe {
+        height: 100vh !important;
+        min-height: 100vh;
+    }
+}
+@media (max-width: 576px) {
+    /* Keep 100vh on small mobile (override per-modal 576px rules) */
+    #taliswa1Modal .modal-body,
+    .taliswa1-modal-body,
+    #taliswa2Modal .modal-body,
+    .taliswa2-modal-body,
+    #taliswa4Modal .modal-body,
+    .taliswa4-modal-body,
+    #taliswa5Modal .modal-body,
+    .taliswa5-modal-body,
+    #taliswa6Modal .modal-body,
+    .taliswa6-modal-body,
+    #nomad1Modal .modal-body,
+    .nomad1-modal-body,
+    #nomad2Modal .modal-body,
+    .nomad2-modal-body {
+        min-height: 100vh !important;
+        height: 100% !important;
+    }
+    .taliswa1-modal-iframe,
+    .taliswa2-modal-iframe,
+    .taliswa4-modal-iframe,
+    .taliswa5-modal-iframe,
+    .taliswa6-modal-iframe,
+    .nomad1-modal-iframe,
+    .nomad2-modal-iframe {
+        height: 100vh !important;
+        min-height: 100vh !important;
     }
 }
 
@@ -5440,6 +5567,29 @@ body:has(.about-hero) {
     background: transparent;
 }
 .collection-image-modal-header .btn-close-white {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+/* Collection iframe modals (taliswa/nomad) – top-aligned dialog, close button fixed top-right */
+.modal-align-top.modal .modal-dialog {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+.modal-align-top.modal {
+    align-items: flex-start;
+}
+.collection-iframe-modal-close {
+    position: fixed !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    z-index: 1060;
+    border: none;
+    padding: 0.5rem;
+    background: transparent;
+}
+.collection-iframe-modal-close .btn-close-white {
     filter: brightness(0) invert(1);
     opacity: 0.9;
 }

@@ -30,9 +30,10 @@
 @yield('content')
 
 @if(config('app.whatsapp_number'))
-    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', config('app.whatsapp_number')) }}" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', config('app.whatsapp_number')) }}" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" data-whatsapp-float>
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+    <script>(function(){if(window.self!==window.top){var el=document.querySelector('[data-whatsapp-float]');if(el)el.style.display='none';}})();</script>
 @endif
 
 <!-- Bootstrap JS -->

@@ -23,29 +23,29 @@
                         </div>
                         <div class="row justify-content-center align-item-end mt-15 gap-4">
                             <div class="col-3 position-relative">
-                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Talisva 1.png')]) }}">
+                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Talisva 1.png')]) }}" data-mobile-modal="taliswa1Modal" data-mobile-route="{{ route('collection.taliswa1') }}">
                                     <img src="{{ asset('assets/img/collections/c-1.png') }}" class="img-fluid" alt="" srcset="">
                                 </a>
                             </div>
                             <div class="col-3 position-relative">
-                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Talisva 2.png'), asset('assets/img/product-images/products/Talisva 3.png')]) }}">
+                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Talisva 2.png'), asset('assets/img/product-images/products/Talisva 3.png')]) }}" data-mobile-modal="taliswa2Modal" data-mobile-routes="{{ json_encode([route('collection.taliswa2'), route('collection.taliswa3')]) }}">
                                     <img src="{{ asset('assets/img/collections/c-2.png') }}" class="img-fluid" alt="" srcset="">
                                 </a>
                             </div>
                         </div>
                         <div class="row justify-content-center align-item-end mt-15 gap-4">
                             <div class="col-3 position-relative">
-                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Talisva 4.png')]) }}">
+                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Talisva 4.png')]) }}" data-mobile-modal="taliswa4Modal" data-mobile-route="{{ route('collection.taliswa4') }}">
                                     <img src="{{ asset('assets/img/collections/c-3.png') }}" class="img-fluid" alt="" srcset="">
                                 </a>
                             </div>
                             <div class="col-3 position-relative">
-                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Talisva 5.png')]) }}">
+                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Talisva 5.png')]) }}" data-mobile-modal="taliswa5Modal" data-mobile-route="{{ route('collection.taliswa5') }}">
                                     <img src="{{ asset('assets/img/collections/c-4.png') }}" class="img-fluid" alt="" srcset="">
                                 </a>
                             </div>
                             <div class="col-3 position-relative">
-                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Talisva 6.png')]) }}">
+                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Talisva 6.png')]) }}" data-mobile-modal="taliswa6Modal" data-mobile-route="{{ route('collection.taliswa6') }}">
                                     <img src="{{ asset('assets/img/collections/c-5.png') }}" class="img-fluid" alt="" srcset="">
                                 </a>
                             </div>
@@ -69,15 +69,13 @@
                         </div>
                         <div class="row justify-content-center align-item-end mt-15 gap-4">
                             <div class="col-4 position-relative">
-                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Nomad 1.png')]) }}">
+                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Nomad 1.png')]) }}" data-mobile-modal="nomad1Modal" data-mobile-route="{{ route('collection.nomad1') }}">
                                     <img src="{{ asset('assets/img/collections/n-1.png') }}" class="img-fluid" alt="" srcset="">
                                 </a>
                             </div>
                             <div class="col-4 position-relative">
-                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Nomad 2.png'), asset('assets/img/product-images/products/Nomad 3.png')]) }}">
-                                    <img src="{{ asset('assets/img/collections/n-2.png') }}" class="img-fluid" alt="" srcset=""
-                                    
-                                    style="position: relative; top: 6px;">
+                                <a href="#" class="collection-modal-trigger" data-images="{{ json_encode([asset('assets/img/product-images/products/Nomad 2.png'), asset('assets/img/product-images/products/Nomad 3.png')]) }}" data-mobile-modal="nomad2Modal" data-mobile-routes="{{ json_encode([route('collection.nomad2'), route('collection.nomad3')]) }}">
+                                    <img src="{{ asset('assets/img/collections/n-2.png') }}" class="img-fluid" alt="" srcset="" style="position: relative; top: 6px;">
                                 </a>
                             </div>
                         </div>
@@ -117,6 +115,136 @@
                     <div class="taliswa2-modal-pagination collection-modal-dots" style="display: none;">
                         <span class="taliswa2-modal-dot active" data-index="0" aria-label="Slide 1"></span>
                         <span class="taliswa2-modal-dot" data-index="1" aria-label="Slide 2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile-only iframe modals (opened when viewport < 992px) -->
+    <div class="modal fade" id="taliswa1Modal" tabindex="-1" aria-hidden="true">
+        <div class="collection-iframe-modal-close">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
+            <div class="modal-content taliswa1-modal-content">
+                <div class="modal-body p-0 taliswa1-modal-body">
+                    <iframe id="taliswa1ModalFrame" src="" title="Talisva – Forest Piper" class="taliswa1-modal-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="taliswa2Modal" tabindex="-1" aria-hidden="true">
+        <div class="collection-iframe-modal-close">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
+            <div class="modal-content taliswa2-modal-content">
+                <div class="modal-body p-0 taliswa2-modal-body">
+                    <button type="button" class="taliswa2-modal-nav taliswa2-modal-nav-left" aria-label="Previous">
+                        <img src="{{ asset('assets/img/backbtn.png') }}" alt="Previous">
+                    </button>
+                    <button type="button" class="taliswa2-modal-nav taliswa2-modal-nav-right" aria-label="Next">
+                        <img src="{{ asset('assets/img/rightbtn.png') }}" alt="Next">
+                    </button>
+                    <div class="taliswa2-modal-carousel">
+                        <div class="taliswa2-modal-track">
+                            <div class="taliswa2-modal-slide">
+                                <iframe id="taliswa2ModalFrame1" src="" title="Talisva 2" class="taliswa2-modal-iframe"></iframe>
+                            </div>
+                            <div class="taliswa2-modal-slide">
+                                <iframe id="taliswa2ModalFrame2" src="" title="Talisva 3" class="taliswa2-modal-iframe"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="taliswa2-modal-pagination">
+                        <span class="taliswa2-modal-dot active" data-slide="0" aria-label="Slide 1"></span>
+                        <span class="taliswa2-modal-dot" data-slide="1" aria-label="Slide 2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="taliswa4Modal" tabindex="-1" aria-hidden="true">
+        <div class="collection-iframe-modal-close">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
+            <div class="modal-content taliswa4-modal-content">
+                <div class="modal-body p-0 taliswa4-modal-body">
+                    <iframe id="taliswa4ModalFrame" src="" title="Talisva – Rosea Petroica" class="taliswa4-modal-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="taliswa5Modal" tabindex="-1" aria-hidden="true">
+        <div class="collection-iframe-modal-close">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
+            <div class="modal-content taliswa5-modal-content">
+                <div class="modal-body p-0 taliswa5-modal-body">
+                    <iframe id="taliswa5ModalFrame" src="" title="Talisva – Pineapple Plover" class="taliswa5-modal-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="taliswa6Modal" tabindex="-1" aria-hidden="true">
+        <div class="collection-iframe-modal-close">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
+            <div class="modal-content taliswa6-modal-content">
+                <div class="modal-body p-0 taliswa6-modal-body">
+                    <iframe id="taliswa6ModalFrame" src="" title="Talisva – Plum N Roll" class="taliswa6-modal-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="nomad1Modal" tabindex="-1" aria-hidden="true">
+        <div class="collection-iframe-modal-close">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
+            <div class="modal-content nomad1-modal-content">
+                <div class="modal-body p-0 nomad1-modal-body">
+                    <iframe id="nomad1ModalFrame" src="" title="Nomad – Wild Pint" class="nomad1-modal-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="nomad2Modal" tabindex="-1" aria-hidden="true">
+        <div class="collection-iframe-modal-close">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
+            <div class="modal-content nomad2-modal-content">
+                <div class="modal-body p-0 nomad2-modal-body">
+                    <button type="button" class="nomad2-modal-nav nomad2-modal-nav-left" aria-label="Previous">
+                        <img src="{{ asset('assets/img/backbtn.png') }}" alt="Previous">
+                    </button>
+                    <button type="button" class="nomad2-modal-nav nomad2-modal-nav-right" aria-label="Next">
+                        <img src="{{ asset('assets/img/rightbtn.png') }}" alt="Next">
+                    </button>
+                    <div class="nomad2-modal-carousel">
+                        <div class="nomad2-modal-track">
+                            <div class="nomad2-modal-slide">
+                                <iframe id="nomad2ModalFrame1" src="" title="Nomad 2" class="nomad2-modal-iframe"></iframe>
+                            </div>
+                            <div class="nomad2-modal-slide">
+                                <iframe id="nomad2ModalFrame2" src="" title="Nomad 3" class="nomad2-modal-iframe"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nomad2-modal-pagination">
+                        <span class="nomad2-modal-dot active" data-slide="0" aria-label="Slide 1"></span>
+                        <span class="nomad2-modal-dot" data-slide="1" aria-label="Slide 2"></span>
                     </div>
                 </div>
             </div>
@@ -179,14 +307,110 @@
                 if (modal) new bootstrap.Modal(modal).show();
             }
 
+            var isDesktop = function () { return window.matchMedia('(min-width: 992px)').matches; };
+
             document.querySelectorAll('.collection-modal-trigger').forEach(function (a) {
-                        a.addEventListener('click', function (e) {
-                            e.preventDefault();
-                    var data = this.getAttribute('data-images');
-                    var urls = data ? JSON.parse(data) : [];
-                    openModal(urls);
-                        });
-                    });
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (isDesktop()) {
+                        var data = this.getAttribute('data-images');
+                        var urls = data ? JSON.parse(data) : [];
+                        openModal(urls);
+                        return;
+                    }
+                    var modalId = this.getAttribute('data-mobile-modal');
+                    var route = this.getAttribute('data-mobile-route');
+                    var routesJson = this.getAttribute('data-mobile-routes');
+                    var modalEl = modalId ? document.getElementById(modalId) : null;
+                    if (!modalEl) return;
+                    if (route) {
+                        var frame = modalEl.querySelector('iframe');
+                        if (frame) frame.src = route;
+                    } else if (routesJson) {
+                        var routes = JSON.parse(routesJson);
+                        var frames = modalEl.querySelectorAll('.modal-body iframe');
+                        if (frames.length >= 2) {
+                            frames[0].src = routes[0];
+                            frames[1].src = routes[1];
+                        }
+                        var track = modalEl.querySelector('.taliswa2-modal-track, .nomad2-modal-track');
+                        if (track) track.style.transform = 'translateX(0)';
+                        var dots = modalEl.querySelectorAll('.taliswa2-modal-dot, .nomad2-modal-dot');
+                        dots.forEach(function (d, j) { d.classList.toggle('active', j === 0); });
+                    }
+                    new bootstrap.Modal(modalEl).show();
+                });
+            });
+
+            [['taliswa1Modal', 'taliswa1ModalFrame'], ['taliswa4Modal', 'taliswa4ModalFrame'], ['taliswa5Modal', 'taliswa5ModalFrame'], ['taliswa6Modal', 'taliswa6ModalFrame'], ['nomad1Modal', 'nomad1ModalFrame']].forEach(function (pair) {
+                var m = document.getElementById(pair[0]);
+                var f = document.getElementById(pair[1]);
+                if (m && f) m.addEventListener('hidden.bs.modal', function () { f.src = ''; });
+            });
+            var taliswa2Modal = document.getElementById('taliswa2Modal');
+            if (taliswa2Modal) {
+                taliswa2Modal.addEventListener('hidden.bs.modal', function () {
+                    var fa = document.getElementById('taliswa2ModalFrame1');
+                    var fb = document.getElementById('taliswa2ModalFrame2');
+                    if (fa) fa.src = '';
+                    if (fb) fb.src = '';
+                });
+                var track2 = taliswa2Modal.querySelector('.taliswa2-modal-track');
+                var dots2 = taliswa2Modal.querySelectorAll('.taliswa2-modal-dot');
+                var goTo2 = function (i) {
+                    var idx = Math.max(0, Math.min(i, 1));
+                    if (track2) track2.style.transform = 'translateX(-' + idx * 100 + '%)';
+                    dots2.forEach(function (d, j) { d.classList.toggle('active', j === idx); });
+                    return idx;
+                };
+                var cur2 = 0;
+                taliswa2Modal.querySelector('.taliswa2-modal-nav-left') && taliswa2Modal.querySelector('.taliswa2-modal-nav-left').addEventListener('click', function () { cur2 = goTo2(cur2 - 1); });
+                taliswa2Modal.querySelector('.taliswa2-modal-nav-right') && taliswa2Modal.querySelector('.taliswa2-modal-nav-right').addEventListener('click', function () { cur2 = goTo2(cur2 + 1); });
+                dots2.forEach(function (d, i) { d.addEventListener('click', function () { cur2 = goTo2(i); }); });
+                var body2 = taliswa2Modal.querySelector('.modal-body');
+                if (body2) {
+                    var tsX2 = 0, teX2 = 0, minSwipe = 50;
+                    body2.addEventListener('touchstart', function (e) { tsX2 = e.changedTouches ? e.changedTouches[0].screenX : e.screenX; }, { passive: true });
+                    body2.addEventListener('touchend', function (e) {
+                        teX2 = e.changedTouches ? e.changedTouches[0].screenX : e.screenX;
+                        var d = tsX2 - teX2;
+                        if (d > minSwipe) cur2 = goTo2(cur2 + 1);
+                        else if (d < -minSwipe) cur2 = goTo2(cur2 - 1);
+                    }, { passive: true });
+                }
+            }
+            var nomad2Modal = document.getElementById('nomad2Modal');
+            if (nomad2Modal) {
+                nomad2Modal.addEventListener('hidden.bs.modal', function () {
+                    var fa = document.getElementById('nomad2ModalFrame1');
+                    var fb = document.getElementById('nomad2ModalFrame2');
+                    if (fa) fa.src = '';
+                    if (fb) fb.src = '';
+                });
+                var trackN2 = nomad2Modal.querySelector('.nomad2-modal-track');
+                var dotsN2 = nomad2Modal.querySelectorAll('.nomad2-modal-dot');
+                var goToN2 = function (i) {
+                    var idx = Math.max(0, Math.min(i, 1));
+                    if (trackN2) trackN2.style.transform = 'translateX(-' + idx * 100 + '%)';
+                    dotsN2.forEach(function (d, j) { d.classList.toggle('active', j === idx); });
+                    return idx;
+                };
+                var curN2 = 0;
+                nomad2Modal.querySelector('.nomad2-modal-nav-left') && nomad2Modal.querySelector('.nomad2-modal-nav-left').addEventListener('click', function () { curN2 = goToN2(curN2 - 1); });
+                nomad2Modal.querySelector('.nomad2-modal-nav-right') && nomad2Modal.querySelector('.nomad2-modal-nav-right').addEventListener('click', function () { curN2 = goToN2(curN2 + 1); });
+                dotsN2.forEach(function (d, i) { d.addEventListener('click', function () { curN2 = goToN2(i); }); });
+                var bodyN2 = nomad2Modal.querySelector('.modal-body');
+                if (bodyN2) {
+                    var tsXN2 = 0, teXN2 = 0, minSwipeN2 = 50;
+                    bodyN2.addEventListener('touchstart', function (e) { tsXN2 = e.changedTouches ? e.changedTouches[0].screenX : e.screenX; }, { passive: true });
+                    bodyN2.addEventListener('touchend', function (e) {
+                        teXN2 = e.changedTouches ? e.changedTouches[0].screenX : e.screenX;
+                        var d = tsXN2 - teXN2;
+                        if (d > minSwipeN2) curN2 = goToN2(curN2 + 1);
+                        else if (d < -minSwipeN2) curN2 = goToN2(curN2 - 1);
+                    }, { passive: true });
+                }
+            }
 
             if (prevBtn) prevBtn.addEventListener('click', function () { showSlide(currentIndex - 1); });
             if (nextBtn) nextBtn.addEventListener('click', function () { showSlide(currentIndex + 1); });
