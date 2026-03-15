@@ -43,6 +43,7 @@
                                             src="{{ asset('storage/' . $item->image_path) }}"
                                             alt="Gallery {{ $item->id }}"
                                             class="img-fluid rounded"
+                                            style="transform: rotate({{ (int) ($item->image_orientation ?? 0) }}deg);"
                                         >
                                     @endif
                                 </td>

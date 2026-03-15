@@ -27,14 +27,32 @@
                 @method('PUT')
 
                 <div class="mb-3">
+                    <label for="image_orientation" class="form-label">Image orientation</label>
+                    <select class="form-select" id="image_orientation" name="image_orientation">
+                        @foreach (\App\Models\GalleryItem::IMAGE_ORIENTATIONS as $deg)
+                            <option value="{{ $deg }}" {{ (int) old('image_orientation', $item->image_orientation ?? 0) === $deg ? 'selected' : '' }}>
+                                @if ($deg === 0)
+                                    Normal (0°)
+                                @else
+                                    Rotate {{ $deg }}° clockwise
+                                @endif
+                            </option>
+                        @endforeach
+                    </select>
+                    <div class="form-text">Use this if the image displays with wrong orientation (e.g. from phone photos).</div>
+                </div>
+
+                <div class="mb-3">
                     <label class="form-label d-block">Current Image</label>
                     @if ($item->image_path)
-                        <img
-                            src="{{ asset('storage/' . $item->image_path) }}"
-                            alt="Gallery"
-                            class="img-fluid rounded mb-2"
-                            style="max-width: 240px;"
-                        >
+                        <div class="mb-2" style="max-width: 240px;">
+                            <img
+                                src="{{ asset('storage/' . $item->image_path) }}"
+                                alt="Gallery"
+                                class="img-fluid rounded"
+                                style="max-width: 100%; transform: rotate({{ (int) ($item->image_orientation ?? 0) }}deg);"
+                            >
+                        </div>
                     @else
                         <p class="text-muted">No image uploaded.</p>
                     @endif

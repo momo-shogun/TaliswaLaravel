@@ -8,6 +8,7 @@ use App\Services\ImageCompressionService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
 /**
@@ -43,6 +44,7 @@ class GalleryItemController extends Controller
     {
         $data = $request->validate([
             'image' => ['required', 'image', 'max:2048'],
+            'image_orientation' => ['nullable', 'integer', Rule::in(GalleryItem::IMAGE_ORIENTATIONS)],
         ]);
 
         $imagePath = app(ImageCompressionService::class)->compressAndStore(
@@ -52,6 +54,7 @@ class GalleryItemController extends Controller
 
         GalleryItem::create([
             'image_path' => $imagePath,
+            'image_orientation' => (int) ($data['image_orientation'] ?? 0),
         ]);
 
         return redirect()
@@ -76,9 +79,12 @@ class GalleryItemController extends Controller
     {
         $data = $request->validate([
             'image' => ['nullable', 'image', 'max:2048'],
+            'image_orientation' => ['nullable', 'integer', Rule::in(GalleryItem::IMAGE_ORIENTATIONS)],
         ]);
 
-        $update = [];
+        $update = [
+            'image_orientation' => (int) ($data['image_orientation'] ?? 0),
+        ];
 
         if ($request->hasFile('image')) {
             if ($gallery->image_path && Storage::disk('public')->exists($gallery->image_path)) {

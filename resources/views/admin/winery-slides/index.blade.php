@@ -46,6 +46,7 @@
                                             src="{{ asset('storage/' . $slide->image_path) }}"
                                             alt="{{ $slide->title }}"
                                             class="img-fluid rounded"
+                                            style="transform: rotate({{ (int) ($slide->image_orientation ?? 0) }}deg);"
                                         >
                                     @endif
                                 </td>

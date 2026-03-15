@@ -21,6 +21,17 @@
                 @csrf
 
                 <div class="mb-3">
+                    <label for="image_orientation" class="form-label">Image orientation</label>
+                    <select class="form-select" id="image_orientation" name="image_orientation">
+                        <option value="0" {{ (int) old('image_orientation', 0) === 0 ? 'selected' : '' }}>Normal (0°)</option>
+                        <option value="90" {{ (int) old('image_orientation', 0) === 90 ? 'selected' : '' }}>Rotate 90° clockwise</option>
+                        <option value="180" {{ (int) old('image_orientation', 0) === 180 ? 'selected' : '' }}>Rotate 180°</option>
+                        <option value="270" {{ (int) old('image_orientation', 0) === 270 ? 'selected' : '' }}>Rotate 270° clockwise</option>
+                    </select>
+                    <div class="form-text">Use this if the image displays with wrong orientation (e.g. from phone camera).</div>
+                </div>
+
+                <div class="mb-3">
                     <label for="image" class="form-label">Image</label>
                     <input
                         type="file"

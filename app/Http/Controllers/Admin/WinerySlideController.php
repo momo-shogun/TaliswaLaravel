@@ -54,6 +54,7 @@ class WinerySlideController extends Controller
             'description' => ['nullable', 'string'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
             'image' => ['required', 'image', 'max:2048'],
+            'image_orientation' => ['nullable', 'integer', Rule::in(WinerySlide::IMAGE_ORIENTATIONS)],
         ]);
 
         $imagePath = app(ImageCompressionService::class)->compressAndStore(
@@ -66,6 +67,7 @@ class WinerySlideController extends Controller
             'description' => $data['description'] ?? null,
             'sort_order' => (int) $data['sort_order'],
             'image_path' => $imagePath,
+            'image_orientation' => (int) ($data['image_orientation'] ?? 0),
         ]);
 
         return redirect()
@@ -99,12 +101,14 @@ class WinerySlideController extends Controller
             'description' => ['nullable', 'string'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
             'image' => ['nullable', 'image', 'max:2048'],
+            'image_orientation' => ['nullable', 'integer', Rule::in(WinerySlide::IMAGE_ORIENTATIONS)],
         ]);
 
         $update = [
             'title' => $data['title'],
             'description' => $data['description'] ?? null,
             'sort_order' => (int) $data['sort_order'],
+            'image_orientation' => (int) ($data['image_orientation'] ?? 0),
         ];
 
         if ($request->hasFile('image')) {

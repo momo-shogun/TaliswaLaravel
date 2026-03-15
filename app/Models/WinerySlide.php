@@ -27,7 +27,15 @@ class WinerySlide extends Model
         'title',
         'description',
         'image_path',
+        'image_orientation',
         'sort_order',
     ];
+
+    /**
+     * Valid image orientation values (degrees).
+     *
+     * @var array<int, int>
+     */
+    public const IMAGE_ORIENTATIONS = [0, 90, 180, 270];
 }
 

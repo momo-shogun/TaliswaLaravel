@@ -78,6 +78,7 @@ At Kikkeri Farms, fruit is selected with precision and transformed through metic
                                                     src="{{ asset('storage/' . $slide->image_path) }}"
                                                     alt="{{ $slide->title }}"
                                                     class="img-fluid"
+                                                    style="transform: rotate({{ (int) ($slide->image_orientation ?? 0) }}deg);"
                                                 >
                                             @endif
                                         </div>
@@ -137,7 +138,7 @@ At Kikkeri Farms, fruit is selected with precision and transformed through metic
                 <div class="swiper-slide">
                     <div class="gallery--slide-inner">
                         @if ($item->image_path)
-                        <img src="{{ asset('storage/' . $item->image_path) }}" alt="Gallery {{ $index + 1 }}" class="gallery--slide-img">
+                        <img src="{{ asset('storage/' . $item->image_path) }}" alt="Gallery {{ $index + 1 }}" class="gallery--slide-img" style="transform: rotate({{ (int) ($item->image_orientation ?? 0) }}deg);">
                         @endif
                     </div>
                 </div>
