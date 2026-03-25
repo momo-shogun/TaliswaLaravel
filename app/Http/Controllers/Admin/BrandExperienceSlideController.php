@@ -54,8 +54,8 @@ class BrandExperienceSlideController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
-            'image' => ['required', 'image', 'max:2048'],
-            'decoration' => ['nullable', 'image', 'max:2048'],
+            'image' => ['required', 'image'],
+            'decoration' => ['nullable', 'image'],
             'decoration_size' => ['nullable', 'integer', 'min:60', 'max:300'],
         ]);
 
@@ -108,8 +108,8 @@ class BrandExperienceSlideController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
-            'image' => ['nullable', 'image', 'max:2048'],
-            'decoration' => ['nullable', 'image', 'max:2048'],
+            'image' => ['nullable', 'image'],
+            'decoration' => ['nullable', 'image'],
             'decoration_size' => ['nullable', 'integer', 'min:60', 'max:300'],
         ]);
 

@@ -43,7 +43,7 @@ class GalleryItemController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $data = $request->validate([
-            'image' => ['required', 'image', 'max:2048'],
+            'image' => ['required', 'image'],
             'image_orientation' => ['nullable', 'integer', Rule::in(GalleryItem::IMAGE_ORIENTATIONS)],
         ]);
 
@@ -78,7 +78,7 @@ class GalleryItemController extends Controller
     public function update(Request $request, GalleryItem $gallery): RedirectResponse
     {
         $data = $request->validate([
-            'image' => ['nullable', 'image', 'max:2048'],
+            'image' => ['nullable', 'image'],
             'image_orientation' => ['nullable', 'integer', Rule::in(GalleryItem::IMAGE_ORIENTATIONS)],
         ]);
 

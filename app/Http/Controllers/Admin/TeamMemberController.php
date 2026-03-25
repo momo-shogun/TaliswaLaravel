@@ -53,7 +53,7 @@ class TeamMemberController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'role' => ['nullable', 'string', 'max:255'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
-            'image' => ['required', 'image', 'max:2048'],
+            'image' => ['required', 'image'],
         ]);
 
         $imagePath = app(ImageCompressionService::class)->compressAndStore(
@@ -98,7 +98,7 @@ class TeamMemberController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'role' => ['nullable', 'string', 'max:255'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
-            'image' => ['nullable', 'image', 'max:2048'],
+            'image' => ['nullable', 'image'],
         ]);
 
         $update = [

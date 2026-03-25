@@ -41,7 +41,6 @@
                         accept="image/*"
                         required
                     >
-                    <div class="form-text">Max 2MB. Images are compressed automatically.</div>
                     <div class="form-text fw-semibold text-dark mt-1">Recommended size: 800 × 1000 px (4:5 aspect ratio) for the gallery carousel.</div>
                 </div>
 

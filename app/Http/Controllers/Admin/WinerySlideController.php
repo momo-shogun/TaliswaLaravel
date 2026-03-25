@@ -53,7 +53,7 @@ class WinerySlideController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
-            'image' => ['required', 'image', 'max:2048'],
+            'image' => ['required', 'image'],
             'image_orientation' => ['nullable', 'integer', Rule::in(WinerySlide::IMAGE_ORIENTATIONS)],
         ]);
 
@@ -100,7 +100,7 @@ class WinerySlideController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'sort_order' => ['required', 'integer', Rule::in(config('admin.sort_orders'))],
-            'image' => ['nullable', 'image', 'max:2048'],
+            'image' => ['nullable', 'image'],
             'image_orientation' => ['nullable', 'integer', Rule::in(WinerySlide::IMAGE_ORIENTATIONS)],
         ]);
 
@@ -146,4 +146,3 @@ class WinerySlideController extends Controller
             ->with('status', 'Winery slide deleted successfully.');
     }
 }
-
