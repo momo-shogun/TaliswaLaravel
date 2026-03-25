@@ -87,7 +87,7 @@
                         accept="image/*"
                     >
                     <div class="form-text">
-                        Recommended: 800 × 1000 px (4:5) for the Brand Experience carousel.
+                        Supported: images & GIFs. Recommended: 800 × 1000 px (4:5) for the Brand Experience carousel.
                     </div>
                 </div>
 
@@ -115,7 +115,7 @@
                         accept="image/*"
                     >
                     <div class="form-text">
-                        Shown in the bottom-right of the green panel. Use PNG or WebP to keep transparent background. Recommended: 400 × 400 px (1:1) or similar.
+                        Supported: images & GIFs. Shown in the bottom-right of the green panel. Use PNG or WebP to keep transparent background. Recommended: 400 × 400 px (1:1) or similar.
                     </div>
                 </div>
 

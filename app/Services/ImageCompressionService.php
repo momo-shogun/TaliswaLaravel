@@ -26,6 +26,11 @@ class ImageCompressionService
      */
     public function compressAndStore(UploadedFile $file, string $directory): string
     {
+        // GIFs are often animated; converting to JPEG would destroy animation.
+        if ($this->isGif($file)) {
+            return $this->storeAsOriginal($file, $directory, 'gif');
+        }
+
         if (! extension_loaded('gd')) {
             throw new \RuntimeException('PHP GD extension is required for image compression.');
         }
@@ -54,8 +59,8 @@ class ImageCompressionService
             $resource = $this->resizeProportional($resource, $width, $height, self::MAX_DIMENSION);
         }
 
-        $filename = Str::random(40) . '.jpg';
-        $relativePath = $directory . '/' . $filename;
+        $filename = Str::random(40).'.jpg';
+        $relativePath = $directory.'/'.$filename;
         $fullPath = Storage::disk('public')->path($relativePath);
 
         // Ensure directory exists
@@ -73,6 +78,24 @@ class ImageCompressionService
         }
 
         return $relativePath;
+    }
+
+    private function isGif(UploadedFile $file): bool
+    {
+        $mime = strtolower((string) $file->getMimeType());
+        if ($mime === 'image/gif') {
+            return true;
+        }
+
+        return strtolower($file->getClientOriginalExtension()) === 'gif';
+    }
+
+    private function storeAsOriginal(UploadedFile $file, string $directory, string $fallbackExtension): string
+    {
+        $ext = strtolower($file->getClientOriginalExtension() ?: $fallbackExtension);
+        $filename = Str::random(40).'.'.$ext;
+
+        return $file->storeAs($directory, $filename, 'public');
     }
 
     private function createImageResource(string $path, int $type): \GdImage|false
