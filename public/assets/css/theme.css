@@ -4782,7 +4782,8 @@ body:has(.about-hero) {
 @media (max-width: 992px) {
     .nomad2-page {
         overflow-x: hidden;
-        overflow: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -4900,8 +4901,8 @@ body:has(.about-hero) {
         align-items: center;
         justify-content: flex-start;
         min-height: 100vh;
-        height: 100vh;
-        overflow: hidden;
+        height: auto;
+        overflow: visible;
     }
 
     .nomad2-hero--left {
@@ -4910,20 +4911,20 @@ body:has(.about-hero) {
         width: 100%;
         left: 0;
         bottom: 0;
-        flex: 1 1 0;
+        flex: 0 0 auto;
         min-height: 0;
-        overflow: hidden;
+        overflow: visible;
     }
 
     .nomad2-hero--right {
         order: 1;
-        padding: 2rem 0 1rem;
+        padding: 0 0.5rem 1rem;
         margin: 0;
         width: 100%;
         justify-content: center;
         align-items: center;
         flex: 0 0 auto;
-        max-height: 44vh;
+        overflow: visible;
     }
 
     .nomad2-text-card {
@@ -4944,10 +4945,9 @@ body:has(.about-hero) {
     .nomad2-text-inner {
         position: relative;
         right: 0;
-        flex: 1 1 0;
+        flex: 0 0 auto;
         min-height: 0;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
+        overflow-y: visible;
     }
 
     .nomad2-tree {
@@ -4955,7 +4955,12 @@ body:has(.about-hero) {
     }
 
     .nomad2-bottle {
-        max-height: 50vh;
+        height: 557px;
+        max-height: 557px;
+        max-width: 100%;
+        width: auto;
+        object-fit: contain;
+        object-position: center;
         bottom: 0;
     }
 }
@@ -4980,12 +4985,13 @@ body:has(.about-hero) {
     }
 
     .nomad2-hero--right {
-        padding: 0 0 0.75rem;
+        padding: 0 0.25rem 0.75rem;
         margin: 0;
     }
 
     .nomad2-bottle {
-        max-height: 60vh;
+        height: 557px;
+        max-height: 557px;
         max-width: 100%;
     }
 }
@@ -5003,7 +5009,8 @@ body:has(.about-hero) {
 @media (max-width: 992px) {
     .nomad3-page {
         overflow-x: hidden;
-        overflow: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -5121,8 +5128,8 @@ body:has(.about-hero) {
         align-items: center;
         justify-content: flex-start;
         min-height: 100vh;
-        height: 100vh;
-        overflow: hidden;
+        height: auto;
+        overflow: visible;
     }
 
     .nomad3-hero--left {
@@ -5131,20 +5138,20 @@ body:has(.about-hero) {
         width: 100%;
         left: 0;
         bottom: 0;
-        flex: 1 1 0;
+        flex: 0 0 auto;
         min-height: 0;
-        overflow: hidden;
+        overflow: visible;
     }
 
     .nomad3-hero--right {
         order: 1;
-        padding: 2rem 0 1rem;
+        padding: 0 0.5rem 1rem;
         margin: 0;
         width: 100%;
         justify-content: center;
         align-items: center;
         flex: 0 0 auto;
-        max-height: 44vh;
+        overflow: visible;
     }
 
     .nomad3-text-card {
@@ -5167,10 +5174,9 @@ body:has(.about-hero) {
         position: relative;
         top: 0;
         right: 0;
-        flex: 1 1 0;
+        flex: 0 0 auto;
         min-height: 0;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
+        overflow-y: visible;
     }
 
     .nomad3-title {
@@ -5190,7 +5196,12 @@ body:has(.about-hero) {
     }
 
     .nomad3-bottle {
-        max-height: 44vh;
+        height: 557px;
+        max-height: 557px;
+        max-width: 100%;
+        width: auto;
+        object-fit: contain;
+        object-position: center;
         bottom: 0;
     }
 }
@@ -5206,7 +5217,7 @@ body:has(.about-hero) {
 
     .nomad3-hero--right {
         order: 1;
-        padding: 0 0 0.75rem;
+        padding: 0 0.25rem 0.75rem;
         margin: 0;
     }
 
@@ -5225,7 +5236,8 @@ body:has(.about-hero) {
     }
 
     .nomad3-bottle {
-        max-height: 40vh;
+        height: 557px;
+        max-height: 557px;
         max-width: 100%;
     }
 }
