@@ -1864,7 +1864,7 @@ body:has(.about-hero) {
 
     /* Hero Banner */
     .hero-banner {
-        height: 500px;
+        height: 543px;
         padding: 2rem;
     }
 
@@ -4692,23 +4692,31 @@ body:has(.about-hero) {
         left: 0;
         width: 100%;
         max-width: 100%;
-        margin: 0 0.5rem;
-        height: 100%;
+        margin: 0;
+        height: auto;
         min-height: 0;
-        max-height: 100%;
-        aspect-ratio: auto;
+        max-height: none;
+        /* textbg.png 759×789 — box matches image so contain shows full art uncropped */
+        aspect-ratio: 759 / 789;
         display: flex;
         flex-direction: column;
-        background-size: 133%;
-        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center top;
+        box-sizing: border-box;
     }
 
     .nomad1-text-inner {
-        position: relative;
-        flex: 1 1 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        flex: none;
         min-height: 0;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        box-sizing: border-box;
     }
 
     .nomad1-title {
@@ -4736,7 +4744,7 @@ body:has(.about-hero) {
 
 @media (max-width: 576px) {
     .nomad1-hero {
-        padding: 1.5rem 0.5rem;
+        padding: 1.5rem 0;
     }
 
     .nomad1-hero--left {
@@ -4750,8 +4758,11 @@ body:has(.about-hero) {
     }
 
     .nomad1-text-card {
-        /* margin: 0 0.5rem; */
-        margin-top: 75px;
+        width: 100%;
+        max-width: 100%;
+        margin: 75px 0 0;
+        background-size: contain;
+        background-position: center top;
     }
 
     .nomad1-text-inner {
@@ -4782,8 +4793,7 @@ body:has(.about-hero) {
 @media (max-width: 992px) {
     .nomad2-page {
         overflow-x: hidden;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
+        overflow: hidden;
     }
 }
 
@@ -4802,7 +4812,7 @@ body:has(.about-hero) {
 .nomad2-hero--left {
     display: flex;
     justify-content: center;
-    /* padding: 3rem; */
+    padding: 3rem;
     padding-top: 0;
 }
 
@@ -4816,16 +4826,15 @@ body:has(.about-hero) {
     background-size: contain;
     background-position: center;
     z-index: 1;
-    /* bottom: 11px; */
-    left: 4px;
-    background-size: 100%;
+    bottom: -20px;
+    left: 50px;
 }
 
 .nomad2-text-inner {
     position: absolute;
-    top: 15px;
-    left: -19px;
-    /* right: 80px; */
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
     display: flex;
     flex-direction: column;
@@ -4834,6 +4843,8 @@ body:has(.about-hero) {
     padding: 3.9rem;
     color: #333092;
     font-family: 'Newsreader', serif;
+    gap: 0.75rem;
+    text-align: center;
 }
 
 .nomad2-title {
@@ -4856,7 +4867,7 @@ body:has(.about-hero) {
     font-size: 0.9rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    /* margin-bottom: 1.25rem; */
+    margin-bottom: 1.25rem;
 }
 
 .nomad2-copy {
@@ -4875,7 +4886,7 @@ body:has(.about-hero) {
 .nomad2-tree {
     position: absolute;
     bottom: 11%;
-    left: 17px;
+    left: 0;
     width: 35%;
     max-width: 266px;
     pointer-events: none;
@@ -4892,7 +4903,7 @@ body:has(.about-hero) {
     width: auto;
     object-fit: contain;
     position: relative;
-    bottom: 74px;
+    bottom: 76px;
 }
 
 @media (max-width: 992px) {
@@ -4901,53 +4912,93 @@ body:has(.about-hero) {
         align-items: center;
         justify-content: flex-start;
         min-height: 100vh;
-        height: auto;
-        overflow: visible;
+        height: 100vh;
+        overflow: hidden;
     }
 
     .nomad2-hero--left {
         order: 2;
-        /* padding: 2rem 2rem 0; */
+        padding: 0;
+        padding-top: 2rem;
         width: 100%;
         left: 0;
         bottom: 0;
-        flex: 0 0 auto;
+        flex: 1 1 0;
         min-height: 0;
-        overflow: visible;
+        overflow: hidden;
     }
 
     .nomad2-hero--right {
         order: 1;
-        padding: 0 0.5rem 1rem;
+        padding: 2rem 0 1rem;
         margin: 0;
         width: 100%;
         justify-content: center;
         align-items: center;
         flex: 0 0 auto;
-        overflow: visible;
+        max-height: 44vh;
     }
 
     .nomad2-text-card {
         position: relative;
-        left: 20px;
+        left: 28px;
+        bottom: -20px;
         width: 100%;
         max-width: 100%;
-        height: 100%;
+        margin: 0;
+        height: auto;
         min-height: 0;
-        max-height: 100%;
-        aspect-ratio: auto;
+        max-height: none;
+        aspect-ratio: 809 / 812;
         display: flex;
         flex-direction: column;
-        /* background-size intentionally inherited from base (contain) */
-        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center top;
+        box-sizing: border-box;
     }
 
     .nomad2-text-inner {
-        position: relative;
+        position: absolute;
+        top: 0;
         right: 0;
-        flex: 0 0 auto;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2.5rem 1.25rem 2rem;
+        flex: none;
         min-height: 0;
-        overflow-y: visible;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        box-sizing: border-box;
+    }
+
+    .nomad2-text-inner .nomad2-title,
+    .nomad2-text-inner .nomad2-abv,
+    .nomad2-text-inner .nomad2-tagline,
+    .nomad2-text-inner .nomad2-mrp {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nomad2-title {
+        margin-top: 0;
+    }
+
+    .nomad2-copy {
+        font-family: 'Newsreader', serif;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 311px;
+        width: 100%;
+        text-align: center;
     }
 
     .nomad2-tree {
@@ -4955,43 +5006,66 @@ body:has(.about-hero) {
     }
 
     .nomad2-bottle {
-        height: 557px;
-        max-height: 557px;
-        max-width: 100%;
-        width: auto;
-        object-fit: contain;
-        object-position: center;
+        max-height: 50vh;
         bottom: 0;
+        object-fit: inherit;
     }
 }
 
 @media (max-width: 576px) {
     .nomad2-hero {
-        padding: 1.5rem 0.5rem;
+        padding: 1.5rem 0;
+    }
+
+    .nomad2-hero--left {
+        order: 2;
+    }
+
+    .nomad2-hero--right {
+        order: 1;
+        padding: 0 0 0.75rem;
+        margin: 0;
     }
 
     .nomad2-text-card {
-        /* margin: 0 0.5rem; */
-        margin-top: 25px;
+        width: 100%;
+        max-width: 100%;
+        bottom: -20px;
+        /* margin: 75px 0 0; */
+        background-size: contain;
+        background-position: center top;
     }
 
     .nomad2-text-inner {
-        padding: 1rem 3.5rem;
-        right: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2.25rem 2.25rem 1.75rem 0;
+    }
+
+    .nomad2-text-inner .nomad2-abv,
+    .nomad2-text-inner .nomad2-tagline,
+    .nomad2-text-inner .nomad2-copy,
+    .nomad2-text-inner .nomad2-mrp {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nomad2-text-inner .nomad2-copy {
+        max-width: min(311px, 100%);
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .nomad2-title {
         font-size: 0;
     }
 
-    .nomad2-hero--right {
-        padding: 0 0.25rem 0.75rem;
-        margin: 0;
-    }
-
     .nomad2-bottle {
-        height: 557px;
-        max-height: 557px;
+        max-height: 60vh;
         max-width: 100%;
     }
 }
@@ -5134,7 +5208,8 @@ body:has(.about-hero) {
 
     .nomad3-hero--left {
         order: 2;
-        padding: 2rem 2rem 0;
+        padding: 0;
+        padding-top: 2rem;
         width: 100%;
         left: 0;
         bottom: 0;
@@ -5159,24 +5234,31 @@ body:has(.about-hero) {
         left: 0;
         width: 100%;
         max-width: 100%;
-        margin: 0 0.5rem;
-        height: 100%;
+        margin: 0;
+        height: auto;
         min-height: 0;
-        max-height: 100%;
-        aspect-ratio: auto;
+        max-height: none;
+        /* textbg2.png 712×767 */
+        aspect-ratio: 712 / 685;
         display: flex;
         flex-direction: column;
-        background-size: 133%;
-        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center top;
+        box-sizing: border-box;
     }
 
     .nomad3-text-inner {
-        position: relative;
+        position: absolute;
         top: 0;
         right: 0;
-        flex: 0 0 auto;
+        bottom: 0;
+        left: 0;
+        flex: none;
         min-height: 0;
-        overflow-y: visible;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        box-sizing: border-box;
     }
 
     .nomad3-title {
@@ -5208,7 +5290,7 @@ body:has(.about-hero) {
 
 @media (max-width: 576px) {
     .nomad3-hero {
-        padding: 1.5rem 0.5rem;
+        padding: 1.5rem 0;
     }
 
     .nomad3-hero--left {
@@ -5222,13 +5304,19 @@ body:has(.about-hero) {
     }
 
     .nomad3-text-card {
-        margin: 0 0.5rem;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        background-size: contain;
+        background-position: center top;
     }
 
     .nomad3-text-inner {
-        position: relative;
-        padding: 1rem 1rem;
+        top: 0;
         right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 1rem 1rem;
     }
 
     .nomad3-title {
@@ -5918,7 +6006,7 @@ body:has(.about-hero) {
 }
 .nomad1-modal-header {
     position: absolute;
-    top: 0;
+    top: 14px;
     right: 0;
     z-index: 1056;
     border: none;
@@ -5929,46 +6017,43 @@ body:has(.about-hero) {
     filter: brightness(0) invert(1);
     opacity: 0.9;
 }
+/* Nomad1 modal-body: same as #taliswa1Modal (desktop hidden overflow; mobile scroll) */
 #nomad1Modal .modal-body,
-.nomad1-modal-body,
-#nomad2Modal .modal-body,
-.nomad2-modal-body {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+.nomad1-modal-body {
+    overflow: hidden;
     padding: 0;
     min-height: 85vh;
+}
+@media (max-width: 991.98px) {
+    #nomad1Modal .modal-body,
+    .nomad1-modal-body {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 }
 .nomad1-modal-iframe {
     width: 100%;
     height: 85vh;
-    min-height: 400px;
     border: none;
     display: block;
 }
 @media (max-width: 991.98px) {
-    #nomad1Modal .modal-dialog,
-    #nomad2Modal .modal-dialog {
+    #nomad1Modal .modal-dialog {
         margin: 0;
         max-width: 100%;
         width: 100%;
     }
-    .nomad1-modal-body,
-    .nomad2-modal-body { min-height: 90vh; }
-    .nomad1-modal-iframe,
-    .nomad2-modal-iframe { height: 90vh; min-height: 50vh; }
+    .nomad1-modal-body { min-height: 90vh; }
+    .nomad1-modal-iframe { height: 90vh; min-height: 50vh; }
 }
 @media (max-width: 576px) {
-    #nomad1Modal .modal-dialog,
-    #nomad2Modal .modal-dialog { max-width: 100%; }
-    .nomad1-modal-body,
-    .nomad2-modal-body { min-height: 85vh; }
-    .nomad1-modal-iframe,
-    .nomad2-modal-iframe { height: 85vh; min-height: 400px; }
-    .nomad1-modal-header,
-    .nomad2-modal-header { padding: 0.75rem; }
+    #nomad1Modal .modal-dialog { max-width: 100%; }
+    .nomad1-modal-body { min-height: 85vh; }
+    .nomad1-modal-iframe { height: 85vh; min-height: 400px; }
+    .nomad1-modal-header { padding: 0.75rem; }
 }
 
-/* Nomad2 modal (same as Nomad1 + carousel) */
+/* Nomad2 modal (same as #taliswa2Modal – carousel + iframes for Nomad 2 & 3) */
 #nomad2Modal .modal-dialog {
     max-width: 1320px;
 }
@@ -5989,8 +6074,19 @@ body:has(.about-hero) {
     filter: brightness(0) invert(1);
     opacity: 0.9;
 }
+#nomad2Modal .modal-body,
 .nomad2-modal-body {
+    overflow: hidden;
+    padding: 0;
+    min-height: 85vh;
     position: relative;
+}
+@media (max-width: 991.98px) {
+    #nomad2Modal .modal-body,
+    .nomad2-modal-body {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 }
 .nomad2-modal-carousel {
     overflow: hidden;
@@ -6059,7 +6155,20 @@ body:has(.about-hero) {
 .nomad2-modal-dot.active {
     background-color: rgba(255, 255, 255, 0.9);
 }
+@media (max-width: 991.98px) {
+    #nomad2Modal .modal-dialog {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    .nomad2-modal-body { min-height: 90vh; }
+    .nomad2-modal-iframe { height: 90vh; min-height: 50vh; }
+}
 @media (max-width: 576px) {
+    #nomad2Modal .modal-dialog { max-width: 100%; }
+    .nomad2-modal-body { min-height: 85vh; }
+    .nomad2-modal-iframe { height: 85vh; min-height: 400px; }
+    .nomad2-modal-header { padding: 0.75rem; }
     .nomad2-modal-nav img { max-width: 2rem; max-height: 2rem; }
     .nomad2-modal-nav-left { left: 0.25rem; }
     .nomad2-modal-nav-right { right: 0.25rem; }
