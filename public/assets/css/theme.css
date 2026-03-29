@@ -2704,26 +2704,27 @@ body:has(.about-hero) {
 .winery-experience--box-green {
     background-color: var(--green-dark);
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: stretch;
 }
 
 .winery-experience--box-green .winery-experience--box-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: stretch;
+    text-align: left;
     width: 100%;
-    max-width: 480px;
+    max-width: 100%;
 }
 
 .winery-experience--box-title {
     color: var(--light-white-color);
     font-size: 24px;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     font-family: var(--secondary-font);
     margin-bottom: 1rem;
+    margin-top: 0;
 }
 
 .winery-experience--box-description {
@@ -2731,6 +2732,7 @@ body:has(.about-hero) {
     font-size: 1rem;
     line-height: 1.65;
     margin: 0;
+    text-align: left;
 }
 
 .winery-pagination {
