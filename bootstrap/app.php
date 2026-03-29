@@ -22,7 +22,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $exceptions->renderable(function (\Symfony\Component\HttpKernel\Exception\HttpException $e) {
             if ($e->getStatusCode() === 413) {
                 return response()->view('errors.413', [
-                    'message' => $e->getMessage() ?: 'The file or data you are uploading is too large. Please use an image under 2MB.',
+                    'message' => $e->getMessage() ?: 'The file or data you are uploading is too large.',
                 ], 413);
             }
         });

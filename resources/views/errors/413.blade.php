@@ -21,7 +21,7 @@
         <div class="error-code">413</div>
         <h1 class="error-title">Request Entity Too Large</h1>
         <p class="error-message">{{ $message ?? 'The file or data you are uploading is too large.' }}</p>
-        <p class="error-hint">Please use an image under 2MB. You can compress images using free tools online before uploading.</p>
+        <p class="error-hint">If this keeps happening, try a smaller file or ask your host to increase PHP <code>upload_max_filesize</code> and <code>post_max_size</code>.</p>
         <a href="{{ url()->previous('/') }}" class="btn-back">Go Back</a>
     </div>
 </body>

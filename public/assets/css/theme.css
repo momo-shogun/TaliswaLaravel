@@ -2126,10 +2126,10 @@ body:has(.about-hero) {
         width: 90%;
     }
 
-    /* About Section */
+    /* About Section – mobile height */
     .about-section {
         padding: 3rem 1rem;
-        height: 400px;
+        height: 580px;
     }
 
     .about-section--label {
@@ -2279,7 +2279,7 @@ body:has(.about-hero) {
     .about-section--creative {
         width: 100%;
         position: absolute;
-        bottom: -3rem;
+        bottom: 0rem;
     }
 
     /* Feature Section - Small Mobile */
