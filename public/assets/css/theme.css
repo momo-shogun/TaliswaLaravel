@@ -337,21 +337,27 @@ body {
     }
 }
 
-/* Hamburger toggler: clear border, theme color icon */
+/* Hamburger toggler: Taliswa theme green (#385E4B), light icon for contrast */
 .navbar-toggler--custom {
-    border: 1px solid rgba(51, 48, 146, 0.3);
+    background-color: #385e4b;
+    border: 1px solid #385e4b;
     border-radius: 0.375rem;
     padding: 0.375rem 0.75rem;
 }
 
+.navbar-toggler--custom:hover {
+    background-color: #2f5043;
+    border-color: #2f5043;
+}
+
 .navbar-toggler--custom:focus {
-    box-shadow: 0 0 0 0.2rem rgba(51, 48, 146, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(56, 94, 75, 0.35);
 }
 
 .navbar-toggler--custom .navbar-toggler-icon {
     width: 1.25em;
     height: 1.25em;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23333092' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 @media (max-width: 991.98px) {

@@ -31,9 +31,9 @@
 
     <marquee behavior="" direction="">
         <div>
-            <p><span></span>From Kakeri Farms, Authentic wines with a wild spirit</p>
-            <p><span></span>From Kakeri Farms, Authentic wines with a wild spirit</p>
-            <p><span></span>From Kakeri Farms, Authentic wines with a wild spirit</p>
+            <p><span></span>From Kikkeri  Farms, Authentic wines with a wild spirit</p>
+            <p><span></span>From Kikkeri  Farms, Authentic wines with a wild spirit</p>
+            <p><span></span>From Kikkeri  Farms, Authentic wines with a wild spirit</p>
         </div>
     </marquee>
 
