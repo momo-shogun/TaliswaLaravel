@@ -30,3 +30,9 @@ Homestead.yaml
 error_log
 
 Thumbs.db
+
+# Cursor typo (in case something is created as .crusor/)
+.crusor/
+
+# Ignore markdown files (local notes/artifacts)
+*.md
