@@ -131,6 +131,6 @@ return [
     |
     */
 
-    'whatsapp_number' => env('WHATSAPP_NUMBER', '+917275408525'),
+    'whatsapp_number' => env('WHATSAPP_NUMBER', '+919686369899'),
 
 ];

@@ -77,8 +77,7 @@
         <a href="{{ route('collection') }}#nomad-collection" class="f-card f-card--link text-decoration-none">
             <div class="f-card--content bg-2">
                 <img src="{{ asset('assets/img/logos/nomad-logo.png') }}" class="img-fluid f-card--logo" alt="">
-                <p>A delicious category of honey wines (meads) made by fermenting honey with fruit, adding vibrant
-                    flavors, sugars, and complexity.</p>
+                <p>A delicious category of honey wines (meads) crafted by fermenting honey with fruits & berries, bringing natural depth, character, and complexity.</p>
                 <img src="{{ asset('assets/img/white-border.png') }}" class="img-fluid f-card--border" alt="">
             </div>
             <div class="f-card--img">
