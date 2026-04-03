@@ -162,6 +162,9 @@
                         <span class="taliswa2-modal-dot active" data-slide="0" aria-label="Slide 1"></span>
                         <span class="taliswa2-modal-dot" data-slide="1" aria-label="Slide 2"></span>
                     </div>
+                    {{-- Touch swipes hit iframes first; narrow strips capture horizontal swipe above carousel --}}
+                    <div class="collection-iframe-swipe-edge collection-iframe-swipe-edge--left" aria-hidden="true"></div>
+                    <div class="collection-iframe-swipe-edge collection-iframe-swipe-edge--right" aria-hidden="true"></div>
                 </div>
             </div>
         </div>
@@ -246,6 +249,8 @@
                         <span class="nomad2-modal-dot active" data-slide="0" aria-label="Slide 1"></span>
                         <span class="nomad2-modal-dot" data-slide="1" aria-label="Slide 2"></span>
                     </div>
+                    <div class="collection-iframe-swipe-edge collection-iframe-swipe-edge--left" aria-hidden="true"></div>
+                    <div class="collection-iframe-swipe-edge collection-iframe-swipe-edge--right" aria-hidden="true"></div>
                 </div>
             </div>
         </div>
@@ -367,17 +372,28 @@
                 taliswa2Modal.querySelector('.taliswa2-modal-nav-left') && taliswa2Modal.querySelector('.taliswa2-modal-nav-left').addEventListener('click', function () { cur2 = goTo2(cur2 - 1); });
                 taliswa2Modal.querySelector('.taliswa2-modal-nav-right') && taliswa2Modal.querySelector('.taliswa2-modal-nav-right').addEventListener('click', function () { cur2 = goTo2(cur2 + 1); });
                 dots2.forEach(function (d, i) { d.addEventListener('click', function () { cur2 = goTo2(i); }); });
-                var body2 = taliswa2Modal.querySelector('.modal-body');
-                if (body2) {
-                    var tsX2 = 0, teX2 = 0, minSwipe = 50;
-                    body2.addEventListener('touchstart', function (e) { tsX2 = e.changedTouches ? e.changedTouches[0].screenX : e.screenX; }, { passive: true });
-                    body2.addEventListener('touchend', function (e) {
-                        teX2 = e.changedTouches ? e.changedTouches[0].screenX : e.screenX;
-                        var d = tsX2 - teX2;
-                        if (d > minSwipe) cur2 = goTo2(cur2 + 1);
-                        else if (d < -minSwipe) cur2 = goTo2(cur2 - 1);
-                    }, { passive: true });
-                }
+                /* Swipe on edge strips only — touches on full-screen iframes never reach .modal-body */
+                (function () {
+                    var minSwipe = 45;
+                    var tsX2 = 0;
+                    function touchStartX(e) {
+                        if (e.touches && e.touches[0]) return e.touches[0].screenX;
+                        return 0;
+                    }
+                    function touchEndX(e) {
+                        if (e.changedTouches && e.changedTouches[0]) return e.changedTouches[0].screenX;
+                        return tsX2;
+                    }
+                    taliswa2Modal.querySelectorAll('.collection-iframe-swipe-edge').forEach(function (el) {
+                        el.addEventListener('touchstart', function (e) { tsX2 = touchStartX(e); }, { passive: true });
+                        el.addEventListener('touchend', function (e) {
+                            var te = touchEndX(e);
+                            var delta = tsX2 - te;
+                            if (delta > minSwipe) cur2 = goTo2(cur2 + 1);
+                            else if (delta < -minSwipe) cur2 = goTo2(cur2 - 1);
+                        }, { passive: true });
+                    });
+                })();
             }
             var nomad2Modal = document.getElementById('nomad2Modal');
             if (nomad2Modal) {
@@ -399,17 +415,27 @@
                 nomad2Modal.querySelector('.nomad2-modal-nav-left') && nomad2Modal.querySelector('.nomad2-modal-nav-left').addEventListener('click', function () { curN2 = goToN2(curN2 - 1); });
                 nomad2Modal.querySelector('.nomad2-modal-nav-right') && nomad2Modal.querySelector('.nomad2-modal-nav-right').addEventListener('click', function () { curN2 = goToN2(curN2 + 1); });
                 dotsN2.forEach(function (d, i) { d.addEventListener('click', function () { curN2 = goToN2(i); }); });
-                var bodyN2 = nomad2Modal.querySelector('.modal-body');
-                if (bodyN2) {
-                    var tsXN2 = 0, teXN2 = 0, minSwipeN2 = 50;
-                    bodyN2.addEventListener('touchstart', function (e) { tsXN2 = e.changedTouches ? e.changedTouches[0].screenX : e.screenX; }, { passive: true });
-                    bodyN2.addEventListener('touchend', function (e) {
-                        teXN2 = e.changedTouches ? e.changedTouches[0].screenX : e.screenX;
-                        var d = tsXN2 - teXN2;
-                        if (d > minSwipeN2) curN2 = goToN2(curN2 + 1);
-                        else if (d < -minSwipeN2) curN2 = goToN2(curN2 - 1);
-                    }, { passive: true });
-                }
+                (function () {
+                    var minSwipe = 45;
+                    var tsX = 0;
+                    function touchStartX(e) {
+                        if (e.touches && e.touches[0]) return e.touches[0].screenX;
+                        return 0;
+                    }
+                    function touchEndX(e) {
+                        if (e.changedTouches && e.changedTouches[0]) return e.changedTouches[0].screenX;
+                        return tsX;
+                    }
+                    nomad2Modal.querySelectorAll('.collection-iframe-swipe-edge').forEach(function (el) {
+                        el.addEventListener('touchstart', function (e) { tsX = touchStartX(e); }, { passive: true });
+                        el.addEventListener('touchend', function (e) {
+                            var te = touchEndX(e);
+                            var delta = tsX - te;
+                            if (delta > minSwipe) curN2 = goToN2(curN2 + 1);
+                            else if (delta < -minSwipe) curN2 = goToN2(curN2 - 1);
+                        }, { passive: true });
+                    });
+                })();
             }
 
             if (prevBtn) prevBtn.addEventListener('click', function () { showSlide(currentIndex - 1); });
@@ -425,11 +451,12 @@
             var swipeTarget = carouselWrap || (modal ? modal.querySelector('.modal-body') : null);
             if (swipeTarget) {
                 swipeTarget.addEventListener('touchstart', function (e) {
-                    touchStartX = e.changedTouches ? e.changedTouches[0].screenX : e.screenX;
+                    if (e.touches && e.touches[0]) touchStartX = e.touches[0].screenX;
+                    else if (e.changedTouches && e.changedTouches[0]) touchStartX = e.changedTouches[0].screenX;
                 }, { passive: true });
                 swipeTarget.addEventListener('touchend', function (e) {
                     if (images.length <= 1) return;
-                    touchEndX = e.changedTouches ? e.changedTouches[0].screenX : e.screenX;
+                    touchEndX = e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].screenX : touchStartX;
                     var diff = touchStartX - touchEndX;
                     if (diff > minSwipe) showSlide(currentIndex + 1);
                     else if (diff < -minSwipe) showSlide(currentIndex - 1);

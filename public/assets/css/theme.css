@@ -5747,6 +5747,30 @@ body:has(.about-hero) {
 .taliswa2-modal-carousel {
     overflow: hidden;
     width: 100%;
+    position: relative;
+    z-index: 1;
+}
+/* Iframes steal touch events; side strips sit above carousel (below nav z-index 1056) for swipe */
+.collection-iframe-swipe-edge {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+    max-width: 200px;
+    z-index: 1055;
+    touch-action: pan-y;
+}
+@media (max-width: 991.98px) {
+    .collection-iframe-swipe-edge {
+        display: block;
+    }
+}
+.collection-iframe-swipe-edge--left {
+    left: 0;
+}
+.collection-iframe-swipe-edge--right {
+    right: 0;
 }
 .taliswa2-modal-track {
     display: flex;
@@ -6097,6 +6121,8 @@ body:has(.about-hero) {
 .nomad2-modal-carousel {
     overflow: hidden;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 .nomad2-modal-track {
     display: flex;
