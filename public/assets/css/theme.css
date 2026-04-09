@@ -6260,6 +6260,14 @@ body:has(.about-hero) {
     max-width: 10rem;
     width: 100%;
     height: auto;
+    /* main-logo.png is dark green; invert to light so it reads on --green-dark */
+    filter: brightness(0) invert(1);
+    opacity: 0.96;
+}
+
+.age-verify-modal__logo-link:hover .age-verify-modal__logo,
+.age-verify-modal__logo-link:focus-visible .age-verify-modal__logo {
+    opacity: 1;
 }
 
 .age-verify-modal__title {
