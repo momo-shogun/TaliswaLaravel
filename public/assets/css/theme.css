@@ -6221,7 +6221,7 @@ body:has(.about-hero) {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
-    z-index: 9998;
+    z-index: 1040;
     transition: transform 0.2s, box-shadow 0.2s;
     text-decoration: none;
 }
@@ -6232,4 +6232,82 @@ body:has(.about-hero) {
 }
 .whatsapp-float i {
     font-size: 1.75rem;
+}
+
+/* Age verification modal (public layout) */
+.age-verify-modal .modal-dialog {
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.age-verify-modal__content {
+    background-color: var(--green-dark);
+    border: 1px solid rgba(243, 234, 224, 0.35);
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.35);
+}
+
+.age-verify-modal__body {
+    padding: 2.25rem 1.75rem;
+}
+
+.age-verify-modal__logo-link {
+    text-decoration: none;
+}
+
+.age-verify-modal__logo {
+    max-width: 10rem;
+    width: 100%;
+    height: auto;
+}
+
+.age-verify-modal__title {
+    font-family: var(--primary-font);
+    color: var(--light-white-color);
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.35;
+    margin: 0;
+    text-transform: none;
+}
+
+.age-verify-modal__btn {
+    min-width: 7.5rem;
+    font-family: var(--primary-font);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--light-white-color);
+    background-color: transparent;
+    border: 1px solid var(--light-white-color);
+    padding: 0.65rem 1.5rem;
+    border-radius: 0.25rem;
+}
+
+.age-verify-modal__btn:hover,
+.age-verify-modal__btn:focus {
+    color: var(--green-dark);
+    background-color: var(--light-white-color);
+    border-color: var(--light-white-color);
+}
+
+.age-verify-modal__legal {
+    font-family: var(--secondary-font);
+    color: rgba(243, 234, 224, 0.88);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.age-verify-modal__legal a {
+    color: var(--light-white-color);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.age-verify-modal__legal a:hover {
+    color: var(--khaki);
+}
+
+.age-verify-modal .modal-backdrop.show {
+    opacity: 0.65;
 }

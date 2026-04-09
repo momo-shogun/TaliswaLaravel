@@ -43,6 +43,8 @@
 <!-- Main script bundle (if needed) -->
 <script type="module" src="{{ asset('assets/js/script.js') }}"></script>
 
+@includeWhen(! request()->is('admin-panel*'), 'partials.age-verification')
+
 @stack('scripts')
 </body>
 </html>
